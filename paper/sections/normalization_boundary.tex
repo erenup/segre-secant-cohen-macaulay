@@ -1,0 +1,886 @@
+\subsection{Boundary models for one-sided and mixed extensions}
+\label{nb:statements}
+
+We retain the circuit matrices $Q_1,\ldots,Q_6$, their span $L_0$,
+and $v(s)=(1,s,s^2)^{\mathsf T}$ from~\eqref{eq:Q} and the
+row--column construction. Thus $\sum_{i=1}^6Q_i=0$, and $A_0,B_0$
+denote the old three-dimensional coordinate subspaces. All graph and
+image closures below have their reduced structures. Normalization is
+taken in the variety's own function field.
+
+For nonnegative integers $s,m,k,\alpha,\beta$, define the subalgebras
+\begin{align}
+ \mathcal R_{s,m}
+ &=\C\left[t,\mu_j,y_{ij},\frac{\mu_jy_{ij}}t:
+          1\leq j\leq s,\ 1\leq i\leq m\right],
+ \label{nb:R}\displaybreak[0]\\
+ \mathcal B_{k,\alpha,\beta}
+ &=\C\left[t,p,q_j,x_j,z_j,u_h,v_{ij},
+      \frac{pz_j+q_jx_j}t,\frac{pu_h}t,\frac{q_jv_{ij}}t:
+      1\leq j\leq k,\ 1\leq h\leq\beta,\ 1\leq i\leq\alpha
+      \right].\label{nb:B}
+\end{align}
+Each is the displayed subalgebra of the Laurent polynomial ring in its
+algebraically independent base variables with $t$ inverted. Empty index
+sets are allowed. In $\mathcal B$, $\alpha$ counts the $v$-rows and
+$\beta$ the $u$-variables. Give every base variable degree one; the
+displayed fractions also have degree one. The \emph{homogeneous origin}
+is the point where all these generators vanish.
+
+We use \emph{smooth equivalence} in the following precise sense: a
+smooth local cover of the indicated germ is \'etale over the product
+of the model germ with a smooth germ. The covers include the choices
+of factor vectors and the ordering of configurations. No canonical
+coordinate isomorphism on the unframed normalization is asserted.
+The \emph{tangent excess} of a local ring is its embedding dimension
+minus its Krull dimension.
+
+\begin{theorem}[One-sided extensions, D]\label{nb:D}
+Let
+\[
+ r\geq6,\qquad a\geq r-2,\qquad b\geq3,\qquad c\geq r,
+ \qquad a+b\geq r+2.
+\]
+In $A=\C^a$, choose distinct new coordinate vectors
+$u_1,\ldots,u_{r-5}$ complementary to $A_0$, and put
+\begin{equation}\label{nb:row-witness}
+ \begin{split}
+ R_s&=u_s\otimes v(s+3)\quad(1\leq s\leq r-5),\\
+ L_r&=L_0\oplus\langle R_1,\ldots,R_{r-5}\rangle,\\
+ T_{\mathrm{row}}
+ &=\sum_{i=1}^5Q_i\otimes f_i+
+              \sum_{s=1}^{r-5}R_s\otimes f_{5+s}.
+ \end{split}
+\end{equation}
+Here $v(s+3)\in B_0\subset B=\C^b$, even when $b>3$, and
+$f_1,\ldots,f_r$ are coordinate vectors in $\C^c$.
+The ordinary rank and border rank of $T_{\mathrm{row}}$ equal $r$.
+Its entire normalization fibre in $X_r(a,b,c)$ consists of exactly
+$r+1$ reduced points. Six correspond to the precisely six actual
+unordered $r$-term decompositions and are smooth. The other $r-5$
+points correspond to the dependent configurations containing all six
+$Q$-directions and all $R$-directions except one; they are not actual
+$r$-term decompositions.
+
+Put $\ell=r-6$ and $m=b-3$. Every boundary point is smoothly equivalent
+to the homogeneous origin of $\Spec\mathcal R_{\ell,m}$. This ring is
+normal, with tangent excess $\ell m$; its origin is smooth precisely
+when $\ell m=0$. Thus all boundary points are smooth precisely when
+$r=6$ or $b=3$, and all are singular when $r\geq7$ and $b\geq4$.
+Every such point has dimension $r(a+b+c-2)$ and embedding dimension
+\[
+ r(a+b+c-2)+(r-6)(b-3).
+\]
+There is a Zariski open neighbourhood of $T_{\mathrm{row}}$ over which
+normalization is unramified. If $r=6$ or $b=3$, its entire source over
+a sufficiently small such neighbourhood is smooth. All conclusions
+transport under permutation of the tensor factors together with the
+witness; in particular, transposition gives the added-column version.
+\end{theorem}
+
+The cases $r=6$ and $b=3$ recover the corresponding one-sided families
+above. The disjoint diagonal witnesses are different. Theorem~\ref{nb:D}
+does not apply to simultaneous row and column additions and makes no
+global smoothness, Cohen--Macaulayness, rational-singularity or
+exact-depth assertion about the normalization.
+
+\begin{theorem}[One row and several columns, E1]\label{nb:E1}
+Let
+\[
+ r\geq7,\qquad a\geq4,\qquad b\geq r-3,\qquad c\geq r,
+ \qquad a+b\geq r+2,
+ \qquad k=r-6.
+\]
+Choose a new $A$ coordinate $u$ and new $B$ coordinates
+$w_1,\ldots,w_k$, and set
+\begin{equation}\label{nb:E1-witness}
+ \begin{split}
+ R&=u\otimes v(4),\qquad S_j=v(j+3)\otimes w_j,\\
+ L&=L_0\oplus\C R\oplus\langle S_1,\ldots,S_k\rangle,\\
+ T&=\sum_{i=1}^5Q_i\otimes f_i+R\otimes f_6+
+                         \sum_{j=1}^kS_j\otimes f_{6+j}.
+ \end{split}
+\end{equation}
+This is $T_{r;4,r-3}$, of support dimensions $(4,r-3,r)$, padded to
+the stated format. Its rank and border rank equal $r$, and it has
+exactly six actual unordered $r$-term decompositions. The entire
+normalization fibre consists of exactly $r+1$ reduced points indexed
+by the $r$-element subsets of
+$\{[Q_1],\ldots,[Q_6],[R],[S_1],\ldots,[S_k]\}$, as follows:
+\begin{enumerate}
+\item The six subsets omitting a $Q$-point give smooth points and
+      the six actual decompositions.
+\item The subset omitting $R$ gives one singular point with local
+      model $\mathcal R_{r-6,a-3}$ and tangent excess $(r-6)(a-3)$.
+\item Each subset omitting an $S_j$ gives a singular point with local
+      model $\mathcal B_{r-7,a-4,b-r+4}$ and tangent excess
+      $(r-7)(a-3)+b-r+4$.
+\end{enumerate}
+The latter configurations are dependent, not actual decompositions.
+All the displayed excesses are positive, including at $r=7$, when
+$\mathcal B_{0,a-4,b-3}$ is $\mathcal R_{1,b-3}$ after renaming
+$p,u_h$. Every normalization point has dimension $D=r(a+b+c-2)$;
+its embedding dimension is $D$ at a smooth point and $D$ plus the
+stated excess at a boundary point. Normalization is unramified over
+some Zariski open neighbourhood of $T$. Transposition gives the
+family with one added column and $r-6$ added rows, with all formulas
+transported by the swap.
+\end{theorem}
+
+\begin{theorem}[Two rows and two columns, E2]\label{nb:E2}
+Let $a,b\geq5$, $a+b\geq11$, and $c\geq9$. Choose new coordinates
+$u_1,u_2$ in $A$ and $w_1,w_2$ in $B$, and put
+\begin{equation}\label{nb:E2-witness}
+ \begin{split}
+ R_1&=u_1\otimes v(4),\qquad R_2=u_2\otimes v(5),\\
+ S_1&=v(4)\otimes w_1,\qquad S_2=v(5)\otimes w_2,\\
+ L&=L_0\oplus\langle R_1,R_2,S_1,S_2\rangle,\\
+ T&=\sum_{i=1}^5Q_i\otimes f_i+R_1\otimes f_6+R_2\otimes f_7
+                         +S_1\otimes f_8+S_2\otimes f_9.
+ \end{split}
+\end{equation}
+This is $T_{9;5,5}$, with support dimensions $(5,5,9)$, padded to
+the stated format. Its rank and border rank equal nine, and it has
+exactly six actual unordered nine-term decompositions. Its entire
+normalization fibre consists of ten reduced points indexed by the
+nine-element subsets of the ten displayed matrix directions:
+\begin{enumerate}
+\item Six smooth points omit a $Q$-point and correspond to the six
+      actual decompositions.
+\item The two points omitting $R_1$ or $R_2$ are singular, with
+      model $\mathcal B_{2,a-4,b-5}$ and excess $2a+b-11$.
+\item The two points omitting $S_1$ or $S_2$ are singular, with
+      model $\mathcal B_{2,b-4,a-5}$ and excess $a+2b-11$.
+\end{enumerate}
+The four boundary configurations are dependent. Both excesses are
+at least five. The cases $b=5$ and $a=5$ are included, giving
+$\beta=0$ in the respective star model. Every normalization point
+has dimension $D=9(a+b+c-2)$ and embedding dimension $D$ plus its
+listed excess, with excess zero at the smooth points. Normalization
+is unramified over a Zariski open neighbourhood of $T$.
+\end{theorem}
+
+Theorems~\ref{nb:E1} and~\ref{nb:E2} concern exactly the displayed
+mixed witnesses and their admissible padding. Their conclusions
+transport under factor permutations with the witnesses. They make
+no assertion for broader mixed splits with several retained rows and
+columns, nor any global regularity, Cohen--Macaulayness, rational-
+singularity or exact-depth assertion about a normalization.
+
+\subsection{The configuration graph and the exact dependence ideals}
+\label{nb:geometry}
+
+We prove the three theorems together, retaining the exact parameters
+in each statement. Write $W=A\otimes B$,
+$S=\Seg(\PP A\times\PP B)\subset\PP W$, and let $H$ be the closure
+in $\Gr(r,W)$ of the spans of $r$ independent points of $S$.
+
+\begin{lemma}\label{nb:configuration}
+For each displayed witness, $\PP(L)\cap S$ is the reduced scheme
+of its $r+1$ displayed matrix directions. The only relation is the
+six-core relation. Exactly six $r$-subsets are independent; the
+remaining subsets have span dimension $r-1$. The unordered span map
+is birational onto $H$, and $\dim H=r(a+b-2)$.
+
+The reduced closure $G$ of the independent unordered span graph in
+$\operatorname{Hilb}^r(S)\times H$ is integral, proper and birational
+over $H$. Its fibre over $L$ is the reduced scheme of all $r+1$
+$r$-element subsets. Its six independent-configuration points are
+smooth.
+\end{lemma}
+
+\begin{proof}
+The core computation of~\ref{norm:core} gives the reduced six-point
+intersection in $L_0$. The avoidance calculation in the row--column
+construction gives, for every integer $z\geq4$,
+\begin{equation}\label{nb:avoidance}
+ L_0\cap(A_0\otimes\C v(z))=0,
+ \qquad L_0\cap(\C v(z)\otimes B_0)=0.
+\end{equation}
+For the first equality, the determinant of the rows
+$\mathbf1,v(z)^{\mathsf T},v(z)^{\mathsf T}/(1,2,3)$ is
+$-z(z-1)(z-3)/6$, and the remaining third row eliminates the last
+coefficient. For the second, writing $v(z)b^{\mathsf T}\in L_0$
+gives $b_j=jd/(j-z)$ and $(j+z)d=je$ for $j=1,2,3$;
+the first two equations force $d=0$ and then $b=0$.
+The $v$-directions are distinct and avoid the core factor directions.
+
+Let $E_A,E_B$ be the added row and column spaces. Every matrix in
+$L$ has zero $E_A\otimes E_B$ block. For a rank-one matrix
+$x\otimes y$, this forces $x_{E_A}=0$ or $y_{E_B}=0$. A nonzero
+new row forces the latter equality and its assigned $v$-direction;
+distinct directions kill all other new rows, and~\eqref{nb:avoidance}
+kills the core block. The matrix is that $R$-direction. Transposition
+gives the $S$-directions. If neither new block is present, the matrix
+lies in $L_0$. Padding introduces no further possibility: applying
+the quotient maps shows that a nonzero rank-one matrix in a tensor
+product of subspaces has both factors in those subspaces.
+
+At a $Q$-point, a new row or column in the rank-one tangent space
+has its core factor direction, whereas its possible component in $L$
+has a distinct $v$-direction. All added coefficients vanish, leaving
+the core scalar tangent line. At an $R$-point, the zero mixed block
+kills the varying new-column component; distinct row directions kill
+the other new rows, and~\eqref{nb:avoidance} kills the core component.
+Only the scalar tangent remains. The $S$-case is the transpose, and
+padding adds separate complementary tangent blocks. The projective
+tangent spaces therefore vanish. Nakayama's lemma applied to
+$\mathfrak m/\mathfrak m^2=0$ proves reducedness.
+
+The added matrices occupy distinct row or column blocks, so their
+only relation is $\sum_iQ_i=0$. The independent subsets are precisely
+those omitting a $Q$-point. The third flattening has rank $r$ and
+image $L$. An actual $r$-term decomposition must therefore choose a
+basis among these rank-one directions, and that basis determines its
+third factors uniquely. There are precisely six actual unordered
+decompositions; flattening rank also proves that ordinary rank and
+border rank are $r$. Their addition differentials are injective
+modulo summand scalings: in an independent third-factor basis, every
+matrix variation lies both in $L$ and in its rank-one tangent space,
+so it is scalar; the corresponding third-factor variation cancels
+exactly that scaling.
+
+For generic factor lists and every subset $J$ of size $j\geq2$,
+\[
+ \rank(a_i:i\in J)+\rank(b_i:i\in J)
+ =\min(a,j)+\min(b,j)\geq j+2.
+\]
+The last inequality holds because $a,b\geq3$ and $a+b\geq r+2$.
+Sylvester's inequality makes every combination supported on at least
+two terms have matrix rank at least two. Thus the chosen matrices
+are independent and their span has exactly its original rank-one
+directions. The generic unordered configuration is unique, so in
+characteristic zero the span map is birational. Its domain has
+dimension $r(a+b-2)$.
+
+The graph closure is integral and proper over $H$ by projectivity of
+the Hilbert scheme. The condition $Z\subset\PP(K)$ is closed: it is
+the vanishing of the universal evaluation of the annihilator of the
+tautological $K$ in the rank-$r$ bundle $H^0(Z,\OO_Z(1))$. It holds
+on the dense independent graph and hence on its reduced closure.
+Its fibre over $L$ is consequently a closed subscheme of
+$\operatorname{Hilb}^r(S\cap\PP(L))$, the discrete reduced scheme
+of $r$-subsets. Repeated or infinitesimal configurations cannot occur,
+and a pair $(Z,L)$ determines at most one underlying graph point.
+The six independent subsets give smooth graph points, since there
+the graph is the graph of the span morphism on the smooth
+unordered configuration space.
+
+Every dependent subset occurs. If $R_s=u_s\otimes v(s+3)$ is
+omitted, write $v(s+3)=\sum_{i=1}^3\lambda_i r_i^{\mathsf T}$,
+where $r_i$ are the rows of $M$, and deform
+\begin{equation}\label{nb:row-arc}
+ Q_i(\epsilon)=(e_i+\epsilon\lambda_i u_s)r_i
+ \quad(1\leq i\leq3),
+\end{equation}
+keeping the other core and retained added matrices fixed. The sum
+of the six core matrices is $\epsilon R_s$. A relation for
+$\epsilon\ne0$, projected to the core, makes all six core
+coefficients equal. The retained added blocks then kill their own
+coefficients, and the omitted row kills the common coefficient.
+The matrices are independent. Five deformed core matrices, the
+retained additions and the fixed $R_s$ form a basis with independent
+limits, so their spans tend to $L$.
+
+If $S_s=v(s+3)\otimes w_s$ is omitted, choose $\eta_j$ with
+$v(s+3)=\sum_j\eta_j(-m_j)$ and deform instead
+\begin{equation}\label{nb:column-arc}
+ Q_{3+j}(\epsilon)=(-m_j)(e_j+\epsilon\eta_jw_s)^{\mathsf T}
+ \quad(1\leq j\leq3).
+\end{equation}
+Projection to the old core and then to the retained and omitted
+column blocks gives the same independence and limiting-span argument.
+These are the arcs of~\ref{norm:row-column}. Every subset is thus
+present, proving the asserted reduced fibre. This alone does not
+exclude additional points after normalization; that requires the
+local normality proved below.
+\end{proof}
+
+\begin{lemma}[Exact boundary charts]\label{nb:charts}
+At the boundary configurations of Theorems~\ref{nb:D}--\ref{nb:E2},
+the graph germs are smoothly equivalent to the homogeneous origins
+of the local algebras listed in those theorems.
+\end{lemma}
+
+\begin{proof}
+Locally order the distinct points, a free finite \'etale cover, and
+choose nonzero factor-vector representatives, a smooth torus torsor.
+Call the resulting smooth space $F$. Near such a configuration, the
+Hilbert-scheme graph is the ordinary graph of the rational span map
+on the smooth configuration space.
+
+The $r$ representative columns have rank $r-1$. Fix an invertible
+$(r-1)$-column coordinate minor and let $I$ be the ideal of all
+$r\times r$ minors. Row elimination identifies $I$ exactly with the
+residual coordinates of the final column modulo the first $r-1$.
+Introduce $r-1$ relation coefficients, normalizing one core coefficient
+to one. The five other core coefficients are units; the coefficients
+of the retained additions vanish at the configuration. The pivot
+minor solves the auxiliary coefficients uniquely as regular functions
+on $F$. If $w_i$ are their differences from the solved values, the
+vector-relation ideal on $F\times\mathbb A^{r-1}$ is
+\begin{equation}\label{nb:auxiliary}
+ J=(w_1,\ldots,w_{r-1},I).
+\end{equation}
+Absorb the five unit core coefficients into their first factor vectors.
+With core matrices $A_c,B_c$ and retained-factor matrices $U,V$, the
+relation becomes
+\begin{equation}\label{nb:relation}
+ A_cB_c^{\mathsf T}+U\Delta V^{\mathsf T}=0,
+\end{equation}
+where $\Delta$ is diagonal in the retained coefficients. No vanishing
+coefficient is inverted.
+
+Split the core columns into triples and rows by the old supports:
+\[
+ A_c=\begin{pmatrix}A_{11}&A_{12}\\ A_{21}&A_{22}\end{pmatrix},
+ \quad B_c=[B_1\ B_2],\quad B_2=\binom{B_{20}}{B_{21}},
+ \quad U=\binom{U_0}{U_1},\quad V=\binom{V_0}{V_1}.
+\]
+The blocks $A_{11},B_{20}$ are invertible at the circuit. On the
+neighbourhood where they remain invertible, use the substitutions
+\begin{equation}\label{nb:schur}
+ \begin{gathered}
+ X=A_{11}^{-1}A_{12},\quad Y=A_{21}A_{11}^{-1},\quad
+ P=A_{22}-A_{21}X,\quad C_0=B_1+B_2X^{\mathsf T},\\
+ U'=U_1-YU_0,\qquad V'=V_1-B_{21}B_{20}^{-1}V_0.
+ \end{gathered}
+\end{equation}
+These are regular invertible coordinate changes: they solve uniquely
+for $A_{22},B_1,U_1,V_1$, retaining the other coordinates. The top
+three $A$ rows of~\eqref{nb:relation} solve
+\[
+ C_0^{\mathsf T}=-A_{11}^{-1}U_0\Delta V^{\mathsf T}.
+\]
+Subtracting $Y$ times those rows leaves
+$PB_2^{\mathsf T}+U'\Delta V^{\mathsf T}$. Its first three $B$
+columns solve
+\[
+ P=-U'\Delta V_0^{\mathsf T}(B_{20}^{\mathsf T})^{-1}.
+\]
+The remaining equations are exactly the entries of
+\begin{equation}\label{nb:residual}
+ U'\Delta(V')^{\mathsf T}.
+\end{equation}
+All operations are invertible operations on ideals. The solved
+blocks give $d_0=3b+3(a-3)=3a+3b-9$ independent coordinate
+generators $L_1,\ldots,L_{d_0}$.
+
+We identify the residual ideal in each case. For D, there are
+$\ell=r-6$ retained rows. Their $U'$ columns are independent new
+coordinate directions at the witness, so a fixed $\ell\times\ell$
+row minor gives a regular left inverse. Multiplication by this inverse
+identifies the ideal of~\eqref{nb:residual} with that of
+$\Delta(V')^{\mathsf T}$; the reverse containment follows by
+multiplication by $U'$. With $\mu_j$ the coefficients and $y_{ij}$
+the entries of $V'$, the ideal is
+\begin{equation}\label{nb:row-residual}
+ (\mu_jy_{ij}:1\leq j\leq r-6,\ 1\leq i\leq b-3).
+\end{equation}
+For $\ell=0$ it is zero. The $\mu,y$ are independent vanishing
+coordinates; the retained $U'$ data are smooth parameters.
+
+For E1 with its single row omitted, all $r-6$ retained additions
+are columns. A regular left inverse of the independent $V'$ columns
+identifies~\eqref{nb:residual} with $U'\Delta$. Its ideal is
+\begin{equation}\label{nb:column-residual}
+ (q_jy_{ij}:1\leq j\leq r-6,\ 1\leq i\leq a-3),
+\end{equation}
+again in independent vanishing coordinates, with the remaining
+$V'$ data smooth parameters.
+
+All other cases have one retained row and $k$ retained columns,
+after transposition if necessary. At the witness $U'_R\ne0$ and
+$V'_R=0$, whereas $U'_{S_j}=0$ and the $V'_{S_j}$ are independent.
+Regular invertible operations in $A/A_0$ send $U'_R$ to $e_1$;
+independently, operations in $B/B_0$ send $V'_{S_j}$ to $e_j$.
+The required coordinate and minor are units, and their data remain
+smooth parameters. These changes act invertibly on the opposite
+vanishing columns. Write
+\[
+ \alpha=a-4,\quad\beta=b-3-k,\qquad
+ U'_{S_j}=(x_j,v_{1j},\ldots,v_{\alpha j})^{\mathsf T},\quad
+ V'_R=(z_1,\ldots,z_k,u_1,\ldots,u_\beta)^{\mathsf T}.
+\]
+If $p$ and $q_j$ are the row and column coefficients, the complete
+nonzero entry list of~\eqref{nb:residual} is
+\begin{equation}\label{nb:star-residual}
+ pz_j+q_jx_j\ (1\leq j\leq k),\qquad
+ pu_h\ (1\leq h\leq\beta),\qquad
+ q_jv_{ij}\ (1\leq i\leq\alpha,\ 1\leq j\leq k).
+\end{equation}
+All other entries vanish identically. In particular there are no
+terms $q_jx_l$ for $l\ne j$ and no omitted higher-order remainders.
+For E1 with a column omitted,
+$(k,\alpha,\beta)=(r-7,a-4,b-r+4)$, with $\beta\geq1$;
+the case $k=0$ leaves just $pu_h$. For E2 with a row omitted,
+$(k,\alpha,\beta)=(2,a-4,b-5)$, where $\alpha\geq1$ and
+$\beta\geq0$; if $\beta=0$, admissibility gives $\alpha\geq2$.
+For a column omitted, transpose to obtain $(2,b-4,a-5)$.
+
+Let $\mathcal Q$ denote the relevant quadratic list. We have the
+exact ideal $J=(L_1,\ldots,L_{d_0},\mathcal Q)$. We must remove the
+auxiliary relation coordinates while preserving this embedded model.
+Every $w_i$ in~\eqref{nb:auxiliary} belongs to $J$. All nonlinear
+coordinates vanish at the witness, so $d\mathcal Q=0$ there and each
+$dw_i$ is a linear combination of the $dL_j$. The $r-1$ differentials
+$dw_i$ are independent, since they are graph coordinates for the
+auxiliary coefficients. One coefficient minor is therefore a unit.
+Express $w_i$ in the displayed ideal generators and replace those
+$r-1$ linear coordinates by $w_i$. Inverting that coefficient minor
+preserves the generated ideal together with the remaining $L_j$ and
+$\mathcal Q$. The Jacobian is invertible while the nonlinear and
+unused coordinates are retained. Restricting to $w=0$ returns the
+original $F$ and gives the exact \'etale-local ideal
+\begin{equation}\label{nb:dependence-ideal}
+ I=(l_1,\ldots,l_\kappa,\mathcal Q),\qquad
+ \kappa=d_0-(r-1)=3a+3b-r-8.
+\end{equation}
+The nonlinear variables remain independent. No radical, initial
+ideal or higher-order truncation has been taken. The number $\kappa$
+counts linear generators and is independent of the smooth-parameter
+count in the rank-five local-ring calculation.
+
+The span map is given in Pl\"ucker coordinates by the maximal minors,
+so its graph is the blowup $\Proj\bigoplus_{n\geq0}I^n$.
+Equivalently, this is the closure of the graph of the projective
+rational map defined by these generators. Flat base change commutes
+with ideal powers, so the description is preserved by the \'etale
+coordinates and the factor-vector cover.
+
+Use the arc~\eqref{nb:row-arc} or~\eqref{nb:column-arc} for the
+omitted addition. Choose the pivot from five independent old-core
+entries and one detecting entry for each retained addition: its own
+new row with an old $B$ coordinate, or its own new column with an
+old $A$ coordinate. None uses the omitted row or column. On this arc,
+the normalized pivot relation is still the six-core relation and
+all retained coefficients are identically zero. The unchanged old-core
+entries first determine the six core coefficients; the distinct
+retained entries then force all other coefficients to vanish.
+Consequently every residual quadratic is identically zero on the
+arc, including when an opposite Schur-substituted factor varies to
+first order. In D, one can also see this from the fact that every
+$B$ factor stays in $B_0$, so $V'=0$ throughout the arc.
+
+The relation residual has nonzero derivative equal to the omitted
+matrix modulo the retained span. Since $d\mathcal Q=0$, this gives
+a nonzero linear direction in~\eqref{nb:dependence-ideal}. Choose
+$t=l_1$ nonzero on it and replace the other $l_i$ by combinations
+whose derivative on the arc is zero. The $t$-chart is the actual
+subalgebra
+\begin{equation}\label{nb:graph-chart}
+ \OO_F[l_2/t,\ldots,l_\kappa/t,\mathcal Q/t]
+ \ \subset\ \OO_F[t^{-1}].
+\end{equation}
+Writing $l_i=th_i$ splits off smooth coordinates $h_i$, centered at
+zero at the limit, together with the unused parameters. The remaining
+algebra is exactly $\mathcal R_{r-6,b-3}$ in D,
+$\mathcal R_{r-6,a-3}$ in the omitted-row case of E1, and the stated
+$\mathcal B$ in all star cases. Every model base variable vanishes
+at the witness. Every nonlinear numerator vanishes along the whole
+arc, so each ratio by $t$ has limit zero. The point is the homogeneous
+origin in each case, including opposite omitted and retained types.
+
+The subalgebra~\eqref{nb:graph-chart} retains full $t$-saturation.
+Equations merely setting $t$ times a fraction equal to its numerator
+need not present it. For example, when $\ell=1$ in the monomial
+case, the additional two-by-two minors of
+$\bigl(\begin{smallmatrix}t&y_{11}&\cdots&y_{m1}\\
+\mu_1&\mu_1y_{11}/t&\cdots&\mu_1y_{m1}/t\end{smallmatrix}\bigr)$
+are also necessary. The arcs place the selected point in the actual
+graph closure, without an unsaturated presentation. This proves the
+asserted smooth equivalences.
+\end{proof}
+
+\subsection{Normality of the boundary algebras}
+\label{nb:algebra}
+
+\begin{proposition}\label{nb:monomial}
+For all $s,m\geq0$, $\mathcal R_{s,m}$ is normal. At its homogeneous
+origin its dimension is $1+s+sm$, its embedding dimension is
+$1+s+2sm$, and it is smooth precisely when $sm=0$.
+\end{proposition}
+
+\begin{proof}
+Represent exponents by $(K;A_j;B_{ij})$, with $K$ the $t$ exponent.
+The exponent monoid is exactly the integer vectors satisfying
+\begin{equation}\label{nb:monoid}
+ A_j\geq0,\quad B_{ij}\geq0,\qquad
+ K+\sum_j\min\{A_j,\sum_iB_{ij}\}\geq0.
+\end{equation}
+Indeed, if $p_{ij}$ copies of $\mu_jy_{ij}/t$ occur, then
+$\sum_i p_{ij}\leq A_j$ and $p_{ij}\leq B_{ij}$, proving necessity.
+If $K\geq0$, base variables suffice. If $K<0$, distribute $-K$
+integer units among groups $j$ with capacities
+$\min\{A_j,\sum_iB_{ij}\}$, and then within each group among the
+integer capacities $B_{ij}$. Successive allocation gives integers
+$p_{ij}$ with total $-K$ and the required bounds. The remaining
+exponents are supplied by base variables. This proves sufficiency.
+
+The final inequality is equivalent to the finite family
+\[
+ K+\sum_{j\in E}A_j+\sum_{j\notin E,i}B_{ij}\geq0
+ \qquad(E\subset\{1,\ldots,s\}).
+\]
+The generator lattice is the full integer lattice because all base
+variables occur. Thus the monoid is its rational cone intersected
+with that lattice. More explicitly, intersect the Laurent polynomial
+ring in all base variables with the monomial-weight valuation rings
+for these inequalities and the nonnegativity inequalities. A weight
+valuation of a Laurent polynomial is the minimum of its monomial
+weights; it is multiplicative because lowest homogeneous parts
+multiply nontrivially in the Laurent polynomial domain. The
+intersection consists exactly of Laurent polynomials whose exponents
+satisfy~\eqref{nb:monoid}, hence is $\mathcal R_{s,m}$. Each ring in
+the intersection is integrally closed, proving normality, including
+empty index ranges.
+
+The total-degree functional $K+\sum_jA_j+\sum_{i,j}B_{ij}$ gives
+every displayed generator degree one. They are distinct Laurent
+monomials, so they have no linear relation and form a basis of the
+cotangent space at the origin. There are $1+s+sm$ independent base
+variables and $sm$ fractions. The fraction field has transcendence
+degree $1+s+sm$, while the cotangent dimension is $1+s+2sm$.
+For $sm=0$ the ring is polynomial; otherwise the positive tangent
+excess makes the origin singular.
+\end{proof}
+
+\begin{lemma}[Regular-parameter deformation]\label{nb:deformation}
+Let $D$ be a local domain obtained by localizing a finitely generated
+$\C$-domain, and let $0\ne f$ lie in its maximal ideal. If $D/fD$
+is a normal domain, then $D$ is normal.
+\end{lemma}
+
+\begin{proof}
+The normalization $N$ of $D$ is finite, since finite-type
+$\C$-domains have finite normalization and normalization commutes
+with localization. The prime ideal $(f)$ has height one by the
+principal ideal theorem: $D$ is a domain and $f$ is nonzero and
+not a unit. Hence $D_{(f)}$ is a one-dimensional local domain with
+principal maximal ideal, so it is a discrete valuation ring.
+Every element of $N$ is integral over $D_{(f)}$, whence
+$N\subset D_{(f)}$. Localizing $N$ at $D\setminus(f)$ gives
+$D_{(f)}$ itself. There is exactly one prime $Q$ of $N$ above
+$(f)$, with $N_Q=D_{(f)}$, and $f$ has valuation one at $Q$.
+
+Every height-one prime of $N$ containing $f$ contracts to $(f)$.
+Indeed, a finite birational extension of affine $\C$-domains
+preserves prime heights: total dimensions agree and the corresponding
+residue fields have the same transcendence degree, since their
+extension is finite. The dimension formula gives equality of heights,
+which persists under the localizations defining $D,N$. A height-one
+contraction containing $(f)$ must equal $(f)$. Thus $Q$ is the only
+height-one prime of $N$ containing $f$.
+
+Reduction in $N_Q=D_{(f)}$ embeds $N/Q$ in $\Frac(D/fD)$.
+It is integral over the normal domain $D/fD$, so $N/Q=D/fD$.
+Given $n\in N$, choose $d\in D$ with the same reduction modulo $Q$.
+The fraction $(n-d)/f$ has nonnegative valuation at $Q$, because the
+numerator has valuation at least one. At every other height-one
+prime, $f$ is a unit, so the valuation is again nonnegative. A
+Noetherian normal domain is the intersection of its height-one
+valuation rings in its fraction field; hence $(n-d)/f\in N$.
+Therefore $N=D+fN$. The finite $D$-module $N/D$ satisfies
+$N/D=f(N/D)$, and Nakayama's lemma gives $N/D=0$.
+\end{proof}
+
+\begin{corollary}\label{nb:graded-deformation}
+Let $E$ be a finitely generated nonnegatively graded $\C$-domain,
+and let $\xi$ be a nonzero homogeneous element of positive degree.
+If $E/(\xi)$ is a normal domain, then $E$ is normal.
+\end{corollary}
+
+\begin{proof}
+Lemma~\ref{nb:deformation} proves normality at every prime containing
+$\xi$. The nonnormal locus is closed and invariant under the
+multiplicative action of the grading. Choose finitely many homogeneous
+algebra generators, all of nonnegative degree. Every closed point
+has an affine limit under scalar multiplication as the scalar tends
+to zero: positive-degree coordinates tend to zero and degree-zero
+coordinates remain fixed. The limit lies on $\xi=0$. A nonempty
+nonnormal locus would contain a closed point, its nonzero-scalar
+orbit and its limit, contradicting normality on that fibre. The
+nonnegative grading is used here; normality along one fibre of an
+arbitrary nonproper family would not suffice.
+\end{proof}
+
+\begin{proposition}[Star algebra]\label{nb:star}
+For every $k,\alpha,\beta\geq0$, the exact subalgebra
+$\mathcal B_{k,\alpha,\beta}$ of~\eqref{nb:B} is normal. Its
+dimension and the embedding dimension at its homogeneous origin are
+\[
+ d=2+3k+\beta+\alpha k,\qquad
+ N=2+4k+2\beta+2\alpha k.
+\]
+The tangent excess is $k(\alpha+1)+\beta$. The origin is smooth
+precisely when $k=\beta=0$.
+\end{proposition}
+
+\begin{proof}
+Write $R=\mathcal B_{k,\alpha,\beta}$ and abbreviate its fractions by
+\[
+ G_j=\frac{pz_j+q_jx_j}t,\qquad P_h=\frac{pu_h}t,
+ \qquad Q_{ij}=\frac{q_jv_{ij}}t.
+\]
+The additional elements
+\begin{equation}\label{nb:H}
+ H_{ij}=\frac{pz_jv_{ij}}t=v_{ij}G_j-x_jQ_{ij}
+\end{equation}
+belong to $R$. Let
+$B=\C[t,p,q,x,z,u,v,P,Q,H]$, a monomial algebra; then
+$R=B[G_1,\ldots,G_k]$. Give $q_j$ degree one and all other free
+variables degree zero. Thus $Q_{ij}$ has degree one, $P_h,H_{ij}$
+degree zero, and the leading part of $G_j$ is
+$E_j=q_jx_j/t$. We prove
+\begin{equation}\label{nb:star-graded}
+ \operatorname{gr}R=A:=B[E_1,\ldots,E_k]
+\end{equation}
+for this total-$q$ filtration.
+
+For $S_0\subset\{1,\ldots,k\}$, put
+$B_{S_0}=B[E_l:l\in S_0]$ and fix $j\notin S_0$. The only
+fractional generators consuming $q_j$ in this monomial algebra are
+$Q_{ij}$, and $x_j$ occurs only as a free variable. These facts
+remain true at every intermediate stage. For each $n\geq0$,
+\begin{equation}\label{nb:denominator-ideals}
+ \{b\in B_{S_0}:bE_j^n\in B_{S_0}\}
+       =(t,v_{1j},\ldots,v_{\alpha j})^n.
+\end{equation}
+To prove this, first let $b$ be a Laurent monomial and choose a
+generator representation of $bE_j^n$. Let $s$ be its number of
+$Q_{ij}$ factors with this fixed $j$, counted with multiplicity.
+If $b$ has $q_j,x_j$ exponents $a_q,a_x$, the representation has
+exactly $a_q+n-s$ free $q_j$ factors and $a_x+n$ free $x_j$ factors;
+both $a_q,a_x$ are nonnegative. If $s\geq n$, remove $n$ such
+$Q$ factors and $n$ free $x_j$ factors. Their product is
+$q_j^nx_j^n/t^n$ times a degree-$n$ monomial $V$ in the $v_{ij}$.
+The remaining expression is $b/V\in B_{S_0}$, proving membership
+in the right side. If $s<n$, remove all $s$ such $Q$ factors,
+$n-s$ free $q_j$ factors and $n$ free $x_j$ factors. There are
+enough free $q_j$ factors since $a_q+n-s\geq n-s$. The remaining
+expression is $b/(t^{n-s}V)\in B_{S_0}$, with $V$ a degree-$s$
+$v$-monomial, again proving membership. Conversely,
+\[
+ tE_j=q_jx_j,\qquad v_{ij}E_j=x_jQ_{ij}
+\]
+belong to $B_{S_0}$, so every product of $n$ of these ideal
+generators belongs to the left side. Multiplication by $E_j^n$
+preserves distinct Laurent monomials, making membership termwise.
+This proves the full ideal equality, including $\alpha=0$, when
+the right side is $(t^n)$.
+
+The complete relative kernel is
+\begin{equation}\label{nb:relative-kernel}
+ \ker\bigl(B_{S_0}[Y_j]\longrightarrow B_{S_0}[E_j]\bigr)
+ =(tY_j-q_jx_j,\ v_{ij}Y_j-x_jQ_{ij}:1\leq i\leq\alpha).
+\end{equation}
+Group polynomial terms by equal Laurent images. Every kernel element
+is a linear combination of binomials $bY_j^n-cY_j^m$. Cancelling
+a common $Y_j$ power reduces to $bY_j^e-c$, where
+$c=bE_j^e\in B_{S_0}$. By~\eqref{nb:denominator-ideals}, some
+product $g_1\cdots g_e$ with each $g_l\in\{t,v_{1j},\ldots,
+v_{\alpha j}\}$ divides the monomial $b$ in $B_{S_0}$.
+Write $b=b'g_1\cdots g_e$ and $h_l=g_lE_j$. Each $h_l$ is
+$q_jx_j$ or $x_jQ_{ij}$. The product telescoping identity expresses
+\[
+ b'\bigl((g_1\cdots g_e)Y_j^e-h_1\cdots h_e\bigr)
+\]
+as a combination of $g_lY_j-h_l$. Multiplying by the cancelled
+power proves~\eqref{nb:relative-kernel} before localization,
+including higher powers and torsion relations.
+
+Adjoin the $E_j$ in order. At each stage the displayed relative
+kernel generators have coefficients in the original $B$. Their
+preimage in the preceding polynomial presentation adds precisely
+these generators to the known kernel. Induction gives
+\begin{equation}\label{nb:full-kernel}
+ \ker\bigl(B[Y_1,\ldots,Y_k]\longrightarrow A\bigr)
+ =(tY_j-q_jx_j,\ v_{ij}Y_j-x_jQ_{ij}:\text{all }i,j).
+\end{equation}
+Thus cross-relations among several $Y_j$ are included; relations
+internal to $B$ are already identities in the coefficient algebra.
+
+Give every $Y_j$ weight one in addition to the $q$-grading on $B$.
+The generators in~\eqref{nb:full-kernel} have weight one, while
+substitution of $G_j$ gives
+\begin{equation}\label{nb:reduction-remainders}
+ tG_j-q_jx_j=pz_j,\qquad v_{ij}G_j-x_jQ_{ij}=H_{ij},
+\end{equation}
+whose right sides have weight zero. Represent $f\in R$ by
+$F\in B[Y_1,\ldots,Y_k]$ and let $d$ be its largest weight.
+If its weight-$d$ component survives substitution of $E$, it is
+the leading part of $f$ and lies in $A$. If it cancels, it belongs
+to~\eqref{nb:full-kernel}. Express it using homogeneous coefficients
+of weight $d-1$ times the weight-one kernel generators, and use
+\eqref{nb:reduction-remainders} after substitution of $G$. This
+represents the same $f$ with strictly smaller largest weight.
+Nonnegative integer weights ensure termination. Every leading part
+therefore lies in $A$; conversely its generators are leading parts
+of the corresponding generators of $B$ or $G_j$. This proves
+\eqref{nb:star-graded}. The same reduction shows that any $f$ of
+degree at most $d$ has a representation of weighted degree at most
+$d$ in the enlarged family including the weight-zero $H_{ij}$.
+
+We now prove saturation of the monomial algebra $A$. Write its
+candidate exponent vector as $t$ exponent $K$ and nonnegative
+resource exponents $a_p,a_{q_j},a_{x_j},a_{z_j},a_{u_h},a_{v_{ij}}$.
+The negative-$t$ generators $P_h,E_j,Q_{ij},H_{ij}$ can have
+nonnegative multiplicities $P'_h,E'_j,Q'_{ij},H'_{ij}$ precisely
+subject to the resource bounds
+\begin{equation}\label{nb:flow-bounds}
+ \begin{gathered}
+ \sum_hP'_h+\sum_{i,j}H'_{ij}\leq a_p,\qquad
+ E'_j+\sum_iQ'_{ij}\leq a_{q_j},\qquad E'_j\leq a_{x_j},\\
+ \sum_iH'_{ij}\leq a_{z_j},\qquad P'_h\leq a_{u_h},\qquad
+ Q'_{ij}+H'_{ij}\leq a_{v_{ij}}.
+ \end{gathered}
+\end{equation}
+If $N'$ is their total multiplicity, the required $t$ exponent is
+possible exactly when $N'\geq-K$, using $K+N'$ free $t$ factors.
+Unused resources are supplied by free variables.
+
+The bounds are a single-commodity flow network. Its source has
+edges to $p$ and $q_j$ of capacities $a_p,a_{q_j}$. There are
+unrestricted edges $p\to u_h$, followed by $u_h$-to-sink edges of
+capacity $a_{u_h}$. An edge $p\to\mathrm{gate}_j$ has capacity
+$a_{z_j}$, followed by unrestricted edges to $v_{ij}$. There are
+unrestricted edges $q_j\to x_j$ and $q_j\to v_{ij}$; their edges
+to the sink have capacities $a_{x_j}$ and $a_{v_{ij}}$, respectively.
+The four path types are $P,H,E,Q$. Every unrestricted edge may be
+given finite capacity $a_p+\sum_j a_{q_j}$. For integer resource
+data all capacities are integral, so integral max-flow supplies
+integer multiplicities whenever real multiplicities reach the
+integer demand $-K>0$. Deleting unit paths permits any smaller
+required nonnegative integer flow. If $K\geq0$, free variables
+already give a representation.
+
+The exponent cone is exactly this real-feasible region: a real
+generator expression gives a packing, and a packing with unused
+resources gives a real generator expression. Every integer point
+of the cone consequently has an integer generator expression. The
+lattice is the full integer lattice because all free variables are
+present. Thus the exponent monoid is its cone intersected with the
+lattice. Intersecting the Laurent polynomial ring with the monomial
+valuation rings for the rational cone facets, as in
+Proposition~\ref{nb:monomial}, proves that $A$ is normal. This
+argument includes all empty index sets.
+
+Let $F_dR$ denote elements of total $q$ degree at most $d$, and form
+the weighted Rees algebra
+\[
+ \mathcal E=\bigoplus_{d\geq0}F_dR\,\xi^d.
+\]
+The terminating reduction proves finite generation: generators are
+$\xi$, the weight-zero elements $t,p,x,z,u,v,P,H$, and
+$q_j\xi,Q_{ij}\xi,G_j\xi$. Including $H_{ij}$ explicitly is
+essential, since its cancellation expression~\eqref{nb:H} has
+larger weight before cancellation. The grading is nonnegative, and
+\[
+ \mathcal E/(\xi)=\operatorname{gr}R=A,\qquad
+ \mathcal E[\xi^{-1}]=R[\xi,\xi^{-1}].
+\]
+Corollary~\ref{nb:graded-deformation} makes $\mathcal E$ normal.
+Localizing gives a normal $R[\xi,\xi^{-1}]$. An element of
+$\Frac(R)$ integral over $R$ belongs to that Laurent polynomial
+ring and, being independent of $\xi$, belongs to $R$. Thus $R$
+is normal.
+
+Finally, inverting $t$ eliminates all fraction generators, so the
+fraction field is that of its $2+3k+\beta+\alpha k$ independent
+base variables. For the homogeneous origin, now give \emph{all}
+base variables degree one. The original $G,P,Q$ also have degree
+one, while $H$ has degree two. The degree-zero part is $\C$.
+There is no linear relation among the original generators: free
+variables and $P,Q$ are distinct Laurent monomials, and the monomial
+$pz_j/t$ occurs in the unique generator $G_j$. Its coefficient
+first forces each $G_j$ coefficient to vanish; the remaining
+monomial coefficients then vanish. Hence the original degree-one
+generators form a basis of the cotangent space. Their number is
+$2+3k+\beta+\alpha k+(k+\beta+\alpha k)=N$. The excess is
+$k+\beta+\alpha k$, positive unless $k=\beta=0$. In that case
+$R=\C[t,p]$, independently of $\alpha$, and is smooth.
+\end{proof}
+
+\subsection{Identification of the entire fibres and their local dimensions}
+\label{nb:completion}
+
+\begin{proof}[Proof of Theorems~\ref{nb:D}, \ref{nb:E1} and~\ref{nb:E2}]
+Lemma~\ref{nb:configuration} gives precisely the stated graph
+configurations, six of them smooth. Lemma~\ref{nb:charts} gives
+the exact local models at every dependent configuration, and
+Propositions~\ref{nb:monomial} and~\ref{nb:star} prove them normal.
+Normality descends through the factor-vector torus torsor and the
+free ordered-configuration \'etale quotient. Thus $G$ is normal at
+every point of its finite fibre over $L$.
+
+The non-quasi-finite locus is closed and misses that fibre; remove
+its proper image in $H$. The nonnormal locus is likewise closed
+for a variety over $\C$, and its proper image also misses $L$.
+After these shrinkings, $G\to H$ is finite with normal integral
+source and is birational. It is therefore the entire normalization:
+on affine rings, a finite normal extension with the same fraction
+field equals the integral closure. In particular there is precisely
+one normalization point at each of the $r+1$ configurations, or
+ten configurations when $r=9$ in E2.
+
+We also check unramifiedness scheme-theoretically. The projective
+point incidence $Z_H=\{(K,p):p\in\PP(K)\cap S\}$ has finite
+reduced fibre at $L$. Properness makes it finite near $L$. Its fibre
+cotangent spaces vanish; base change for relative differentials and
+Nakayama's lemma give unramifiedness at the fibre. Removing the
+closed image of the remaining non-unramified locus gives a finite
+unramified incidence nearby. In its $r$-fold fibre product the
+distinct-point locus is open and closed, since diagonals of a
+separated unramified morphism are open and closed. This locus is
+therefore finite and unramified over $H$.
+
+The graph with its points ordered is a closed subscheme of that
+incidence near the fibre. The proper image of the locus of nonreduced
+Hilbert-scheme configurations may first be removed, since it misses
+the fibre. Closed immersions are unramified, and descent through the
+free \'etale permutation quotient proves unramifiedness of $G\to H$.
+Over $\C$, its finite unramified fibres are reduced. When the models
+in D are smooth, all points over $L$ are smooth; removing the proper
+image of the nonsmooth locus gives a neighbourhood whose entire
+normalization source is smooth. We have used only the incidence and
+bundle constructions underlying~\ref{norm:criterion}; its
+all-subsets-independent hypothesis is not imposed or used at these
+dependent configurations.
+
+On the rank-$r$ locus of the third flattening, $X_r(a,b,c)$ is the
+bundle of surjections $(\C^c)^*\to K$ over $K\in H$. For an
+independent rank-one span, every such surjection is an $r$-term
+tensor sum, and conversely a rank-$r$-flattening $r$-term sum gives
+such a span. Taking reduced closures preserves this equality: a
+local trivialization is a product, and the bundle projection is
+smooth and open. Pulling the normalization of $H$ back along this
+bundle gives a finite birational source that is an open vector
+bundle over a normal variety, hence normal. It is the full
+normalization of this tensor locus. Base change preserves
+unramifiedness and the indicated fibres; the bundle adds only $rc$
+smooth parameters. Thus every point has dimension
+\[
+ \dim H+rc=r(a+b+c-2).
+\]
+
+Smooth and \'etale covers preserve tangent excess. For D,
+Proposition~\ref{nb:monomial} gives $(r-6)(b-3)$, with zero exactly
+when $r=6$ or $b=3$. For the mixed cases, the excesses are
+\[
+ \begin{array}{c|c}
+ \text{configuration}&\text{tangent excess}\\ \hline
+ \text{E1, omitted row}&(r-6)(a-3)\\
+ \text{E1, omitted column}&(r-7)(a-3)+b-r+4\\
+ \text{E2, omitted row}&2a+b-11\\
+ \text{E2, omitted column}&a+2b-11.
+ \end{array}
+\]
+The first is positive since $r\geq7,a\geq4$; the second is
+positive since $b-r+4\geq1$. The last two are at least five
+because $a,b\geq5$ and $a+b\geq11$. These are normal singular
+points, including the $k=0$ and $\beta=0$ boundary cases allowed
+by Proposition~\ref{nb:star}. Adding the dimension gives exactly
+the claimed embedding dimensions, and the six actual-decomposition
+points remain smooth. Factor permutations transport the variety,
+normalization and witness, proving the remaining assertions.
+\end{proof}

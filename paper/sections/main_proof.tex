@@ -1,0 +1,91 @@
+\section{The depth defect and the projective statement}\label{sec:main-proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Apply Proposition~\ref{prop:geometry-summary} with the dimensions
+in~\eqref{eq:main-range}. It gives a smooth irreducible source $Y$
+of unordered decompositions with independent third factors, a
+birational addition morphism $f:Y\to X$, and an open
+$G\subseteq Y$ whose image is smooth and whose complement has
+codimension at least two. It also gives
+$\dim X=D=r(a+b+c-2)$.
+
+Choose $p,q$ by~\eqref{eq:seed-choice} and pad the integer tensor
+in~\eqref{eq:uniform-witness} to the target format.
+Proposition~\ref{prop:witness-immersion} supplies two distinct
+points of $Y$ over this tensor $T$ at which $df$ is injective.
+Proposition~\ref{prop:conductor-obstruction} therefore proves that
+$\OO_{X,T}$ is not an $S_2$ ring and is not Cohen--Macaulay.
+Consequently $X$ itself fails $S_2$. The witness has ordinary rank
+and border rank $r$ by the same construction.
+
+It remains to prove the precise depth assertion at the homogeneous
+vertex. Put $N=abc$, let $S=\C[z_1,\ldots,z_N]$, and write
+$R=S/J$, where $J=I(X)$ is a homogeneous prime ideal. Then
+$\height J=N-D$. Suppose that $R_{\mathfrak m}$ were
+Cohen--Macaulay, and put $\mathfrak n=(z_1,\ldots,z_N)$ in $S$.
+The Auslander--Buchsbaum formula over the regular local ring
+$S_{\mathfrak n}$ gives
+\[
+ \pd_{S_{\mathfrak n}}R_{\mathfrak m}=N-D
+ \qquad\text{\cite[Tag~090V]{stacks-project}}.
+\]
+A polynomial ring has finite global dimension
+\cite[Tag~00OQ]{stacks-project}, so $R$ has a finite minimal graded
+free resolution over $S$. The entries in each differential lie in
+$\mathfrak n$, hence its localization at $\mathfrak n$ is still
+minimal. Every nonzero free term remains nonzero there. The graded
+resolution therefore has length exactly $N-D$.
+
+For any prime $\mathfrak P\supseteq J$, localizing this resolution
+gives
+\[
+ \pd_{S_{\mathfrak P}}R_{\mathfrak P/J}\leq N-D.
+\]
+Regularity of $S_{\mathfrak P}$ and Auslander--Buchsbaum yield
+\begin{align*}
+ \depth R_{\mathfrak P/J}
+ &=\dim S_{\mathfrak P}
+      -\pd_{S_{\mathfrak P}}R_{\mathfrak P/J}\\
+ &\geq\height\mathfrak P-(N-D)
+   =\dim R_{\mathfrak P/J}.
+\end{align*}
+The last equality is the height formula for a prime quotient of a
+polynomial ring. Since depth cannot exceed dimension, every local
+ring of $R$ would be Cohen--Macaulay. This contradicts the local ring
+at $T$. Hence $\depth R_{\mathfrak m}<D$. Permuting tensor factors
+is a linear isomorphism preserving the varieties and their local
+rings, proving the final assertion.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:examples}]
+The stated formats satisfy~\eqref{eq:main-range}, and substitution
+in $D=r(a+b+c-2)$ gives the displayed dimensions and depth bounds.
+For the orbit identity, the dense open set of triples of invertible
+$r\times r$ factor matrices parametrizes precisely the
+$(\GL_r)^3$ orbit of $\Delta_r$. Allowing arbitrary factor matrices
+parametrizes all sums of $r$ pure tensors in format $r\times r\times r$.
+The image closures of a morphism and of its restriction to a dense
+open of its irreducible source are equal. This proves
+\eqref{eq:unit-orbit} and its asserted consequences.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:projective}]
+The witness $T$ is nonzero. Choose a degree-one coordinate $\ell$
+with $\ell(T)\ne0$. Scalar rescaling gives an isomorphism
+\[
+ X\cap D(\ell)\simeq D_+(\ell)\times\Gm,
+\]
+where $D_+(\ell)$ is the corresponding affine chart of
+$\Proj R$. Explicitly, a tensor is sent to its representative with
+$\ell=1$ and to its nonzero $\ell$-value.
+At the selected closed point, the local ring on the right is a
+localized Laurent-polynomial extension of the projective local
+ring. Cohen--Macaulayness ascends to this extension. Conversely,
+quotienting by the regular parameter $t-\ell(T)$ recovers the
+projective local ring and preserves Cohen--Macaulayness.
+Thus the two local rings are Cohen--Macaulay simultaneously.
+The affine local ring at $T$ is not Cohen--Macaulay, so the
+projective local ring at $[T]$ is not Cohen--Macaulay either.
+Its arithmetic Cohen--Macaulayness is already excluded by
+\eqref{eq:main-depth}.
+\end{proof}

@@ -1,0 +1,1136 @@
+{
+  "schema_version": 1,
+  "paper": "paper/main.tex",
+  "scope": "Every numbered theorem, proposition, lemma, corollary, definition and remark of paper/main.tex and its included section files is indexed in TeX order. Every field of the Lean propositions TR25.FiniteCertificate and TR25Family.FiniteCertificate is mapped to the declaration that proves it. No numbered paper result is claimed to be formalized in Lean in full; each Lean theorem is a finite certificate layer.",
+  "lean_projects": [
+    {
+      "root": "lean/witness-666",
+      "declaration": "TR25.finiteCertificate",
+      "source": "lean/witness-666/TR25.lean",
+      "proposition": "TR25.FiniteCertificate",
+      "proposition_source": "lean/witness-666/TR25/Statement.lean",
+      "axiom_probe": "lean/witness-666/audit/Axioms.lean",
+      "scope": "Fourteen finite assertions about the integer witness in format 3x3x5 and its zero padding to 6x6x6: tensor equalities over the integers, nonzero and pairwise nonproportional summands, different decompositions, third-flattening ranks, six rational determinants and coordinate Jacobian ranks over the complex numbers. It has no border-rank, secant-dimension, tangent-space, normalization, conductor, S2, Cohen-Macaulay or depth premise or conclusion."
+    },
+    {
+      "root": "lean/family-345",
+      "declaration": "TR25Family.finiteCertificate",
+      "source": "lean/family-345/TR25Family.lean",
+      "proposition": "TR25Family.FiniteCertificate",
+      "proposition_source": "lean/family-345/TR25Family/Statement.lean",
+      "axiom_probe": "lean/family-345/audit/Axioms.lean",
+      "scope": "Fourteen finite assertions about the fixed integer witness in format 3x4x5: tensor equalities, nonzero and pairwise nonproportional summands, different decompositions, flattening ranks 3, 3 and 5, pair-product and third-factor ranks, six rational determinants and coordinate Jacobian ranks. It quantifies over no formats or ranks and has no geometric premise or conclusion; the number 50 is the rank of each coordinate Jacobian at this witness."
+    }
+  ],
+  "lean_targets": [
+    {
+      "id": "orig_tensor_eq",
+      "project": "lean/witness-666",
+      "declaration": "TR25.small_total_eq",
+      "source": "lean/witness-666/TR25/ArithmeticFacts.lean",
+      "field": "TR25.FiniteCertificate.tensor_eq",
+      "scope": "For both literal factor lists in format 3x3x5, the sum of the five pure tensors equals the literal witness tensor over the integers."
+    },
+    {
+      "id": "orig_embedded_tensor_eq",
+      "project": "lean/witness-666",
+      "declaration": "TR25.embedded_total_eq",
+      "source": "lean/witness-666/TR25/ArithmeticFacts.lean",
+      "field": "TR25.FiniteCertificate.embedded_tensor_eq",
+      "scope": "After zero padding to 6x6x6, both five-term sums equal the padded witness tensor over the integers."
+    },
+    {
+      "id": "orig_terms_nonzero",
+      "project": "lean/witness-666",
+      "declaration": "TR25.small_nonzero",
+      "source": "lean/witness-666/TR25/ArithmeticFacts.lean",
+      "field": "TR25.FiniteCertificate.terms_nonzero",
+      "scope": "In format 3x3x5, every summand of each list is a nonzero complex tensor."
+    },
+    {
+      "id": "orig_terms_distinct",
+      "project": "lean/witness-666",
+      "declaration": "TR25.small_distinct",
+      "source": "lean/witness-666/TR25/ArithmeticFacts.lean",
+      "field": "TR25.FiniteCertificate.terms_distinct",
+      "scope": "In format 3x3x5, no summand of a list is a complex multiple of a different summand of the same list."
+    },
+    {
+      "id": "orig_decompositions_different",
+      "project": "lean/witness-666",
+      "declaration": "TR25.small_different",
+      "source": "lean/witness-666/TR25/ArithmeticFacts.lean",
+      "field": "TR25.FiniteCertificate.decompositions_different",
+      "scope": "In format 3x3x5, some summand of the first list is not a complex multiple of any summand of the second list."
+    },
+    {
+      "id": "orig_embedded_terms_nonzero",
+      "project": "lean/witness-666",
+      "declaration": "TR25.embedded_nonzero",
+      "source": "lean/witness-666/TR25/ArithmeticFacts.lean",
+      "field": "TR25.FiniteCertificate.embedded_terms_nonzero",
+      "scope": "The same nonvanishing statement after padding to 6x6x6."
+    },
+    {
+      "id": "orig_embedded_terms_distinct",
+      "project": "lean/witness-666",
+      "declaration": "TR25.embedded_distinct",
+      "source": "lean/witness-666/TR25/ArithmeticFacts.lean",
+      "field": "TR25.FiniteCertificate.embedded_terms_distinct",
+      "scope": "The same pairwise nonproportionality statement after padding to 6x6x6."
+    },
+    {
+      "id": "orig_embedded_decompositions_different",
+      "project": "lean/witness-666",
+      "declaration": "TR25.embedded_different",
+      "source": "lean/witness-666/TR25/ArithmeticFacts.lean",
+      "field": "TR25.FiniteCertificate.embedded_decompositions_different",
+      "scope": "The same difference of the two lists after padding to 6x6x6."
+    },
+    {
+      "id": "orig_flattening_rank",
+      "project": "lean/witness-666",
+      "declaration": "TR25.small_flattening_rank",
+      "source": "lean/witness-666/TR25/Flattening.lean",
+      "field": "TR25.FiniteCertificate.flattening_rank",
+      "scope": "The 9x5 third-mode flattening of the 3x3x5 witness has rank 5 over the complex numbers."
+    },
+    {
+      "id": "orig_embedded_flattening_rank",
+      "project": "lean/witness-666",
+      "declaration": "TR25.embedded_flattening_rank",
+      "source": "lean/witness-666/TR25/Flattening.lean",
+      "field": "TR25.FiniteCertificate.embedded_flattening_rank",
+      "scope": "The 36x6 third-mode flattening of the padded 6x6x6 witness has rank 5 over the complex numbers."
+    },
+    {
+      "id": "orig_row_determinants",
+      "project": "lean/witness-666",
+      "declaration": "TR25.row_determinants_exact",
+      "source": "lean/witness-666/TR25/ArithmeticFacts.lean",
+      "field": "TR25.FiniteCertificate.row_determinants",
+      "scope": "The three row-ratio determinants of M are -1/18, 1/3 and -2 over the rationals."
+    },
+    {
+      "id": "orig_column_determinants",
+      "project": "lean/witness-666",
+      "declaration": "TR25.column_determinants_exact",
+      "source": "lean/witness-666/TR25/ArithmeticFacts.lean",
+      "field": "TR25.FiniteCertificate.column_determinants",
+      "scope": "The three column-ratio determinants of M are -1/18, 4/9 and -3/2 over the rationals."
+    },
+    {
+      "id": "orig_small_linearized_rank",
+      "project": "lean/witness-666",
+      "declaration": "TR25.small_linearized_rank",
+      "source": "lean/witness-666/TR25/SmallRank.lean",
+      "field": "TR25.FiniteCertificate.small_linearized_rank",
+      "scope": "For both lists, the 45x55 coordinate Jacobian of the five-term tensor-sum map in format 3x3x5 has rank 45 over the complex numbers."
+    },
+    {
+      "id": "orig_embedded_linearized_rank",
+      "project": "lean/witness-666",
+      "declaration": "TR25.embeddedJacobian_rank",
+      "source": "lean/witness-666/TR25/LargeRank.lean",
+      "field": "TR25.FiniteCertificate.embedded_linearized_rank",
+      "scope": "For both padded lists, the 216x90 coordinate Jacobian in format 6x6x6 has rank 80 over the complex numbers."
+    },
+    {
+      "id": "fam_tensor_eq",
+      "project": "lean/family-345",
+      "declaration": "TR25Family.family_total_eq",
+      "source": "lean/family-345/TR25Family/ArithmeticFacts.lean",
+      "field": "TR25Family.FiniteCertificate.tensor_eq",
+      "scope": "For both literal factor lists in format 3x4x5, whose second factors have zero fourth coordinate, the five-term sum equals the literal witness over the integers."
+    },
+    {
+      "id": "fam_terms_nonzero",
+      "project": "lean/family-345",
+      "declaration": "TR25Family.family_nonzero",
+      "source": "lean/family-345/TR25Family/ArithmeticFacts.lean",
+      "field": "TR25Family.FiniteCertificate.terms_nonzero",
+      "scope": "Every summand of each list is a nonzero complex tensor."
+    },
+    {
+      "id": "fam_terms_distinct",
+      "project": "lean/family-345",
+      "declaration": "TR25Family.family_distinct",
+      "source": "lean/family-345/TR25Family/ArithmeticFacts.lean",
+      "field": "TR25Family.FiniteCertificate.terms_distinct",
+      "scope": "No summand of a list is a complex multiple of a different summand of the same list."
+    },
+    {
+      "id": "fam_decompositions_different",
+      "project": "lean/family-345",
+      "declaration": "TR25Family.family_different",
+      "source": "lean/family-345/TR25Family/ArithmeticFacts.lean",
+      "field": "TR25Family.FiniteCertificate.decompositions_different",
+      "scope": "Some summand of the first list is not a complex multiple of any summand of the second list."
+    },
+    {
+      "id": "fam_flatteningA_rank",
+      "project": "lean/family-345",
+      "declaration": "TR25Family.flatteningA_rank_exact",
+      "source": "lean/family-345/TR25Family/Flattening.lean",
+      "field": "TR25Family.FiniteCertificate.flatteningA_rank",
+      "scope": "The 20x3 first-mode flattening of the 3x4x5 witness has rank 3 over the complex numbers."
+    },
+    {
+      "id": "fam_flatteningB_rank",
+      "project": "lean/family-345",
+      "declaration": "TR25Family.flatteningB_rank_exact",
+      "source": "lean/family-345/TR25Family/Flattening.lean",
+      "field": "TR25Family.FiniteCertificate.flatteningB_rank",
+      "scope": "The 15x4 second-mode flattening has rank 3 over the complex numbers."
+    },
+    {
+      "id": "fam_flatteningC_rank",
+      "project": "lean/family-345",
+      "declaration": "TR25Family.flatteningC_rank_exact",
+      "source": "lean/family-345/TR25Family/Flattening.lean",
+      "field": "TR25Family.FiniteCertificate.flatteningC_rank",
+      "scope": "The 12x5 third-mode flattening has rank 5 over the complex numbers."
+    },
+    {
+      "id": "fam_pairAB_rank",
+      "project": "lean/family-345",
+      "declaration": "TR25Family.pairAB_rank_exact",
+      "source": "lean/family-345/TR25Family/PairRanks.lean",
+      "field": "TR25Family.FiniteCertificate.pairAB_rank",
+      "scope": "For both lists, the 12x5 matrix of the products of first and second factors has rank 5."
+    },
+    {
+      "id": "fam_pairAC_rank",
+      "project": "lean/family-345",
+      "declaration": "TR25Family.pairAC_rank_exact",
+      "source": "lean/family-345/TR25Family/PairRanks.lean",
+      "field": "TR25Family.FiniteCertificate.pairAC_rank",
+      "scope": "For both lists, the 15x5 matrix of the products of first and third factors has rank 5."
+    },
+    {
+      "id": "fam_pairBC_rank",
+      "project": "lean/family-345",
+      "declaration": "TR25Family.pairBC_rank_exact",
+      "source": "lean/family-345/TR25Family/PairRanks.lean",
+      "field": "TR25Family.FiniteCertificate.pairBC_rank",
+      "scope": "For both lists, the 20x5 matrix of the products of second and third factors has rank 5."
+    },
+    {
+      "id": "fam_thirdFactors_rank",
+      "project": "lean/family-345",
+      "declaration": "TR25Family.thirdFactors_rank_exact",
+      "source": "lean/family-345/TR25Family/PairRanks.lean",
+      "field": "TR25Family.FiniteCertificate.thirdFactors_rank",
+      "scope": "For both lists, the 5x5 matrix of third factors has rank 5."
+    },
+    {
+      "id": "fam_row_determinants",
+      "project": "lean/family-345",
+      "declaration": "TR25Family.row_determinants_exact",
+      "source": "lean/family-345/TR25Family/ArithmeticDeterminants.lean",
+      "field": "TR25Family.FiniteCertificate.row_determinants",
+      "scope": "The three row-ratio determinants of M are -1/18, 1/3 and -2 over the rationals."
+    },
+    {
+      "id": "fam_column_determinants",
+      "project": "lean/family-345",
+      "declaration": "TR25Family.column_determinants_exact",
+      "source": "lean/family-345/TR25Family/ArithmeticDeterminants.lean",
+      "field": "TR25Family.FiniteCertificate.column_determinants",
+      "scope": "The three column-ratio determinants of M are -1/18, 4/9 and -3/2 over the rationals."
+    },
+    {
+      "id": "fam_linearized_rank",
+      "project": "lean/family-345",
+      "declaration": "TR25Family.family_linearized_rank",
+      "source": "lean/family-345/TR25Family/Rank.lean",
+      "field": "TR25Family.FiniteCertificate.linearized_rank",
+      "scope": "For both lists, the 60x60 coordinate Jacobian of the five-term tensor-sum map in format 3x4x5 has rank 50 over the complex numbers."
+    }
+  ],
+  "exact_checks": [
+    {
+      "id": "witness_main",
+      "source": "verification/core/verification/check_witness.py",
+      "function": "main",
+      "scope": "Reads the integer factors in verification/core/verification/witness.json and checks, in format 3x3x5: exact integer equality of the two five-term decompositions, five distinct projective summand directions in each, distinct unordered decompositions, rank 5 of the three pair-product lists in both decompositions, rank 5 of the third flattening, and tangent matrix ranks 45 and, after padding to 6x6x6, 80 at both decompositions, by elimination modulo the prime 1,000,003, whose primality it checks.",
+      "limitation": "One fixed rank-five witness. Modular ranks are lower bounds; the matching upper bounds come from the scaling-kernel argument of the paper."
+    },
+    {
+      "id": "five_term_main",
+      "source": "verification/core/verification/check_five_term_tensor.py",
+      "function": "main",
+      "scope": "Constructs both decompositions directly from the matrix M, independently of the first checker, and checks integer equality, nonzero and distinct pure summands, different unordered decompositions, and tangent matrix ranks 45 and 80 at both decompositions modulo 101.",
+      "limitation": "One fixed rank-five witness, with the same upper-bound argument."
+    },
+    {
+      "id": "family_exact",
+      "source": "lean/family-345/audit/check_exact.py",
+      "function": "verify",
+      "scope": "Independent integer and rational recomputation of the 3x4x5 certificate: tensor equality, nonzero and pairwise nonproportional summands, different decompositions, flattening ranks 3, 3 and 5, pair-product and third-factor ranks 5, the six ratio determinants, and rank 50 of both 60x60 coordinate Jacobians, all by full rational elimination.",
+      "limitation": "One fixed witness; no geometric or all-rank conclusion."
+    },
+    {
+      "id": "norm_identities",
+      "source": "verification/core/normalization/verification/check_normalization_identities.py",
+      "function": "main",
+      "scope": "The torus-elimination polynomial identity in the proof of Lemma 7.2, det M = 2, the three row and three column tangent determinants (4.11) and (4.12), the determinant (4.15) as a polynomial identity, and the symbolic row and column arc coefficient identities of the proof of Proposition 7.4.",
+      "limitation": "Fixed identities only; the normalization geometry and every universal quantifier are written proofs."
+    },
+    {
+      "id": "higher_rank_core",
+      "source": "verification/core/normalization/higher_rank/verification/check_exact.py",
+      "function": "verify",
+      "scope": "For the six matrices Q_1, ..., Q_6: the circuit relation, rank 5 of the circuit and of every five of its matrices, the rank-one cycle equations at the six points with nonzero Jacobian determinants, and four polynomial elimination identities.",
+      "limitation": "Fixed six-point core only; the all-rank valuation arguments, blowup geometry and normalization statements are written proofs."
+    },
+    {
+      "id": "boundary_core",
+      "source": "verification/core/normalization/boundary_models/verification/check_exact.py",
+      "function": "verify",
+      "scope": "A byte-identical copy of the higher-rank core checker and certificate, run in the boundary-model suite: circuit relation and rank, independence of every five points, cycle-equation Jacobian determinants and elimination identities.",
+      "limitation": "Finite core only; boundary normality, saturation, fibre exhaustion and the mixed-model geometry are written proofs."
+    },
+    {
+      "id": "local_ring_tangents",
+      "source": "verification/core/normalization/local_ring/verification/check_certificate.py",
+      "function": "check_format",
+      "scope": "For the padded rank-five circuit with first two factor dimensions (3,4), (4,4) and (6,6), the exact dimensions of one branch tangent space, the common tangent space and the span of all six: 25, 23, 35; 30, 26, 50; and 50, 38, 110. Integer containments give the upper bounds and inverse certificates modulo 101 the lower bounds.",
+      "limitation": "Three fixed formats; residue-map surjectivity, scheme gluing, branch exhaustion, the tensor-bundle passage and the depth calculation are written proofs."
+    },
+    {
+      "id": "local_ring_core",
+      "source": "verification/core/normalization/local_ring/verification/check_core.py",
+      "function": "main",
+      "scope": "A byte-identical copy of the normalization identity checker, run in the local-ring suite. Its inputs to Theorem 7.10 are the torus-elimination identity, the six tangent determinants and det M = 2.",
+      "limitation": "Fixed identities only; the avoidance and arc identities it also checks are not inputs to Theorem 7.10."
+    },
+    {
+      "id": "family_instances",
+      "source": "verification/core/family-instances/check_reach_instances.py",
+      "function": "main",
+      "scope": "Constructs the two integer decompositions of the family witness for all 15 pairs (r,p) with 5<=r<=9 and 3<=p<=r-2 (seed in format p x q x r and padded witness in p x (q+1) x r, q=r+1-p) and for the extension from 4x5x8 to 5x5x8, 31 pairs in all; checks tensor equality and distinctness over the integers, independence of matrix factors and third factors modulo 101, and addition-differential rank r(a+b+c-2) modulo 101.",
+      "limitation": "Finitely many formats only; the uniform construction for every rank r >= 5 is the written proof of Proposition 4.6."
+    }
+  ],
+  "numbered_results": [
+    {
+      "labels": [
+        "thm:main"
+      ],
+      "environment": "theorem",
+      "number": "1.1",
+      "section": 1,
+      "source": "paper/main.tex",
+      "title": "Failure of S2 and of Cohen-Macaulayness for the secant family",
+      "coverage": "partial_lean",
+      "lean_targets": [
+        "orig_tensor_eq",
+        "orig_decompositions_different",
+        "orig_flattening_rank",
+        "orig_embedded_linearized_rank",
+        "fam_tensor_eq",
+        "fam_decompositions_different",
+        "fam_flatteningC_rank",
+        "fam_linearized_rank"
+      ],
+      "exact_checks": [
+        "witness_main",
+        "five_term_main",
+        "family_exact"
+      ],
+      "covered": "For r = 5 the witness is the integer tensor T_5 padded to the target format. For its paddings to 6x6x6 and 3x4x5, Lean proves integer equality of the two five-term decompositions, that they are different, third-flattening rank 5 and coordinate Jacobian ranks 80 and 50; the exact checkers recompute these data.",
+      "paper_only": "The theorem for every r and format in (1.2): the dimension D, failure of S2, non-Cohen-Macaulayness of R and of the local ring at T, the vertex-depth inequality (1.3), rank and border rank r of the witness, and the factor permutations. The proof in Section 5 combines Propositions 2.5, 3.3 and 4.6."
+    },
+    {
+      "labels": [
+        "cor:examples"
+      ],
+      "environment": "corollary",
+      "number": "1.2",
+      "section": 1,
+      "source": "paper/main.tex",
+      "title": "The rank-five examples and the unit-tensor orbit closures",
+      "coverage": "partial_lean",
+      "lean_targets": [
+        "orig_embedded_tensor_eq",
+        "orig_embedded_decompositions_different",
+        "orig_embedded_linearized_rank",
+        "fam_tensor_eq",
+        "fam_decompositions_different",
+        "fam_linearized_rank"
+      ],
+      "exact_checks": [
+        "witness_main",
+        "family_exact"
+      ],
+      "covered": "For the rank-five witnesses in formats 6x6x6 and 3x4x5: equality and difference of the two decompositions and coordinate Jacobian ranks 80 and 50. These are ranks of explicit matrices; they agree numerically with the stated dimensions but are not variety dimensions.",
+      "paper_only": "Failure of S2, the dimensions 50, 80, 2r^2 and 3r^2-2r, the vertex-depth inequalities, the family X_r(3,r-1,r) and the orbit-closure identity (1.4)."
+    },
+    {
+      "labels": [
+        "cor:projective"
+      ],
+      "environment": "corollary",
+      "number": "1.3",
+      "section": 1,
+      "source": "paper/main.tex",
+      "title": "Local non-Cohen-Macaulayness of the projective secant",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Non-Cohen-Macaulay local ring of the projective secant at the class of the witness, through the affine chart isomorphism with a Gm-bundle, and failure of arithmetic Cohen-Macaulayness."
+    },
+    {
+      "labels": [
+        "geom:matrix-criterion"
+      ],
+      "environment": "lemma",
+      "number": "2.1",
+      "section": 2,
+      "source": "paper/sections/geometry.tex",
+      "title": "Rank-one points in a span satisfying condition (G)",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Independence of the P_i, the rank-one directions of their span, the tangent intersections (2.2) and reducedness of the scheme-theoretic intersection, by Sylvester's rank inequality and Nakayama's lemma."
+    },
+    {
+      "labels": [
+        "geom:bad-pairs-codimension"
+      ],
+      "environment": "lemma",
+      "number": "2.2",
+      "section": 2,
+      "source": "paper/sections/geometry.tex",
+      "title": "Codimension of the failure locus of condition (G)",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Codimension at least two of the locus where (G) fails, under the numerical conditions (2.1)."
+    },
+    {
+      "labels": [
+        "geom:smooth-span"
+      ],
+      "environment": "lemma",
+      "number": "2.3",
+      "section": 2,
+      "source": "paper/sections/geometry.tex",
+      "title": "Smoothness of the span variety at reduced spanning intersections",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "A finite etale ordered cover of a neighbourhood of L in H, and dim H = r(a+b-2)."
+    },
+    {
+      "labels": [
+        "geom:flattening-bundle"
+      ],
+      "environment": "lemma",
+      "number": "2.4",
+      "section": 2,
+      "source": "paper/sections/geometry.tex",
+      "title": "The third-flattening bundle and the dimension of the secant",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Identification of the rank-r third-flattening locus with the restricted bundle, smoothness at reduced spanning intersections, and dim X_r(a,b,c) = r(a+b+c-2)."
+    },
+    {
+      "labels": [
+        "prop:geometry-summary"
+      ],
+      "environment": "proposition",
+      "number": "2.5",
+      "section": 2,
+      "source": "paper/sections/geometry.tex",
+      "title": "The smooth birational decomposition space",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Smoothness, irreducibility and dimension of Y, birationality of the addition map f, codimension at least two of the complement of Y_good, smooth image of Y_good and uniqueness of its decompositions."
+    },
+    {
+      "labels": [
+        "lem:conductor"
+      ],
+      "environment": "lemma",
+      "number": "3.1",
+      "section": 3,
+      "source": "paper/sections/conductor.tex",
+      "title": "A conductor divisor under S2",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "For an S2 local domain essentially of finite type over C, a height-one prime containing the conductor below every point where the conductor is proper."
+    },
+    {
+      "labels": [
+        "lem:proper-at-fiber"
+      ],
+      "environment": "lemma",
+      "number": "3.2",
+      "section": 3,
+      "source": "paper/sections/conductor.tex",
+      "title": "Properness of the conductor at a fibre with two points",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "The conductor is proper at every normalization point above a local ring whose normalization has at least two points over its maximal ideal."
+    },
+    {
+      "labels": [
+        "prop:conductor-obstruction"
+      ],
+      "environment": "proposition",
+      "number": "3.3",
+      "section": 3,
+      "source": "paper/sections/conductor.tex",
+      "title": "The two-point obstruction",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Two distinct immersive points over T, with a smooth-image open set whose complement has codimension at least two, force failure of S2 and of Cohen-Macaulayness at T; the proof uses the normalization lifting property, Zariski's Main Theorem and Lemmas 3.1 and 3.2."
+    },
+    {
+      "labels": [
+        "rem:fiber-scope"
+      ],
+      "environment": "remark",
+      "number": "3.4",
+      "section": 3,
+      "source": "paper/sections/conductor.tex",
+      "title": "Scope of the two-point obstruction",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Only the two specified immersive decompositions are used; no claim of smoothness in codimension one is made."
+    },
+    {
+      "labels": [
+        "lem:L",
+        "lemma:witness-core"
+      ],
+      "environment": "lemma",
+      "number": "4.1",
+      "section": 4,
+      "source": "paper/sections/witness.tex",
+      "title": "The circuit of six rank-one matrices",
+      "coverage": "paper_and_exact_checks",
+      "lean_targets": [],
+      "exact_checks": [
+        "higher_rank_core"
+      ],
+      "covered": "Relation (4.3), rank 5 of Q_1, ..., Q_6, so that the relation is unique up to scalar, and rank 5 of every five of them are computed exactly.",
+      "paper_only": "The coordinate description (4.4) of the elements of L."
+    },
+    {
+      "labels": [
+        "lem:tangent-intersections"
+      ],
+      "environment": "lemma",
+      "number": "4.2",
+      "section": 4,
+      "source": "paper/sections/witness.tex",
+      "title": "Six tangent intersections",
+      "coverage": "partial_lean",
+      "lean_targets": [
+        "orig_row_determinants",
+        "orig_column_determinants",
+        "fam_row_determinants",
+        "fam_column_determinants"
+      ],
+      "exact_checks": [
+        "norm_identities"
+      ],
+      "covered": "The six determinant values (4.11) and (4.12) are Lean theorems over Q in both projects and are recomputed exactly.",
+      "paper_only": "The reduction of each tangency condition to one of these determinants and the conclusion (4.10)."
+    },
+    {
+      "labels": [
+        "lemma:tangent-criterion"
+      ],
+      "environment": "lemma",
+      "number": "4.3",
+      "section": 4,
+      "source": "paper/sections/witness.tex",
+      "title": "From matrix tangencies to tensor immersion",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Injectivity of the addition differential from scalar-only tangent intersections and a basis of third factors."
+    },
+    {
+      "labels": [
+        "lemma:avoidance"
+      ],
+      "environment": "lemma",
+      "number": "4.4",
+      "section": 4,
+      "source": "paper/sections/witness.tex",
+      "title": "Two avoidance identities",
+      "coverage": "paper_and_exact_checks",
+      "lean_targets": [],
+      "exact_checks": [
+        "norm_identities"
+      ],
+      "covered": "The determinant (4.15) as a polynomial identity in t.",
+      "paper_only": "Both intersection statements (4.14) for every integer t >= 4, and the distinctness and avoidance of the lines spanned by v(t)."
+    },
+    {
+      "labels": [
+        "lemma:extended-tangencies"
+      ],
+      "environment": "lemma",
+      "number": "4.5",
+      "section": 4,
+      "source": "paper/sections/witness.tex",
+      "title": "Tangent intersections after adding rows and columns",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Scalar-only tangent intersections for the extended span L in every rank, by block comparison using Lemmas 4.2 and 4.4."
+    },
+    {
+      "labels": [
+        "prop:witness-immersion"
+      ],
+      "environment": "proposition",
+      "number": "4.6",
+      "section": 4,
+      "source": "paper/sections/witness.tex",
+      "title": "Integer witnesses with two immersive decompositions",
+      "coverage": "partial_lean",
+      "lean_targets": [
+        "orig_tensor_eq",
+        "orig_embedded_tensor_eq",
+        "orig_terms_nonzero",
+        "orig_terms_distinct",
+        "orig_decompositions_different",
+        "orig_embedded_terms_nonzero",
+        "orig_embedded_terms_distinct",
+        "orig_embedded_decompositions_different",
+        "orig_flattening_rank",
+        "orig_embedded_flattening_rank",
+        "orig_small_linearized_rank",
+        "orig_embedded_linearized_rank",
+        "fam_tensor_eq",
+        "fam_terms_nonzero",
+        "fam_terms_distinct",
+        "fam_decompositions_different",
+        "fam_flatteningC_rank",
+        "fam_pairAB_rank",
+        "fam_pairAC_rank",
+        "fam_pairBC_rank",
+        "fam_thirdFactors_rank",
+        "fam_linearized_rank"
+      ],
+      "exact_checks": [
+        "witness_main",
+        "five_term_main",
+        "family_exact",
+        "family_instances"
+      ],
+      "covered": "At r = 5 and p = q = 3, in formats 3x3x5, 6x6x6 and 3x4x5: integer equality of the two decompositions, nonzero and pairwise nonproportional summands, different decompositions, third-flattening rank 5, independent third factors and pair products in format 3x4x5, and coordinate Jacobian ranks 45, 80 and 50, which equal r(a+b+c-2).",
+      "paper_only": "The proposition for every r >= 5, every admissible p and q and every padding; the passage from coordinate Jacobian rank to injectivity of the differential on the unordered decomposition space; rank and border rank r."
+    },
+    {
+      "labels": [
+        "bound:small-rank"
+      ],
+      "environment": "theorem",
+      "number": "6.1",
+      "section": 6,
+      "source": "paper/sections/boundaries.tex",
+      "title": "Rank five is the first possible rank",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "No three-factor tensor has two distinct immersive r-term decompositions for 1 <= r <= 4; sharpness is Proposition 4.6."
+    },
+    {
+      "labels": [
+        "bound:adjacent"
+      ],
+      "environment": "proposition",
+      "number": "6.2",
+      "section": 6,
+      "source": "paper/sections/boundaries.tex",
+      "title": "The adjacent Cohen-Macaulay family in format 3×3×c",
+      "coverage": "partial_lean",
+      "lean_targets": [
+        "orig_small_linearized_rank"
+      ],
+      "exact_checks": [
+        "witness_main",
+        "five_term_main"
+      ],
+      "covered": "The differential rank 45 of the core decomposition in format 3x3x5 is the rank of its 45x55 coordinate Jacobian.",
+      "paper_only": "X_5(3,3,c) is the ambient space for c <= 5 and the variety of 9 x c matrices of rank at most five for c >= 5, and is Cohen-Macaulay for every c >= 1."
+    },
+    {
+      "labels": [
+        "bound:invertible-slice"
+      ],
+      "environment": "proposition",
+      "number": "6.3",
+      "section": 6,
+      "source": "paper/sections/boundaries.tex",
+      "title": "No two immersive decompositions on invertible-slice charts",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Uniqueness, or a positive-dimensional family with a nonzero tangent kernel, for r-term decompositions on an invertible-slice chart."
+    },
+    {
+      "labels": [
+        "bound:smooth-lifts"
+      ],
+      "environment": "proposition",
+      "number": "6.4",
+      "section": 6,
+      "source": "paper/sections/boundaries.tex",
+      "title": "Smooth concise lifts of the two decompositions",
+      "coverage": "partial_lean",
+      "lean_targets": [
+        "orig_decompositions_different",
+        "fam_pairBC_rank",
+        "fam_thirdFactors_rank"
+      ],
+      "exact_checks": [
+        "witness_main",
+        "family_exact"
+      ],
+      "covered": "The two decompositions of T_5 are different; in the 3x4x5 padding the products of second and third factors and the third factors of each decomposition have rank 5.",
+      "paper_only": "The two distinct smooth points of the concise secant above the class of T_5, the unit-tensor framing, and the cited concise-secant construction."
+    },
+    {
+      "labels": [
+        "norm:criterion"
+      ],
+      "environment": "proposition",
+      "number": "7.1",
+      "section": 7,
+      "source": "paper/sections/normalization.tex",
+      "title": "Finite reduced intersection criterion",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Smooth normalization, unramified normalization map and exactly binom(m,r) reduced points above L, and the same near tensors with flattening image L."
+    },
+    {
+      "labels": [
+        "norm:core"
+      ],
+      "environment": "lemma",
+      "number": "7.2",
+      "section": 7,
+      "source": "paper/sections/normalization.tex",
+      "title": "The six-point core intersection",
+      "coverage": "paper_and_exact_checks",
+      "lean_targets": [],
+      "exact_checks": [
+        "norm_identities",
+        "higher_rank_core"
+      ],
+      "covered": "The torus-elimination polynomial identity, and, by a second route, the cycle equations at the six rank-one points with nonzero Jacobian determinants and the elimination identities.",
+      "paper_only": "Exhaustion of the rank-one points of the span, reducedness through Lemma 4.2 and Nakayama's lemma, and the padding statement."
+    },
+    {
+      "labels": [
+        "norm:rank-five"
+      ],
+      "environment": "corollary",
+      "number": "7.3",
+      "section": 7,
+      "source": "paper/sections/normalization.tex",
+      "title": "The rank-five normalization fibre",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Exactly six reduced smooth normalization points above the padded T_5, their bijection with the six actual decompositions, and a smooth unramified normalization near T_5."
+    },
+    {
+      "labels": [
+        "norm:row-column"
+      ],
+      "environment": "proposition",
+      "number": "7.4",
+      "section": 7,
+      "source": "paper/sections/normalization.tex",
+      "title": "Row-column configurations and the fibre lower bound",
+      "coverage": "paper_and_exact_checks",
+      "lean_targets": [],
+      "exact_checks": [
+        "norm_identities"
+      ],
+      "covered": "The row and column arc coefficient identities, v as a combination of the rows of M and of the negated columns of M, verified symbolically.",
+      "paper_only": "The reduced (r+1)-point intersection, the six actual decompositions, rank and border rank r, the algebraic arcs and the lower bound r+1 on the normalization fibre."
+    },
+    {
+      "labels": [
+        "nf:proper-graph"
+      ],
+      "environment": "lemma",
+      "number": "7.5",
+      "section": 7,
+      "source": "paper/sections/normalization_higher_rank.tex",
+      "title": "Fibre schemes and the normalization model",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Reduced finite fibres of the proper graph model and its identification with the normalization when smooth along the fibre."
+    },
+    {
+      "labels": [
+        "nf:diagonal"
+      ],
+      "environment": "theorem",
+      "number": "7.6",
+      "section": 7,
+      "source": "paper/sections/normalization_higher_rank.tex",
+      "title": "Diagonal fibres",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Exactly six smooth reduced normalization points over the diagonal extensions for r >= 6, a,b >= r-2, c >= r, with smooth unramified normalization nearby. Its fixed core input is Lemma 7.2."
+    },
+    {
+      "labels": [
+        "nf:diagonal-block"
+      ],
+      "environment": "lemma",
+      "number": "7.7",
+      "section": 7,
+      "source": "paper/sections/normalization_higher_rank.tex",
+      "title": "Diagonal block valuation",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "The valuation estimate for the lower-right block of two rank-three matrix arcs over C[[z]]."
+    },
+    {
+      "labels": [
+        "nf:rank-six"
+      ],
+      "environment": "theorem",
+      "number": "7.8",
+      "section": 7,
+      "source": "paper/sections/normalization_higher_rank.tex",
+      "title": "The rank-six row-extension fibre",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Exactly seven smooth reduced normalization points over the rank-six row witness, one from the dependent six-core configuration, and the transposed statement."
+    },
+    {
+      "labels": [
+        "nf:three-factor"
+      ],
+      "environment": "theorem",
+      "number": "7.9",
+      "section": 7,
+      "source": "paper/sections/normalization_higher_rank.tex",
+      "title": "The three-dimensional-factor row family",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Exactly r+1 smooth reduced normalization points over the row witness when the second factor has dimension three, r-5 of them from dependent configurations."
+    },
+    {
+      "labels": [
+        "nl:theorem"
+      ],
+      "environment": "theorem",
+      "number": "7.10",
+      "section": 7,
+      "source": "paper/sections/normalization_local.tex",
+      "title": "The completed local ring of the rank-five circuit",
+      "coverage": "paper_and_exact_checks",
+      "lean_targets": [],
+      "exact_checks": [
+        "local_ring_tangents",
+        "local_ring_core"
+      ],
+      "covered": "For first two factor dimensions (3,4), (4,4) and (6,6): the dimensions of one branch tangent space, the common tangent space and the span of all six, whose branch-minus-common differences equal q = 2(a+b-6); the torus-elimination identity, the six tangent determinants and det M = 2.",
+      "paper_only": "The isomorphism (7.12) for every a,b >= 3 with a+b >= 7 and c >= 5, the dimension, depth, embedding dimension, multiplicity, normalization and conductor of the local ring."
+    },
+    {
+      "labels": [
+        "nl:scope"
+      ],
+      "environment": "remark",
+      "number": "7.11",
+      "section": 7,
+      "source": "paper/sections/normalization_local.tex",
+      "title": "Specializations and scope of the local-ring theorem",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Dimension 80 and depth 69 at 6x6x6, dimension 50 and depth 49 at 3x4x5, and the scope: no vertex-depth formula, global normalization description or higher-rank fibre formula."
+    },
+    {
+      "labels": [
+        "nb:D"
+      ],
+      "environment": "theorem",
+      "number": "7.12",
+      "section": 7,
+      "source": "paper/sections/normalization_boundary.tex",
+      "title": "One-sided extensions, D",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Exactly r+1 reduced normalization points over the one-sided row witness, the boundary models R_{r-6,b-3}, tangent excesses, dimensions and unramifiedness. Its fixed core input is Lemma 7.15."
+    },
+    {
+      "labels": [
+        "nb:E1"
+      ],
+      "environment": "theorem",
+      "number": "7.13",
+      "section": 7,
+      "source": "paper/sections/normalization_boundary.tex",
+      "title": "One row and several columns, E1",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "The r+1 reduced normalization points over T_{r;4,r-3}, their local models, tangent excesses and dimensions."
+    },
+    {
+      "labels": [
+        "nb:E2"
+      ],
+      "environment": "theorem",
+      "number": "7.14",
+      "section": 7,
+      "source": "paper/sections/normalization_boundary.tex",
+      "title": "Two rows and two columns, E2",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "The ten reduced normalization points over T_{9;5,5}, their local models, tangent excesses and dimensions."
+    },
+    {
+      "labels": [
+        "nb:configuration"
+      ],
+      "environment": "lemma",
+      "number": "7.15",
+      "section": 7,
+      "source": "paper/sections/normalization_boundary.tex",
+      "title": "The configuration graph",
+      "coverage": "paper_and_exact_checks",
+      "lean_targets": [],
+      "exact_checks": [
+        "boundary_core"
+      ],
+      "covered": "The fixed six-point core: circuit relation, rank 5 of the circuit and of every five of its points, cycle-equation Jacobian determinants and elimination identities.",
+      "paper_only": "The reduced (r+1)-point intersections, the six independent r-subsets, birationality of the span map, dim H, and the properties of the graph closure G for every displayed witness."
+    },
+    {
+      "labels": [
+        "nb:charts"
+      ],
+      "environment": "lemma",
+      "number": "7.16",
+      "section": 7,
+      "source": "paper/sections/normalization_boundary.tex",
+      "title": "Exact boundary charts",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Smooth equivalence of the graph germs at the boundary configurations with the homogeneous origins of the listed algebras."
+    },
+    {
+      "labels": [
+        "nb:monomial"
+      ],
+      "environment": "proposition",
+      "number": "7.17",
+      "section": 7,
+      "source": "paper/sections/normalization_boundary.tex",
+      "title": "Normality of the monomial boundary algebras",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Normality, dimension, embedding dimension and smoothness criterion of the algebras R_{s,m}."
+    },
+    {
+      "labels": [
+        "nb:deformation"
+      ],
+      "environment": "lemma",
+      "number": "7.18",
+      "section": 7,
+      "source": "paper/sections/normalization_boundary.tex",
+      "title": "Regular-parameter deformation",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Normality of a local domain whose quotient by a nonzero element of the maximal ideal is a normal domain."
+    },
+    {
+      "labels": [
+        "nb:graded-deformation"
+      ],
+      "environment": "corollary",
+      "number": "7.19",
+      "section": 7,
+      "source": "paper/sections/normalization_boundary.tex",
+      "title": "The graded regular-parameter deformation",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Normality of a nonnegatively graded domain whose quotient by a homogeneous element of positive degree is a normal domain."
+    },
+    {
+      "labels": [
+        "nb:star"
+      ],
+      "environment": "proposition",
+      "number": "7.20",
+      "section": 7,
+      "source": "paper/sections/normalization_boundary.tex",
+      "title": "Star algebra",
+      "coverage": "paper_only",
+      "lean_targets": [],
+      "exact_checks": [],
+      "covered": "No Lean declaration or exact check is assigned.",
+      "paper_only": "Normality, dimension, embedding dimension and tangent excess of the algebras B_{k,alpha,beta}."
+    }
+  ],
+  "supporting_steps": [
+    {
+      "labels": [
+        "eq:T-second"
+      ],
+      "section": 4,
+      "source": "paper/sections/witness.tex",
+      "title": "The two five-term decompositions of T_5",
+      "lean_targets": [
+        "orig_tensor_eq",
+        "orig_terms_nonzero",
+        "orig_terms_distinct",
+        "orig_decompositions_different"
+      ],
+      "exact_checks": [
+        "witness_main",
+        "five_term_main"
+      ],
+      "covered": "Equality of (4.5) and (4.7) over the integers, nonzero and pairwise nonproportional summands in each, and different summand sets.",
+      "paper_only": "The derivation of (4.7) from relation (4.3)."
+    },
+    {
+      "labels": [
+        "eq:rank-border-rank"
+      ],
+      "section": 4,
+      "source": "paper/sections/witness.tex",
+      "title": "Rank and border rank five of T_5",
+      "lean_targets": [
+        "orig_flattening_rank"
+      ],
+      "exact_checks": [
+        "witness_main"
+      ],
+      "covered": "Third-flattening rank 5 over C.",
+      "paper_only": "Vanishing of flattening minors on the closure of the sums of four pure tensors, and hence (4.8)."
+    },
+    {
+      "labels": [
+        "eq:rank45"
+      ],
+      "section": 4,
+      "source": "paper/sections/witness.tex",
+      "title": "Differential rank 45 at both decompositions",
+      "lean_targets": [
+        "orig_small_linearized_rank"
+      ],
+      "exact_checks": [
+        "witness_main",
+        "five_term_main"
+      ],
+      "covered": "Both 45x55 coordinate Jacobians in format 3x3x5 have rank 45.",
+      "paper_only": "The geometric derivation of (4.13) from Lemmas 4.2 and 4.3."
+    },
+    {
+      "labels": [
+        "bound:moduli-subsection"
+      ],
+      "section": 6,
+      "source": "paper/sections/boundaries.tex",
+      "title": "Flattening ranks (3,3,5) of T_5",
+      "lean_targets": [
+        "fam_flatteningA_rank",
+        "fam_flatteningB_rank",
+        "fam_flatteningC_rank"
+      ],
+      "exact_checks": [
+        "family_exact"
+      ],
+      "covered": "For the 3x4x5 padding of T_5, flattening ranks 3, 3 and 5 over C.",
+      "paper_only": "Invariance under padding, basis changes and factor permutations, and the absence of an invertible slice between two five-dimensional factors."
+    },
+    {
+      "labels": [
+        "sec:verification"
+      ],
+      "section": 8,
+      "source": "paper/sections/verification.tex",
+      "title": "Exact arithmetic and the finite formal certificate",
+      "lean_targets": [
+        "orig_tensor_eq",
+        "orig_embedded_tensor_eq",
+        "orig_terms_nonzero",
+        "orig_terms_distinct",
+        "orig_decompositions_different",
+        "orig_embedded_terms_nonzero",
+        "orig_embedded_terms_distinct",
+        "orig_embedded_decompositions_different",
+        "orig_flattening_rank",
+        "orig_embedded_flattening_rank",
+        "orig_row_determinants",
+        "orig_column_determinants",
+        "orig_small_linearized_rank",
+        "orig_embedded_linearized_rank"
+      ],
+      "exact_checks": [
+        "witness_main",
+        "five_term_main"
+      ],
+      "covered": "Section 8.1 describes the two root exact checkers; the five items of Section 8.2 are the fourteen fields of TR25.FiniteCertificate.",
+      "paper_only": "Section 8.3 describes the uniform construction, which is a written proof. The additional finite corroboration it reports for 15 pairs (r,p) and one 4x5x8 to 5x5x8 extension is not among the exact checks of this repository."
+    }
+  ]
+}

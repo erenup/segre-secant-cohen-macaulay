@@ -1,0 +1,10 @@
+normal: positive checks PASS
+normal equality: intended rejection PASS; REJECT: negative control: decompositions differ
+normal distinctness: intended rejection PASS; REJECT: negative control: unordered decompositions same
+normal immersion: intended rejection PASS; REJECT: negative control: matrix factors dependent
+normal avoidance: intended rejection PASS; REJECT: negative control: derivative rank fails in decomposition 0
+optimized: positive checks PASS
+optimized equality: intended rejection PASS; REJECT: negative control: decompositions differ
+optimized distinctness: intended rejection PASS; REJECT: negative control: unordered decompositions same
+optimized immersion: intended rejection PASS; REJECT: negative control: matrix factors dependent
+optimized avoidance: intended rejection PASS; REJECT: negative control: derivative rank fails in decomposition 0

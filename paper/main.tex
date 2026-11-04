@@ -1,0 +1,215 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{a4paper,total={170mm,257mm},left=20mm,top=20mm}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,array}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\hypersetup{pdftitle={Secant Varieties of Segre Products Need Not Be Cohen-Macaulay},pdfauthor={Wenqi Zhu; Ping Nie}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Gm}{\mathbb G_m}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\Sym}{\mathfrak S}
+\newcommand{\brr}{\underline{\mathrm R}}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\depth}{depth}
+\DeclareMathOperator{\height}{ht}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Gr}{Gr}
+\DeclareMathOperator{\Seg}{Seg}
+\DeclareMathOperator{\pd}{pd}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\title{Secant Varieties of Segre Products Need Not Be Cohen--Macaulay\\[2pt]\large Two immersive decompositions, the conductor, and a failure of Serre's condition $S_2$}
+\author{%
+Wenqi Zhu\thanks{Corresponding author.}\\
+{\small Mathematical Institute, Woodstock Road, University of Oxford,}\\
+{\small Oxford, UK, OX2 6GG}\\
+{\small\texttt{wenqi.zhu@maths.ox.ac.uk}}\\[1ex]
+Ping Nie\\
+{\small David R. Cheriton School of Computer Science, University of Waterloo}\\
+{\small\texttt{ping.nie@uwaterloo.ca}}}
+\date{}
+
+\renewcommand{\baselinestretch}{1.15}
+\setlength{\emergencystretch}{2em}
+\begin{document}
+\maketitle
+\begin{abstract}
+For every $r\geq5$, $a,b\geq3$, $a+b\geq r+2$, and $c\geq r$,
+the reduced affine variety of tensors of border rank at most $r$ in
+$\C^a\otimes\C^b\otimes\C^c$ fails Serre's condition $S_2$ and is
+not Cohen--Macaulay. Its dimension is $D=r(a+b+c-2)$ and its
+homogeneous vertex has depth less than $D$. This includes the
+rank-five variety in format $3\times4\times5$ and the closure of
+the unit-tensor orbit in format $r\times r\times r$ for every
+$r\geq5$. The corresponding projective secants are locally
+non-Cohen--Macaulay, disproving the universal arithmetic
+Cohen--Macaulay conjecture for Segre secants.
+Explicit integer tensors have two immersive decompositions.
+A rank condition on matrix factors yields smooth target charts with
+a codimension-two complement in a birational decomposition space;
+the conductor of the finite normalization then obstructs $S_2$.
+We prove that rank five is the first rank admitting this
+three-factor decomposition mechanism. We also identify the adjacent
+Cohen--Macaulay family in format $3\times3\times c$ at rank five
+and prove that the mechanism cannot occur on an invertible-slice
+chart. Exact arithmetic and a Lean formalization certify the fixed
+finite witness calculations; the infinite family follows from the
+written proof.
+\end{abstract}
+
+\section{The main theorem and its context}\label{sec:introduction}
+
+For positive integers $a,b,c,r$, let
+\begin{equation}\label{eq:general-secant}
+ X_r(a,b,c)=
+ \overline{\left\{\sum_{i=1}^r a_i\otimes b_i\otimes c_i:
+    a_i\in\C^a,\ b_i\in\C^b,\ c_i\in\C^c\right\}}^{\mathrm{Zar}},
+\end{equation}
+with its reduced structure. It is the affine cone over
+$\sigma_r(\Seg(\PP^{a-1}\times\PP^{b-1}\times\PP^{c-1}))$.
+The coordinate ring is a standard graded domain, since the
+parametrizing space is irreducible and its image closure is conical.
+All varieties and tensor products in the proofs are over $\C$.
+
+\begin{theorem}\label{thm:main}
+Suppose that
+\begin{equation}\label{eq:main-range}
+ r\geq5,\qquad a,b\geq3,\qquad a+b\geq r+2,\qquad c\geq r.
+\end{equation}
+Set $X=X_r(a,b,c)$, $R=\C[X]$, and $\mathfrak m=R_{>0}$.
+Then
+\[
+ \dim X=D=r(a+b+c-2),
+\]
+$R$ does not satisfy Serre's condition $S_2$, and $R$ is not
+Cohen--Macaulay. Its homogeneous local ring satisfies
+\begin{equation}\label{eq:main-depth}
+ \depth R_{\mathfrak m}<D=\dim R_{\mathfrak m}.
+\end{equation}
+There is an explicit integer tensor $T\in X$, given by
+\eqref{eq:uniform-witness} and~\eqref{eq:seed-choice}, of ordinary
+rank and border rank exactly $r$ for which $\OO_{X,T}$ is not
+Cohen--Macaulay. The same assertions hold after permuting the three
+factor dimensions.
+\end{theorem}
+
+\begin{corollary}\label{cor:examples}
+The varieties $X_5(3,4,5)$ and $X_5(6,6,6)$ fail $S_2$, have
+respective dimensions $50$ and $80$, and have homogeneous vertex
+depths strictly smaller than those dimensions. For every $r\geq5$,
+$X_r(3,r-1,r)$ has dimension $2r^2$ and fails $S_2$.
+Moreover, if $\Delta_r=\sum_{i=1}^r e_i\otimes e_i\otimes e_i$, then
+\begin{equation}\label{eq:unit-orbit}
+ X_r(r,r,r)=\overline{\bigl(\GL_r(\C)\bigr)^3\cdot\Delta_r}
+\end{equation}
+fails $S_2$ and has vertex depth less than $3r^2-2r$.
+\end{corollary}
+
+\begin{corollary}\label{cor:projective}
+For every format in~\eqref{eq:main-range}, the projective secant
+$\sigma_r(\Seg(\PP^{a-1}\times\PP^{b-1}\times\PP^{c-1}))$ has a
+non-Cohen--Macaulay local ring at the class of the tensor in
+Theorem~\ref{thm:main}. In particular, it is not arithmetically
+Cohen--Macaulay.
+\end{corollary}
+
+A Noetherian ring $B$ satisfies $S_2$ when
+\[
+ \depth B_{\mathfrak p}\geq\min\{2,\dim B_{\mathfrak p}\}
+ \quad\text{for every }\mathfrak p\in\Spec B.
+\]
+Cohen--Macaulay rings satisfy $S_2$. Arithmetic Cohen--Macaulayness of
+a projective embedding means Cohen--Macaulayness of its homogeneous
+coordinate ring, including the affine vertex. It is stronger than
+local Cohen--Macaulayness of the projective variety; here both fail.
+Theorem~\ref{thm:main} does not specify the exact depth at the witness
+or at the vertex. Failure of $S_2$ for $\OO_{X,T}$ may occur at a
+further localization and is not an assertion that
+$\depth\OO_{X,T}<2$.
+
+\input{sections/history}
+
+\subsection{The proof and the limits of the mechanism}
+
+The proof separates smoothness of suitable target points from the
+ambiguity at one explicit tensor. A condition on the ranks of all
+subsets of two factor lists forces their matrix span to contain
+exactly the expected reduced rank-one points. A proper incidence
+argument then reconstructs a smooth local configuration space.
+Keeping the third factor list independent gives a smooth
+birational decomposition source whose complement of smooth-image
+points has codimension at least two.
+
+The integer tensor has two distinct decompositions where addition
+is immersive. They produce two distinct open charts in the finite
+normalization. If the tensor secant were $S_2$ at that tensor, its
+conductor would contain a divisor through the corresponding
+normalization point. The codimension estimate excludes such a divisor.
+Adding explicit matrices in new rows and columns extends the
+construction to every rank in~\eqref{eq:main-range}.
+
+The range in the theorem is sufficient, not a classification of all
+non-Cohen--Macaulay secants. We prove that two distinct immersive
+$r$-term decompositions cannot occur in three factors for $r\leq4$;
+this makes $r=5$ sharp for this mechanism. It does not assert that
+all fourth secants are arithmetically Cohen--Macaulay.
+The rank-five family $X_5(3,3,c)$ remains Cohen--Macaulay for every
+$c\geq1$. We also show why the displayed ambiguity cannot be
+transported through an invertible-slice chart to give a Hilbert- or
+Quot-scheme counterexample. No global minimal-format assertion,
+classification in higher tensor order, or Cohen--Macaulay assertion
+about the normalizations is made.
+
+\input{sections/geometry}
+\input{sections/conductor}
+\input{sections/witness}
+\input{sections/main_proof}
+\input{sections/boundaries}
+\input{sections/normalization}
+\input{sections/verification}
+
+
+\section*{Statements and Declarations}
+\paragraph{Funding.}
+The research of Wenqi Zhu was supported by the Engineering and Physical
+Sciences Research Council under grant EP/Y028872/1, \emph{Mathematical
+Foundations of Intelligence: An ``Erlangen Programme'' for AI}.
+
+\paragraph{Competing interests.}
+The authors have no competing interests to declare that are relevant to
+the content of this article.
+
+\paragraph{Data availability.}
+The exact verification scripts, certificates and Lean~4 files accompanying
+this paper are available at
+\url{https://github.com/erenup/segre-secant-cohen-macaulay}.
+
+\paragraph{Use of generative AI and AI-assisted technologies.}
+During the preparation of this work, the authors used AI tools (Codex and Claude Code) to generate candidate constructions and code, perform computations, draft mathematical arguments, and improve the readability of the text. After using these
+tools, the authors reviewed and edited the content as needed and take full
+responsibility for the content of the publication. The fixed finite witness calculations are certified by exact arithmetic and by two Lean~4 finite certificates, for the $3\times3\times5$ witness with its $6\times6\times6$ padding (Section~\ref{sec:verification}) and for its $3\times4\times5$ padding (in the repository above); the infinite family and the geometric and depth conclusions follow from the written proofs.
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+\end{document}

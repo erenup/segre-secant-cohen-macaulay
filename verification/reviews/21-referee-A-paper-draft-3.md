@@ -1,0 +1,224 @@
+# Referee report A: fidelity of an earlier draft of the paper (normalization section)
+
+Reviewed: an earlier, 51-page draft of the paper with the normalization section, against the normalization statements and proofs now in verification/core/normalization/ and the exact checks there. Its bibliography and eight of its eleven section files are byte-identical to those now in paper/; history.tex, conductor.tex and normalization.tex differ only by the editorial changes listed in README.md.
+
+Verdict: **ACCEPT**. No required changes.
+
+This is the requested fidelity and referee review of the
+51-page manuscript, compared with the previously accepted 24-page draft and
+the accepted normalization proofs. It is not a blind statement review. I read all four
+new normalization source files and compared their statements and arguments
+with the authoritative proofs. For the unchanged mathematics and literature audit
+of the previous draft, I explicitly rely on my earlier review of it
+(report 20), with bytewise preservation checked again here. I did not use the author's
+drafting audits or report as mathematical evidence. No author file was edited.
+
+## Versions and preservation
+
+All manifests of the reviewed draft and their 36 distinct members were
+authenticated. The review copy contains the 14 paper source/documentation
+files, with a separate copy of the submitted PDF. The supporting proof and
+verification files were extracted from a fixed snapshot into
+reviewer-owned storage before checks ran.
+
+The seven pre-existing section files and `refs.bib` are byte-identical to the
+previously accepted paper sources. The only change to `main.tex` is the insertion of
+the line that inputs `sections/normalization.tex` immediately before the
+verification section. The README
+describes the added results. Four new files contain Section 7 and its proofs:
+`normalization.tex`, `normalization_higher_rank.tex`,
+`normalization_local.tex`, and `normalization_boundary.tex`. Thus there is no
+unreviewed alteration to the previously accepted family theorem, its proof,
+credit, bibliography, or finite Lean scope. Section renumbering and the
+longer PDF follow from this insertion.
+
+## Statement fidelity
+
+All varieties in the added section have their reduced structures over the
+complex numbers, and normalization is in the variety's own function field.
+The claims are local at the stated witnesses. Factor permutations transport
+the witnesses as well as the dimensions. The following table records the
+principal correspondence with the accepted normalization statements, now in
+verification/core/normalization/.
+
+| Paper | Accepted statement and exact scope |
+| --- | --- |
+| Proposition 7.1 | Base finite reduced intersection criterion: smooth irreducible projective S, nonempty independent unordered r-tuple locus, birational span map, m reduced intersection points, and every r-subset independent; exactly binomial(m,r) reduced normalization points, smooth entire normalization near the fibre, unramified map; the rank-r flattening bundle gives the tensor version for c≥r |
+| Lemma 7.2, Corollary 7.3, Proposition 7.4 | Exact six-point core; rank-five fibre for a,b≥3, a+b≥7, c≥5; row/column witnesses with p,q≥3, p+q=r+1 and permitted padding; exactly six actual decompositions, with only a lower bound on the additional general mixed boundary points at this stage |
+| Theorem 7.6 (A) | Disjoint diagonal extensions, every r≥6, a,b≥r−2, c≥r: exactly six reduced smooth normalization points and no boundary points |
+| Theorem 7.8 (B) | Rank-six row witness, a≥4, b≥3, a+b≥8, c≥6: seven reduced smooth points, six actual and one dependent boundary point |
+| Theorem 7.9 (C) | Row family, every r≥6, a≥r−1, b exactly 3, c≥r: r+1 reduced smooth points, six actual and r−5 boundary points |
+| Theorem 7.10 | Rank-five completed local ring for a,b≥3, a+b≥7, c≥5, with q=2(a+b−6) and h=3a+3b+5c+2: six q-dimensional transverse branches over a common smooth h-dimensional base |
+| Theorem 7.12 (D) | One-sided row family, r≥6, a≥r−2, b≥3, c≥r, a+b≥r+2: exactly r+1 reduced points; boundary model R_(r−6,b−3), excess (r−6)(b−3), smooth exactly when r=6 or b=3 |
+| Theorem 7.13 (E1) | Exactly the one-row, r−6-column witness T_(r;4,r−3), r≥7, a≥4, b≥r−3, c≥r, a+b≥r+2: one omitted-row model R_(r−6,a−3), and r−6 omitted-column models B_(r−7,a−4,b−r+4) |
+| Theorem 7.14 (E2) | Exactly the rank-nine two-row/two-column witness, a,b≥5, a+b≥11, c≥9: ten reduced points, six smooth and four singular; omitted-row model B_(2,a−4,b−5), omitted-column model B_(2,b−4,a−5) |
+| Section 7.12 | Local holomorphic inverse/derivative bounds for an immersive branch; normality of domain retracts and the finite-normalization conductor identity, with their limited scopes preserved |
+
+The completed local ring in Theorem 7.10 is
+
+    C[[z_1,...,z_h,x_(i,j):1≤i≤6,1≤j≤q]] /
+        (x_(i,j)x_(k,l): i≠k).
+
+Its dimension h+q, depth h+1, embedding dimension h+6q, multiplicity six,
+product normalization, and conductor generated by the x variables all agree
+with the accepted statement. In particular, the 6×6×6 witness has dimension
+80 and depth 69, and the 3×4×5 witness has dimension 50 and depth 49.
+These are witness-local calculations, not homogeneous-vertex depths.
+
+The E1 tangent excesses are (r−6)(a−3) and
+(r−7)(a−3)+b−r+4. The E2 excesses are 2a+b−11 and a+2b−11.
+The k=0 endpoint in E1 and β=0 endpoints in E2 are expressly retained.
+The minimum E2 excess is five. Dimensions at normalization points are
+r(a+b+c−2), with r=9 in E2. Models are stated up to the specified smooth
+and étale covers, not as canonical unframed coordinate identifications.
+Unramifiedness is asserted also at the singular boundary points, without
+silently replacing it by étaleness or flatness.
+
+## Proof audit
+
+### Incidence, entire fibres, and the higher-rank cases
+
+The finite-incidence argument uses properness to shrink to a finite map and
+relative cotangent spaces to obtain unramifiedness. In the ordered fibre
+product the distinct-point locus is open and closed because the diagonal of
+a separated unramified morphism is both. Independent configurations form a
+smooth open subset; the free permutation quotient is smooth. The finite
+birational map from this normal source is then the normalization. The
+flattening map is locally a bundle of full-rank r-by-c matrices, so the
+product argument transfers normality, fibres, and unramifiedness to tensors.
+No flatness of normalization is presumed.
+
+The four core equations exclude any further full-support rank-one point by
+polynomial identities. The six nonzero chart Jacobian determinants establish
+reducedness, rather than merely counting closed points. The row/column
+avoidance identities and outside-coordinate constraints also preserve
+reducedness under padding. The proof distinguishes actual decompositions
+from dependent limiting configurations.
+
+The proper Hilbert span graph is important: its fibre is a closed subscheme
+of Hilb^r of the finite reduced intersection. This rules out collisions and
+nonreduced hidden configurations scheme-theoretically. Properness then
+allows removal of the images of the nonfinite and nonnormal loci. In the
+normal cases this identifies the entire normalization near the fibre, not
+just six familiar open charts.
+
+For A, the Schur-complement valuation argument applies to arbitrary DVR
+arcs, not a selected first-order family. Near-identity changes of the two
+matrix bases fix every retained diagonal direction. The missing diagonal
+entry has valuation exactly k, while the rank-three Schur identity forces
+valuation at least k+1. Rectangular outer blocks and arbitrary padding are
+included. Generic birationality follows from the full-spark rank inequality
+in the actual range a+b≥r+2. Thus there are no dependent boundary points.
+
+For B, the dependence centre is the exact maximal-minor ideal. The six core
+relation coefficients remain units on the relevant chart. Solving AB^t on
+an invertible core block gives the asserted smooth centre, and the induced
+normal map is the stated quotient of A_0⊗B+A⊗B_0. Its exceptional direction
+is unique. For C, the residual derivative is surjective precisely because
+the second matrix factor is all of B_0. The paper expressly forbids extending
+this smoothness argument to b>3; D supplies the different conclusion there.
+
+### The completed rank-five ring
+
+The core Grassmannian has a finite étale ordering cover of its six reduced
+points. After choosing representatives, the unique relation has unit
+coefficients. The residue maps, kernels, and graph equations are exact over
+this local base. The six branch corrections share the same base value.
+Subtracting H_0+Σ_i(H_i−H_0) from the common graph coordinate straightens all
+six branches simultaneously. This is stronger than tangent-space or pairwise
+transversality and is what justifies the displayed completed union ring.
+
+The finite incidence exhausts the reduced local span germ, and the
+flattening bundle supplies the extra 5c smooth parameters. The fibre-product
+description and the exact sequence from the six power-series branches to
+C^5 give depth one before the h smooth variables; q≥2 throughout the stated
+range. The Hilbert-series calculation gives multiplicity six and embedding
+dimension 6q before that same smooth factor. Componentwise multiplication
+computes the conductor. Only the normalization of this completed ring is
+identified by the product formula; there is no global conclusion.
+
+### Boundary charts D, E1, E2
+
+The retained auxiliary relation variables are eliminated through a unit
+minor while the nonlinear free coordinates remain fixed. The resulting
+coordinate change preserves the exact dependence ideal. The residual lists
+are the asserted one-sided products and star quadrics, including empty
+index sets; they are not just radicals, tangent cones, or initial ideals.
+Only the core coefficients known to be units are absorbed. Retained added
+coefficients that vanish at the configuration are never inverted.
+
+The graph chart is the saturated subalgebra O_F[l/t,Q/t] in O_F[t^−1].
+Keeping this subalgebra, rather than only equations with cleared
+denominators, prevents an extra component at t=0. On the normalized pivot
+arcs all retained added coefficients stay identically zero. Consequently
+the residual ratios Q/t vanish, proving that the fibre point is the
+homogeneous origin of the model, including the opposite-row/column cases.
+
+For the monomial algebra R, the integer allocation argument proves monoid
+saturation. The valuation-ring intersection proof then establishes normality
+of its semigroup algebra. For the star algebra B, the additional H generators
+and the denominator-ideal identity (t,v_j)^n are retained at every intermediate
+stage. Grouping terms by their Laurent monomial images proves the complete
+relative kernel, including cross relations and the torsion that a naive
+division argument would miss. Leading-weight reduction terminates, giving
+the stated associated graded algebra. Its saturation follows from integral
+single-commodity flow, including the zero-index cases.
+
+The Rees algebra is finitely generated with the weight-zero H generators
+included. The regular-parameter lemma proves normality near the special
+fibre. The subsequent nonnegative grading and orbit-limit argument extends
+normality to the whole algebra without assuming a proper deformation.
+Fraction-field dimension and degree-one cotangent calculations yield the
+exact excesses. The normal graph charts, properness, and generic
+birationality identify the entire normalization near the fibre. Reduced
+incidence and relative differentials prove unramifiedness separately.
+
+All these mechanisms agree with the accepted proof files, including the
+diagonal DVR exclusion, the rank-six and three-dimensional-factor centres,
+the local-ring proof, `PROOF_D.md`, `GEOMETRY_E.md`, `ALGEBRA_STAR.md`, and
+`DEFORMATION_LEMMA.md`. I found no missing hypothesis or mathematical repair.
+
+## Credit, presentation, and limitations
+
+The history section and bibliography are byte-identical to the version
+previously reviewed against the primary literature. That earlier review
+checked the universal conjecture formulations, known positive cases, prior
+unit-orbit nonnormality, Hilbert/Quot distinctions, and the cited Stacks
+facts. No new external priority claim or bibliographic substitution appears
+here. The stronger local results are proved in the paper rather than
+attributed to an unrelated earlier nonnormality theorem.
+
+The author and acknowledgement placeholders remain present, including the
+PDF author metadata. There is no process history, internal identity,
+local machine path, or private report reference in the manuscript. The
+ordinary version description in the README is suitable for the paper folder.
+
+The unchanged statement that Theorem 1.1 does not give an exact witness
+depth refers to that particular theorem; the separately scoped Theorem 7.10
+now gives such a depth at the rank-five witness. The paper does not assert
+an exact vertex depth, global smoothness/CM/rational singularities of the
+normalization, a general mixed-boundary classification, probability tails,
+or a global single-valued inverse. The normalization section does not
+enlarge the finite Lean claim.
+
+## Independent validation
+
+- A fresh source-only `latexmk` build, with `-no-shell-escape`, succeeds and
+  produces 51 pages. There are no LaTeX warnings, undefined references or
+  citations, duplicate-label warnings, or overfull/underfull boxes.
+- Extracted layout text is byte-identical between the submitted and rebuilt
+  PDFs; PDF metadata need not be byte-identical. Representative pages 22, 26, 32,
+  38, 42, 45, 47 and 51 were also rendered and visually inspected.
+- The copied normalization runner passes the base, higher-rank,
+  completed-local-ring, and boundary-model suites. It authenticates proof
+  bindings and checker outputs, runs normal/optimized/alternate-hash-seed
+  modes, and passes all registered negative controls. The log records 9
+  base direct controls, 15 higher-rank controls, 15 local-ring direct
+  controls, and 15 boundary controls, as well as the base source runner and
+  the 14-run local-ring driver. These checks certify their finite algebraic
+  cores; the all-parameter geometry and normality use the written proofs.
+- Term scans for process and internal names pass on the combined source
+  and the complete extracted PDF text. A scan for local paths and process
+  markers also passes.
+
+No corrections are required.

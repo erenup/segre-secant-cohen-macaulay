@@ -1,0 +1,5 @@
+# Retracts and the conductor
+
+For a retract A->B->A of domains, the first map is injective, so identify Frac(A) with its subfield of Frac(B). If z in Frac(A) is integral over A, it is integral over B, and B normal gives z in B. Write z=a/s with a,s in A and s!=0. Applying the retraction to sz=a gives s*rho(z)=a, whence z=rho(z) in A. Coordinate inclusions and projections preserve reduced tensor secants and compose to the identity, so their coordinate domains form such a retract; nonnormality of the smaller implies nonnormality of the larger. This does not establish an analogous result for CM or S2.
+
+For finite normalization A subset B, Ann_A(B/A) is, by definition, {a in A: aB subset A}, the conductor (A:B). The support of a finite module equals the vanishing locus of its annihilator. At a prime, (B/A)_p=0 exactly when B_p=A_p, i.e. the finite normalization map is an isomorphism there; coherence supplies an open isomorphism neighbourhood. Thus its support is exactly the nonisomorphism locus.

@@ -1,0 +1,16 @@
+{
+  "check_normalization_identities.py": [
+    {
+      "name": "polynomial",
+      "stderr": "REJECT: torus polynomial identity\n"
+    },
+    {
+      "name": "core",
+      "stderr": "REJECT: core determinant\n"
+    },
+    {
+      "name": "arc",
+      "stderr": "REJECT: row arc coefficient identity\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+PASS r=5 seed=3x3x5 rank=45; padded=3x4x5 rank=50
+PASS r=6 seed=3x4x6 rank=66; padded=3x5x6 rank=72
+PASS r=6 seed=4x3x6 rank=66; padded=4x4x6 rank=72
+PASS r=7 seed=3x5x7 rank=91; padded=3x6x7 rank=98
+PASS r=7 seed=4x4x7 rank=91; padded=4x5x7 rank=98
+PASS r=7 seed=5x3x7 rank=91; padded=5x4x7 rank=98
+PASS r=8 seed=3x6x8 rank=120; padded=3x7x8 rank=128
+PASS r=8 seed=4x5x8 rank=120; padded=4x6x8 rank=128
+PASS r=8 seed=5x4x8 rank=120; padded=5x5x8 rank=128
+PASS r=8 seed=6x3x8 rank=120; padded=6x4x8 rank=128
+PASS r=9 seed=3x7x9 rank=153; padded=3x8x9 rank=162
+PASS r=9 seed=4x6x9 rank=153; padded=4x7x9 rank=162
+PASS r=9 seed=5x5x9 rank=153; padded=5x6x9 rank=162
+PASS r=9 seed=6x4x9 rank=153; padded=6x5x9 rank=162
+PASS r=9 seed=7x3x9 rank=153; padded=7x4x9 rank=162
+PASS additional selected r=8 padded=5x5x8 rank=128
+PASS exact finite-instance checks: 15 seeds, 15 padded pairs

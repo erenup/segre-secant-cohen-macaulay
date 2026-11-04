@@ -1,0 +1,26 @@
+{
+  "check_five_term_tensor.py": [
+    {
+      "name": "equality",
+      "stderr": "tensor equality failed\n"
+    },
+    {
+      "name": "degeneracy",
+      "stderr": "repeated summand\n"
+    }
+  ],
+  "check_witness.py": [
+    {
+      "name": "equality",
+      "stderr": "FAIL: tensor equality\n"
+    },
+    {
+      "name": "rank",
+      "stderr": "FAIL: pair-product independence\n"
+    },
+    {
+      "name": "distinct",
+      "stderr": "FAIL: decompositions must be distinct even after scaling and permutation\n"
+    }
+  ]
+}

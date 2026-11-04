@@ -1,0 +1,304 @@
+\section{Normalization fibres and local structure}
+\label{sec:normalization}
+
+We now describe the entire normalization fibres at several of the
+explicit tensors above, the completed local ring at the rank-five
+witness, and the local models of specified higher-rank boundary points.
+Normalization is always taken in the function field of the reduced
+integral variety. The assertions about neighbourhoods and local rings
+below concern the displayed witnesses. They do not assert global
+smoothness, Cohen--Macaulayness, or rational singularities of a
+normalization. All conclusions transport under a permutation of the
+three tensor factors together with the specified witness.
+
+\subsection{A finite incidence model for normalization}
+
+The following criterion also applies beyond matrix Segre varieties.
+
+\begin{proposition}[Finite reduced intersection criterion]
+\label{norm:criterion}
+Let $S\subseteq\PP W$ be a smooth irreducible projective variety,
+$r\geq1$, and $\mathcal U\subseteq S^r$ the nonempty open set of
+ordered independent $r$-tuples. Let $H\subseteq\Gr(r,W)$ be the
+reduced closure of their spans, and suppose
+$\mathcal U/\Sym_r\to H$ is birational. Suppose that
+$L\in H$ has scheme-theoretic intersection
+\[
+ \PP L\cap S=\{p_1,\ldots,p_m\},\qquad m\geq r,
+\]
+consisting of distinct reduced points, every $r$ of which are
+independent. Then an open neighbourhood $N$ of $L$ has smooth
+normalization. The normalization morphism over $N$ is unramified,
+and its fibre at $L$ consists of exactly $\binom mr$ reduced points,
+indexed by the $r$-element subsets of the intersection.
+
+Let $C$ have dimension $c\geq r$, and let $X\subseteq W\otimes C$
+be the reduced closure of sums $\sum_{i=1}^r P_i\otimes c_i$ with
+$[P_i]\in S$. If $T\in X$ has flattening rank $r$ and image $L$
+as above, then an open neighbourhood of $T$ has smooth normalization
+with unramified normalization morphism and exactly $\binom mr$
+reduced points above $T$.
+\end{proposition}
+
+\begin{proof}
+The incidence
+\[
+ Z=\{(K,p)\in H\times S:p\in\PP K\}\longrightarrow H
+\]
+is projective. Its fibre at $L$ is finite, so upper semicontinuity
+of fibre dimension, followed by proper quasi-finite implies finite,
+makes it finite after shrinking about $L$. Its fibre cotangent spaces
+at the points above $L$ vanish. Base change for relative differentials
+and Nakayama's lemma imply that the relative differentials vanish
+there. The residue extensions are trivial, so the morphism is
+unramified there. The image of its closed non-unramified locus is
+closed by finiteness. Shrinking once more, we obtain a finite
+unramified morphism $Z_N\to N$. No flatness is asserted.
+
+In the $r$-fold fibre product of $Z_N$ over $N$, the locus where two
+coordinates agree is open and closed: this follows from the diagonal
+criterion for separated unramified morphisms. The ordered distinct
+tuple locus $D$ is consequently open and closed, and is finite
+unramified over $N$. Independence is open in $D$, and its closed
+complement has no point above $L$. Removing the finite image of that
+complement makes all tuples independent. Taking spans now identifies
+$D$ with the open subset $s^{-1}(N)$ of $\mathcal U$. These are
+inverse morphisms on families, since the direct sum of $r$ independent
+tautological lines in a rank-$r$ subbundle is that subbundle.
+In particular $D$ is smooth and irreducible.
+
+The free permutation action gives a finite \emph{\'etale} quotient
+$D\to E=D/\Sym_r$; over affine opens of $N$ the quotient is given
+by invariants in a finite algebra. Thus $E$ is smooth and integral,
+and $E\to N$ is finite and birational. It is the normalization:
+a finite normal extension of domains with the same fraction field
+equals the integral closure. Unramifiedness descends through
+$D\to E$. The fibre consists of unordered $r$-subsets; since the
+map is unramified and the residue field is $\C$, the fibre is
+reduced. This proves the first assertion.
+
+The rank-$r$ locus of $X$ is the bundle of surjections $C^*\to K$
+over $H$. The proof of Lemma~\ref{geom:flattening-bundle} applies
+unchanged: above an actual span all surjections are sums of the
+specified type, and the bundle projection is smooth and open, so
+taking closures gives the equality. Pull this bundle back to $E$.
+The result is smooth and integral, and maps finitely and
+birationally to the original bundle over $N$. It is therefore its
+normalization, and unramifiedness follows by base change. More
+generally, even when the normalization of $H$ is singular, the
+normalization of the rank-$r$ tensor bundle is its pullback to
+$H$'s normalization: a vector bundle over a normal variety and
+every open subset of it are normal, and the map is finite
+birational.
+\end{proof}
+
+\subsection{The core and the row--column configurations}
+
+Use $M,Q_i,L_0,T_5$ from~\eqref{eq:M}, \eqref{eq:Q}, and
+\eqref{eq:T-first}. Thus $T_5=\sum_{i=1}^5Q_i\otimes f_i$.
+
+\begin{lemma}\label{norm:core}
+The scheme $\PP L_0\cap\Seg(\PP^2\times\PP^2)$ consists
+exactly of the six reduced points $[Q_1],\ldots,[Q_6]$.
+The same assertion holds after padding the two matrix factors.
+\end{lemma}
+
+\begin{proof}
+By~\eqref{eq:L-coordinates}, membership of a matrix $N$ in $L_0$
+means $N_{ij}=M_{ij}(x_i-y_j)$. Suppose $N=ab^{\mathsf T}$ has
+rank one. If $a_i=0$ for some $i$, its zero row gives
+$y_1=y_2=y_3=x_i$. Every nonzero row is then proportional to the
+corresponding row of $M$. Since the rows of $M$ are independent,
+rank one permits exactly one such row, giving one of $Q_1,Q_2,Q_3$.
+If any $b_j=0$, the transposed argument gives one of
+$Q_4,Q_5,Q_6$.
+
+If all coordinates are nonzero, choose projective representatives
+$a=(1,u,v)$ and $b=(1,s,t)$, where $u,v,s,t\ne0$.
+The four additive rectangle relations for $N_{ij}/M_{ij}$ are
+\begin{align*}
+ E_1&=(u-2)s-2(u-1)=0,&
+ E_2&=(u-3)t-3(u-1)=0,\\
+ E_3&=(v-4)s-4(v-1)=0,&
+ E_4&=(v-9)t-9(v-1)=0.
+\end{align*}
+Direct expansion gives the polynomial identity
+\[
+ 3(u-4)\bigl((u-2)E_3-(v-4)E_1\bigr)
+ -(u-3)\bigl((u-3)E_4-(v-9)E_2\bigr)=6u(u-1).
+\]
+It forces $u=1$, and then $E_1=0$ forces $s=0$, a contradiction.
+This exhausts the rank-one points. Lemma~\ref{lem:tangent-intersections}
+gives zero projective tangent space at each of them. Nakayama's
+lemma, applied to the local maximal ideal modulo its square, makes
+each local ring $\C$, proving reducedness.
+
+A nonzero rank-one tensor contained in $A_0\otimes B_0$ has its
+two factors in $A_0$ and $B_0$: apply the quotient map by either
+subspace and use that the other factor is nonzero. Thus padding
+creates no new points. Complementary factor variations occupy
+different tensor blocks and cannot contribute to a tangent vector
+in $L_0$. The tangent intersections, and hence reducedness, are
+also preserved.
+\end{proof}
+
+\begin{corollary}\label{norm:rank-five}
+For $a,b\geq3$, $a+b\geq7$, and $c\geq5$, the normalization
+of $X_5(a,b,c)$ has exactly six reduced points above the padded
+$T_5$. They correspond bijectively to its six actual unordered
+five-term decompositions, all immersive. On an open neighbourhood
+of $T_5$ the entire normalization is smooth and the normalization
+morphism is unramified.
+\end{corollary}
+
+\begin{proof}
+The subset rank criterion of Lemmas~\ref{geom:matrix-criterion}
+and~\ref{geom:bad-pairs-codimension} makes the unordered span
+morphism birational in these dimensions. Lemma~\ref{lem:L} says
+that every five of the six intersection points are independent.
+Apply Proposition~\ref{norm:criterion} with $m=6$ and $r=5$.
+An actual five-term decomposition must give a basis of the
+flattening image $L_0$. Conversely, every such basis determines
+unique third coefficients for $T_5$, and these coefficients are
+independent because its flattening has rank five. Thus the six
+subsets give exactly six unordered decompositions. The scalar-only
+tangent intersections and Lemma~\ref{lemma:tangent-criterion},
+with the complementary-block argument of
+Proposition~\ref{prop:witness-immersion}, prove immersion.
+\end{proof}
+
+\begin{proposition}\label{norm:row-column}
+Let $r\geq5$, $p,q\geq3$, and $p+q=r+1$. For the span $L_r=L$
+in~\eqref{eq:extended-L}, the scheme-theoretic rank-one intersection
+consists exactly of its $r+1$ displayed points $[Q_i],[R_s],[S_t]$,
+all reduced. This holds after padding to any $a\geq p,b\geq q$.
+In every format $a\geq p,b\geq q,c\geq r$, the tensor
+$T_{r;p,q}$ has exactly six actual unordered $r$-term
+decompositions, all immersive, and has rank and border rank $r$.
+
+If also $a,b\geq3$ and $a+b\geq r+2$, its normalization fibre
+has at least $r+1$ distinct points. Six distinguished smooth points
+are the actual decompositions. For $r\geq6$, at least $r-5$
+additional points are required by dependent configurations.
+This lower bound alone makes no assertion about their smoothness
+or the exact total size of the fibre.
+\end{proposition}
+
+\begin{proof}
+Write a nonzero rank-one matrix in $L_r$ as $x\otimes y$, in
+the blocks $(A_0\oplus E)\otimes(B_0\oplus F)$.
+Its $E\otimes F$ block vanishes, so $x_E=0$ or $y_F=0$.
+If $x_E\ne0$, then $y_F=0$. The nonzero $E$-rows have the
+pairwise distinct directions $v(s+3)$, so only one such row
+can be nonzero. Its direction determines $y$, and
+Lemma~\ref{lemma:avoidance} forces the core block to vanish.
+The matrix therefore has direction $R_s$. Transposing gives
+direction $S_t$ if $y_F\ne0$. If both complementary parts
+vanish, Lemma~\ref{norm:core} gives a $Q$-direction.
+Lemma~\ref{lemma:extended-tangencies} and Nakayama's lemma prove
+reducedness; the support argument in Lemma~\ref{norm:core}
+preserves both conclusions under padding.
+
+The only relation among the $r+1$ matrices is
+\eqref{eq:Q-relation}. Thus an $r$-subset is independent exactly
+when it omits one $Q_i$. Flattening rank $r$ forces every actual
+decomposition to select such a basis and then uniquely determines
+its third coefficients. This gives six decompositions.
+Their immersion and the rank assertions follow from the same
+proof as Proposition~\ref{prop:witness-immersion}, for each of
+the six choices of a core basis.
+
+For the final assertion, form $H$ and the finite unramified
+incidence near $L_r$ as in Proposition~\ref{norm:criterion}.
+The ordered distinct $r$-tuples, followed by the free permutation
+quotient, give a finite unramified scheme $F\to H$ with fibre
+the $r+1$ unordered $r$-subsets. Let $F_0$ be the reduced
+closure of its independent open subset. That open is the
+unordered span configuration space; the subset rank criterion
+makes its span map birational. Hence $F_0$ is integral and
+finite birational over this neighbourhood in $H$.
+The normalization of $H$ maps finitely and surjectively to
+$F_0$: on affine rings its integral closure contains the finite
+intermediate domain defining $F_0$, in the same fraction field.
+Every point of $F_0$ thus has a normalization point above it.
+
+The six independent subsets lie in $F_0$ and have smooth
+configuration neighbourhoods, so give exactly one smooth
+normalization point each. To treat a subset omitting
+$R_s=u_s\otimes v(s+3)$, write
+$v(s+3)=\sum_{i=1}^3\lambda_i r_i$ in the row basis of $M$.
+Deform
+\[
+ Q_i(z)=(e_i+z\lambda_i u_s)\otimes r_i\quad(1\leq i\leq3),
+ \qquad Q_i(z)=Q_i\quad(4\leq i\leq6),
+\]
+retain every other added matrix, and omit $R_s$. The sum of the
+six deformed core representatives is $zR_s$. For $z\ne0$ the
+resulting $r$ matrices are independent: projection of a relation
+to the core makes its six core coefficients equal, the other
+added blocks kill all retained added coefficients, and the
+$u_s$-row then forces the common coefficient to vanish.
+Their span extends to $L_r$ at $z=0$. Indeed, five of the
+$Q_i(z)$, all retained added matrices, and the fixed $R_s$
+form a basis with independent limit; for $z\ne0$ this basis
+spans the same space by the displayed sum identity.
+This is an algebraic arc of spans and configurations showing
+that the dependent subset belongs to $F_0$.
+
+For a subset omitting $S_t$, write
+$v(t+3)=\sum_{j=1}^3\mu_j(-m_j)$ and deform
+$Q_{3+j}(z)=(-m_j)\otimes(e_j+z\mu_jw_t)$, leaving the
+other matrices fixed. The sum is $zS_t$, and the identical
+column-block argument proves independence and convergence.
+All $r+1$ distinct subsets therefore lie in $F_0$, proving
+the lower bound over $L_r$. Pulling the normalization back
+along the rank-$r$ tensor bundle gives the same conclusion
+over $T_{r;p,q}$. The dependent subsets do not span $L_r$
+and cannot be actual decompositions.
+\end{proof}
+
+\input{sections/normalization_higher_rank}
+\input{sections/normalization_local}
+\input{sections/normalization_boundary}
+
+\subsection{Local inverse branches and two algebraic consequences}
+
+For completeness, the immersive actual decompositions also give a
+precise local stability statement. If $f:Y\to V$ is holomorphic,
+$Y$ is a smooth complex manifold of dimension $d$, $V$ is a
+finite-dimensional Hermitian vector space, and $df_y$ is injective,
+choose a linear projection $\pi:V\to\C^d$ for which
+$d(\pi f)_y$ is invertible. The holomorphic inverse function
+theorem gives a neighbourhood $U$ on which $\pi f$ is
+biholomorphic. Then $(\pi f)^{-1}\pi$ restricts to an inverse
+of $f$ on $f(U)$. On a smaller relatively compact neighbourhood
+its derivative is bounded, by continuity. Equivalently, when $d>0$,
+for any fixed smooth local Hermitian metric on $Y$, the least
+singular value of $df$ is bounded below by a positive constant
+there. Each actual decomposition branch above has this property.
+It implies no probability-tail or moment assertion and no global
+single-valued inverse.
+
+A retract of a normal domain is normal. Indeed, let
+$A\hookrightarrow B\xrightarrow{\rho}A$ have identity composite
+and let $B$ be integrally closed in its fraction field. An
+element $z\in\Frac(A)$ integral over $A$ is integral over $B$,
+so lies in $B$. Write $z=a/s$ with $a,s\in A$, $s\ne0$.
+Applying $\rho$ to $sz=a$ gives $s\rho(z)=a$, and hence
+$z=\rho(z)\in A$. Coordinate inclusions and projections
+preserve reduced tensor secants and compose to the identity.
+Their coordinate rings form such a retract, so nonnormality
+propagates to larger factor dimensions. This argument does
+not transfer Cohen--Macaulayness or $S_2$ through a general
+ring retraction.
+
+Finally, if $A\subseteq B$ is a finite normalization, then
+\[
+ \Ann_A(B/A)=\{a\in A:aB\subseteq A\}=(A:B).
+\]
+The support of a finite module is the vanishing locus of its
+annihilator. At a prime $\mathfrak p$, the quotient vanishes
+exactly when $B_{\mathfrak p}=A_{\mathfrak p}$; coherence
+then gives an open isomorphism neighbourhood for the finite
+normalization. Its nonisomorphism locus is therefore precisely
+the support of $B/A$.

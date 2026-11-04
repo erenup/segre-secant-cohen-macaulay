@@ -1,0 +1,22 @@
+[
+  {
+    "name": "singular matrix",
+    "reason": "matrix determinant"
+  },
+  {
+    "name": "wrong circuit rank",
+    "reason": "circuit rank"
+  },
+  {
+    "name": "corrupted Jacobian",
+    "reason": "Jacobian certificate"
+  },
+  {
+    "name": "wrong first elimination sign",
+    "reason": "first elimination identity"
+  },
+  {
+    "name": "wrong second elimination multiplier",
+    "reason": "second elimination identity"
+  }
+]

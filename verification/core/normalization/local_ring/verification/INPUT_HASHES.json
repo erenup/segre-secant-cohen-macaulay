@@ -1,0 +1,7 @@
+{
+  "CERTIFICATE.json": "2e1bbd65e7b0f4240af0072efde62055a8777439a44b71df10d373815d0aa601",
+  "check_certificate.py": "2ac6c8e0a499e39444fa265810090a86e4d7dc3d054e42df681b6767724f9847",
+  "check_core.py": "8101973551b482e2da67c605104fd61994e8fe04e210431f0761a16e0f39f2ab",
+  "negative_controls/bad_common_tangent.json": "8d87e004398cf3c6099ae9d42251257b070546f2751983644be93f5496c7e2a1",
+  "negative_controls/bad_modular_inverse.json": "cd9d2a7ff60f18e9bbf788106b5787925ac0411cd75388502460f086b24193c8"
+}

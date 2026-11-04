@@ -1,0 +1,9 @@
+{
+  "matrix": [[1,1,1],[1,2,3],[1,4,9]],
+  "matrix_determinant": 2,
+  "row_column_jacobian_determinants": [12,-12,12,-12,12,-12],
+  "circuit_rank": 5,
+  "every_five_rank": 5,
+  "elimination_first_factor": -2,
+  "elimination_second_factor": -6
+}

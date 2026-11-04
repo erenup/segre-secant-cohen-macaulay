@@ -1,0 +1,460 @@
+\section{Matrix spans and the decomposition morphism}
+\label{geom:section}
+
+Throughout this section, let $A,B,C$ be complex vector spaces of
+dimensions $a,b,c$, and suppose that
+\begin{equation}\label{geom:dimensions}
+ r\geq5,\qquad a,b\geq3,\qquad a+b\geq r+2,\qquad c\geq r.
+\end{equation}
+Write $W=A\otimes B$ and
+\[
+ S=\Seg(\PP A\times\PP B)\subseteq\PP W.
+\]
+We regard $W$ as the space of linear maps $B^*\to A$; its nonzero
+rank-one elements are the nonzero points of the affine cone
+$\widehat S$. We construct a smooth space of unordered decompositions
+which maps birationally to $X_r(a,b,c)$. The construction also supplies
+an open subset whose complement has codimension at least two and whose
+image consists of smooth points of $X_r(a,b,c)$.
+
+\subsection{Rank-one points in a matrix span}
+\label{geom:matrix-spans}
+
+For nonzero vectors $a_i\in A$ and $b_i\in B$, put
+$P_i=a_i\otimes b_i$, $1\leq i\leq r$. For a subset
+$J\subseteq\{1,\ldots,r\}$, let $A_J$ and $B_J$ be the matrices with
+columns $a_i$ and $b_i$, respectively, indexed by $J$. Consider the
+condition
+\begin{equation}\label{geom:subset-condition}\tag{G}
+ \rank A_J+\rank B_J\geq |J|+2
+ \qquad\text{whenever }|J|\geq2.
+\end{equation}
+This condition is invariant under rescaling any of the factor vectors
+and under permuting the indices.
+
+\begin{lemma}\label{geom:matrix-criterion}
+Suppose that the $P_i$ satisfy~\eqref{geom:subset-condition}, and put
+$L=\langle P_1,\ldots,P_r\rangle\subseteq W$. Then the $P_i$ are
+linearly independent, and the only rank-one directions in $L$ are
+$\C P_1,\ldots,\C P_r$. Moreover, for every $i$,
+\begin{equation}\label{geom:tangent-intersection}
+ L\cap T_{P_i}\widehat S=\C P_i.
+\end{equation}
+Consequently the scheme-theoretic intersection $\PP L\cap S$ consists
+of the $r$ distinct reduced points $[P_1],\ldots,[P_r]$.
+\end{lemma}
+
+\begin{proof}
+Take a linear combination with nonzero coefficients indexed by a
+nonempty subset $J$, and write $t=|J|$. In matrix notation it is
+\[
+ N=\sum_{i\in J}\lambda_i P_i
+   =A_J\operatorname{diag}(\lambda_i:i\in J)B_J^{\mathsf t}.
+\]
+Sylvester's rank inequality gives
+\begin{equation}\label{geom:sylvester}
+ \rank N\geq\rank A_J+\rank B_J-t.
+\end{equation}
+Indeed, the image of the right-hand map has dimension $\rank B_J$,
+and its intersection with the kernel of the left-hand map has
+dimension at most $t-\rank A_J$. If $t\geq2$, the right-hand side
+of~\eqref{geom:sylvester} is at least two. If $t=1$, the combination
+is a nonzero rank-one matrix. No nonempty combination can therefore
+vanish, proving independence, and a rank-one combination can use only
+one of the $P_i$.
+
+Fix $i$. The affine tangent space at $P_i$ is
+\[
+ T_{P_i}\widehat S=a_i\otimes B+A\otimes b_i.
+\]
+It is the kernel of the quotient map
+\[
+ W\longrightarrow (A/\C a_i)\otimes(B/\C b_i).
+\]
+We show that the images of $P_j$, $j\neq i$, under this map are
+linearly independent. Let $J$ be the nonempty support of a proposed
+relation among these images, and put $t=|J|$. The ranks of the two
+projected factor matrices are
+\[
+ \rank A_{J\cup\{i\}}-1,
+ \qquad
+ \rank B_{J\cup\{i\}}-1.
+\]
+Their sum is at least $t+1$ by~\eqref{geom:subset-condition}.
+Applying the same rank inequality in the quotient spaces shows that
+the proposed combination has rank at least one. This proves
+independence and hence~\eqref{geom:tangent-intersection}.
+
+The set-theoretic intersection $\PP L\cap S$ has already been
+identified. At each of its points $[P_i]$, its Zariski tangent space
+is the quotient of $L\cap T_{P_i}\widehat S$ by $\C P_i$, and is
+therefore zero. If $R$ is the local ring of the intersection at this
+point and $\mathfrak m$ its maximal ideal, this says
+$\mathfrak m/\mathfrak m^2=0$. Nakayama's lemma gives
+$\mathfrak m=0$, so $R=\C$. Thus all the intersection points are
+reduced, including their scheme structures.
+\end{proof}
+
+\begin{lemma}\label{geom:bad-pairs-codimension}
+In
+\[
+ \mathcal F_{A,B}=(A\setminus\{0\})^r
+                    \times(B\setminus\{0\})^r,
+\]
+the locus where~\eqref{geom:subset-condition} fails has codimension
+at least two. In particular, the condition holds on a nonempty open
+subset of $\mathcal F_{A,B}$.
+\end{lemma}
+
+\begin{proof}
+For each fixed subset $J$ of size $t\geq2$, a bad pair of ranks is
+contained in a locus
+\[
+ \rank A_J\leq x,\qquad \rank B_J\leq y,
+ \qquad x+y\leq t+1,
+\]
+where $1\leq x\leq\min(a,t)$ and $1\leq y\leq\min(b,t)$.
+Zero is excluded because the individual columns are nonzero.
+The two determinantal conditions involve disjoint sets of coordinates,
+and their codimensions in the full matrix spaces add to
+\begin{equation}\label{geom:determinantal-cost}
+ (a-x)(t-x)+(b-y)(t-y).
+\end{equation}
+This uses the dimension $x(a+t-x)$ of the variety of $a$-by-$t$
+matrices of rank at most $x$. One obtains that dimension by choosing
+the $x$-dimensional column space and then a surjective map from
+$\C^t$ onto it; the smaller-rank strata have smaller dimension.
+Intersecting with the open conditions on the columns either removes
+a stratum or preserves its codimension.
+
+For $2\leq t\leq r$, the numerical assumptions imply
+\begin{equation}\label{geom:generic-ranks}
+ \min(a,t)+\min(b,t)\geq t+2.
+\end{equation}
+To see this, if both $a,b$ are at least $t$, the sum is $2t$;
+if exactly one is smaller than $t$, the sum is at least $t+3$;
+and if both are smaller, their sum is at least $r+2\geq t+2$.
+Thus~\eqref{geom:determinantal-cost} cannot be zero for a bad pair.
+
+Nor can it be one. If, for example, its first summand is one and
+the second is zero, then $a=t$, $x=t-1$, and $y=\min(b,t)$.
+Since $a=t\geq3$ and $b\geq3$, we have $y\geq3$ and hence
+$x+y\geq t+2$, a contradiction. The other possibility is symmetric.
+Every bad determinantal locus therefore has codimension at least two.
+There are only finitely many choices of $J,x,y$, proving the asserted
+codimension bound. The bad locus is closed as a finite union of these
+closed determinantal loci; its complement is consequently a nonempty
+open subset.
+\end{proof}
+
+\subsection{The variety of spans}
+\label{geom:span-variety}
+
+Let $\mathcal U\subseteq S^r$ be the open subset of ordered tuples
+of linearly independent projective points. Here independence means
+that nonzero representatives in $W$ are linearly independent; in
+particular the points are distinct. There is a span morphism
+\[
+ s:\mathcal U\longrightarrow\Gr(r,W),\qquad
+ ([P_1],\ldots,[P_r])\longmapsto\langle P_1,\ldots,P_r\rangle.
+\]
+Let $H\subseteq\Gr(r,W)$ be the reduced closure of its image.
+The preceding two lemmas show that $\mathcal U$ is nonempty.
+It is smooth and irreducible of dimension $r(a+b-2)$, and $H$ is
+integral. We regard $s$ as a dominant morphism to $H$.
+
+\begin{lemma}\label{geom:smooth-span}
+Suppose that $L\in H$ and that the scheme $\PP L\cap S$ consists
+of exactly $r$ reduced points spanning $\PP L$. Then $H$ is smooth
+at $L$. More precisely, there is an open neighborhood $N$ of $L$ in
+$H$ such that ordering the points of $\PP K\cap S$, for $K\in N$,
+gives a finite \emph{\'etale} surjective cover of $N$ isomorphic to
+$s^{-1}(N)\subseteq\mathcal U$. In particular,
+\begin{equation}\label{geom:dimension-H}
+ \dim H=r(a+b-2).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Consider the scheme-theoretic incidence
+\[
+ Z=\{(K,p)\in H\times S:p\in\PP K\},\qquad
+ \pi:Z\longrightarrow H.
+\]
+It is closed in $H\times S$, so $\pi$ is projective. Its fiber at
+$L$ is the given reduced scheme of length $r$. Upper semicontinuity
+of fiber dimension for a proper morphism supplies an open
+neighborhood of $L$ on which all fibers are zero-dimensional.
+On this neighborhood $\pi$ is proper and quasi-finite, and hence
+finite.
+
+We first verify that its generic fiber has length $r$.
+Condition~\eqref{geom:subset-condition} defines a nonempty open
+subset of $\mathcal U$: this follows by descending the invariant
+condition on nonzero factor vectors, using
+Lemma~\ref{geom:bad-pairs-codimension}. Its image under $s$ is dense
+and constructible in $H$, and therefore contains a dense open subset.
+At every closed point of this image,
+Lemma~\ref{geom:matrix-criterion} identifies the incidence fiber as
+exactly $r$ reduced points. On an affine open where $\pi$ is finite,
+its algebra is a finite module over a domain. Such a module becomes
+free after inverting a nonzero element: choose a basis over the
+fraction field and clear denominators in generators and relations.
+The rank of this free module is the length of every fiber on that
+smaller open. Comparing at a point in the dense image just described
+shows that the generic length is $r$.
+
+Set $R=\OO_{H,L}$, and let $F$ be the finite $R$-algebra obtained
+from $Z$ by base change to $\Spec R$. Since
+\[
+ \dim_{\C}F/\mathfrak m_R F=r,
+\]
+lifting a basis of this fiber and applying Nakayama's lemma gives
+a surjection $R^r\twoheadrightarrow F$. After tensoring with the
+fraction field of $R$, this is a surjection between vector spaces
+of dimension $r$, and hence an isomorphism. Its kernel has rank
+zero. But the kernel is a submodule of the free module $R^r$ over
+the domain $R$, so it is torsion-free; consequently it is zero.
+We have proved
+\begin{equation}\label{geom:finite-free-incidence}
+ F\simeq R^r\qquad\text{as an }R\text{-module}.
+\end{equation}
+After shrinking about $L$, the incidence morphism is therefore
+finite locally free of rank $r$.
+
+The fiber at $L$ is a disjoint union of $r$ copies of
+$\Spec\C$, and is thus \emph{\'etale} over $\C$. A flat morphism
+of finite presentation with an \emph{\'etale} fiber is
+\emph{\'etale} at the points of that fiber. The non-\emph{\'etale}
+locus is closed, and its image under the finite morphism $\pi$ is
+closed. Removing that image yields an open neighborhood $N$ of $L$
+on which
+\[
+ Z_N\longrightarrow N
+\]
+is finite \emph{\'etale} of degree $r$.
+
+Form the cover $Q\to N$ which orders its $r$ points. Concretely,
+$Q$ is the complement of the pairwise diagonals in the $r$-fold
+fiber product of $Z_N$ over $N$. For a finite \emph{\'etale}
+morphism the diagonals are both open and closed, so $Q$ is finite
+\emph{\'etale} over $N$; each geometric fiber has $r!$ points.
+The condition that the ordered points span the corresponding
+$r$-dimensional subspace is open on $Q$. It holds at every point
+above $L$. Since $Q\to N$ is finite, we can again remove the image
+of its closed complement and arrange that it holds throughout $Q$.
+
+The ordered incidence points now define a morphism
+$Q\to\mathcal U$. Its image lies in $s^{-1}(N)$, and taking
+their span recovers the given point of $N$. Conversely, a tuple
+in $s^{-1}(N)$ supplies $r$ distinct points of the corresponding
+incidence fiber. That fiber is finite \emph{\'etale} of degree
+$r$, so the tuple orders all of it and gives a point of $Q$.
+These constructions are inverse morphisms. Indeed, on families
+the independence condition identifies the direct sum of the $r$
+tautological lines with the pulled-back rank-$r$ tautological bundle,
+so recovering the span is an identity of subbundles, not merely
+an equality at closed points. Thus
+\begin{equation}\label{geom:ordered-span-chart}
+ Q\simeq s^{-1}(N).
+\end{equation}
+The right-hand side is a nonempty open subset of the smooth variety
+$\mathcal U$. Smoothness descends through the surjective
+\emph{\'etale} morphism $Q\to N$, proving the smoothness assertion.
+The same finite \emph{\'etale} cover gives
+$\dim N=\dim\mathcal U=r(a+b-2)$ and hence
+\eqref{geom:dimension-H}.
+\end{proof}
+
+\subsection{The full third flattening}
+\label{geom:flattening}
+
+Identify a tensor in $A\otimes B\otimes C$ with its third
+flattening $\phi:C^*\to W$. Let
+\[
+ \mathcal M_r=\{\phi\in\Hom(C^*,W):\rank\phi=r\}.
+\]
+Sending a map to its image defines a morphism
+\[
+ \rho:\mathcal M_r\longrightarrow\Gr(r,W).
+\]
+If $\mathcal E$ is the tautological rank-$r$ bundle on the
+Grassmannian, then $\mathcal M_r$ is the open subspace of the
+total space of $\Hom(C^*,\mathcal E)$ consisting of surjective
+maps. Its fiber over $L$ is the smooth open subset of
+$\Hom(C^*,L)$ of rank-$r$ maps, of dimension $rc$.
+
+\begin{lemma}\label{geom:flattening-bundle}
+The open locus of third flattening rank $r$ in $X_r(a,b,c)$ is,
+with its reduced scheme structure,
+\begin{equation}\label{geom:bundle-identification}
+ X_r(a,b,c)^{(r)}=\rho^{-1}(H).
+\end{equation}
+If $T$ belongs to this locus and its flattening image $L$ has
+scheme-theoretic intersection $\PP L\cap S$ consisting of exactly
+$r$ reduced spanning points, then $X_r(a,b,c)$ is smooth at $T$.
+Moreover,
+\begin{equation}\label{geom:dimension-X}
+ \dim X_r(a,b,c)=r(a+b+c-2).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Every sum of $r$ pure tensors has third flattening rank at most
+$r$, and the same holds on its closure. Hence the rank-$r$ locus
+is open in $X_r(a,b,c)$, and is closed as a subvariety of
+$\mathcal M_r$. It is nonempty: choose a tuple in $\mathcal U$
+and pair its representatives with $r$ independent vectors in $C$.
+If such a tensor is an actual sum
+$\sum_i P_i\otimes c_i$, its rank forces both the $P_i$ and the
+$c_i$ to be linearly independent. Its flattening image is therefore
+the span of $r$ independent points of $S$. Actual sums are dense in
+$X_r(a,b,c)$; intersecting with its nonempty rank-$r$ open subset
+preserves density. Since $\rho^{-1}(H)$ is closed in $\mathcal M_r$,
+this proves one inclusion in~\eqref{geom:bundle-identification}.
+
+Conversely, let $L=s(u)$ for $u\in\mathcal U$, and choose rank-one
+representatives $P_1,\ldots,P_r$ of the tuple $u$. Every surjection
+$C^*\to L$ has a unique expression
+\[
+ \lambda\longmapsto\sum_{i=1}^r\lambda(c_i)P_i
+\]
+with independent vectors $c_i\in C$, so it is an actual sum of
+$r$ pure tensors. Thus $\rho^{-1}(s(\mathcal U))$ is contained in
+$X_r(a,b,c)^{(r)}$. The projection $\rho^{-1}(H)\to H$ is smooth
+and surjective, and therefore open. The inverse image of the dense
+subset $s(\mathcal U)$ is consequently dense in $\rho^{-1}(H)$.
+Taking closures in $\mathcal M_r$ gives the reverse inclusion.
+The variety $\rho^{-1}(H)$ is reduced: locally it is an open
+subset of a vector bundle over the reduced variety $H$.
+Equality of the reduced closed subvarieties follows.
+
+By Lemma~\ref{geom:smooth-span}, $H$ is smooth at an image $L$
+of the stated kind. The bundle description makes
+$X_r(a,b,c)^{(r)}$ smooth at every tensor above $L$. As this is
+open in $X_r(a,b,c)$, the latter is smooth at $T$ as well.
+Finally, $X_r(a,b,c)$ is irreducible and its rank-$r$ locus is
+nonempty. Its dimension is therefore
+\[
+ \dim H+rc=r(a+b-2)+rc=r(a+b+c-2),
+\]
+by~\eqref{geom:dimension-H}.
+\end{proof}
+
+\subsection{The open space of decompositions}
+\label{geom:source}
+
+Let $\mathcal P\subseteq A\otimes B\otimes C$ be the variety
+of nonzero pure tensors. It is the complement of the zero section
+in the tautological line bundle over
+$\PP A\times\PP B\times\PP C$. Thus $\mathcal P$ is smooth
+and irreducible of dimension $a+b+c-2$.
+
+Define an ordered decomposition space by
+\begin{equation}\label{geom:ordered-source}
+ \widetilde Y=
+ \left\{(p_1,\ldots,p_r)\in\mathcal P^r:
+  \begin{array}{l}
+    p_i=a_i\otimes b_i\otimes c_i,\\[-2pt]
+    c_1,\ldots,c_r\text{ are linearly independent}
+  \end{array}\right\}.
+\end{equation}
+Independence is unaffected by the choices of factor vectors, so
+this defines a nonempty open subset of $\mathcal P^r$.
+It implies that the summands are pairwise distinct. Consequently
+$\Sym_r$ acts freely on $\widetilde Y$, and its quotient
+\begin{equation}\label{geom:unordered-source}
+ Y=\widetilde Y/\Sym_r
+\end{equation}
+exists as a variety; the quotient map is finite \emph{\'etale}.
+For example, the free finite-group quotient theorem
+\cite[Tag~07S7]{stacks-project} applies to the quasi-projective
+variety $\widetilde Y$; its torsor is finite \emph{\'etale}
+because the constant group scheme $\Sym_r$ is so over $\C$.
+Addition induces a morphism
+\begin{equation}\label{geom:addition-map}
+ f:Y\longrightarrow X_r(a,b,c),\qquad
+ \{p_1,\ldots,p_r\}\longmapsto\sum_{i=1}^r p_i.
+\end{equation}
+Let $Y_{\mathrm{good}}$ be the open subset on which the first
+two lists of factor vectors satisfy~\eqref{geom:subset-condition}.
+
+\begin{proposition}\label{prop:geometry-summary}
+Under~\eqref{geom:dimensions}, the variety $Y$ is smooth and
+irreducible of dimension
+\[
+ D=r(a+b+c-2)=\dim X_r(a,b,c),
+\]
+and $f$ is birational. The open subset $Y_{\mathrm{good}}$ satisfies
+\begin{equation}\label{geom:good-source-properties}
+ \codim_Y(Y\setminus Y_{\mathrm{good}})\geq2,
+ \qquad
+ f(Y_{\mathrm{good}})\subseteq X_r(a,b,c)_{\mathrm{sm}}.
+\end{equation}
+Every tensor in $f(Y_{\mathrm{good}})$ has a unique unordered
+decomposition into $r$ nonzero pure tensors.
+\end{proposition}
+
+\begin{proof}
+Smoothness and dimension descend through the finite \emph{\'etale}
+quotient from the nonempty open subset $\widetilde Y$ of
+$\mathcal P^r$. Irreducibility follows from that of
+$\widetilde Y$. The full addition morphism on $\mathcal P^r$
+is dominant onto $X_r(a,b,c)$; restricting it to the dense open
+subset $\widetilde Y$ preserves dominance. Thus $f$ is dominant.
+
+For the codimension assertion, use factor-vector coordinates
+upstairs. The morphism
+\[
+ \bigl((A\setminus\{0\})\times(B\setminus\{0\})
+                      \times(C\setminus\{0\})\bigr)^r
+       \longrightarrow\mathcal P^r
+\]
+is a smooth surjective torus torsor of relative dimension $2r$.
+For each summand the scalar changes have the form
+$(\lambda,\mu,(\lambda\mu)^{-1})$. The inverse image of
+$\widetilde Y$ is obtained by imposing only that the third-factor
+matrix have rank $r$. In this space, failure
+of~\eqref{geom:subset-condition} still has codimension at least
+two by Lemma~\ref{geom:bad-pairs-codimension}, since the condition
+involves only the A- and B-coordinates. The bad locus is invariant
+under the torus and the permutations. A smooth surjection of
+constant relative dimension preserves its codimension, as does a
+finite \emph{\'etale} surjection. This proves the first assertion
+of~\eqref{geom:good-source-properties}.
+
+Let $y\in Y_{\mathrm{good}}$ and write its sum as
+$T=\sum_i P_i\otimes c_i$. The $P_i$ are independent by
+Lemma~\ref{geom:matrix-criterion}, and the $c_i$ are independent
+by the definition of $Y$. Thus $T$ has third flattening rank $r$
+with image $L=\langle P_1,\ldots,P_r\rangle$. The same lemma
+identifies $\PP L\cap S$ as $r$ reduced spanning points.
+Lemma~\ref{geom:flattening-bundle} proves that $T$ is smooth in
+$X_r(a,b,c)$, establishing the second assertion
+of~\eqref{geom:good-source-properties}.
+
+Suppose that $T$ has another $r$-term decomposition. Its third
+flattening rank forces its third vectors and matrix factors to
+be independent, and forces those matrix factors to span the same
+space $L$. Each is rank one, so their projective directions must
+be exactly the $r$ points $[P_i]$. After permuting the summands,
+write the new matrix factors as $\lambda_iP_i$. Comparing the
+coefficients in the basis $(P_i)$ shows that the corresponding
+new third factors are $\lambda_i^{-1}c_i$. The full pure summands
+are therefore unchanged, proving uniqueness.
+
+The dimension of the target is $D$ by
+Lemma~\ref{geom:flattening-bundle}. The image of the dense open
+subset $Y_{\mathrm{good}}$ is dense and constructible, and hence
+contains a dense open subset of $X_r(a,b,c)$. The fibers there
+consist of single points by the uniqueness just proved. A
+dominant generically finite morphism of irreducible complex
+varieties induces a separable extension of function fields;
+its degree is the number of points in a general fiber. That
+degree is one here, so $f$ is birational.
+\end{proof}
+
+The restriction to independent third-factor vectors is part of the
+definition of $Y$, including when $c=r$. Thus no codimension claim
+about the third-rank-deficient boundary of a larger decomposition
+space is needed in Proposition~\ref{prop:geometry-summary}.

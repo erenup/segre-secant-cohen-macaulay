@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript using the preferred citation below."
+type: software
+title: "Secant Varieties of Segre Products Need Not Be Cohen-Macaulay"
+authors:
+  - given-names: "Wenqi"
+    family-names: "Zhu"
+    affiliation: "Mathematical Institute, Woodstock Road, University of Oxford, Oxford, UK, OX2 6GG"
+    email: "wenqi.zhu@maths.ox.ac.uk"
+  - given-names: "Ping"
+    family-names: "Nie"
+    affiliation: "David R. Cheriton School of Computer Science, University of Waterloo"
+    email: "ping.nie@uwaterloo.ca"
+license: MIT
+repository-code: "https://github.com/erenup/segre-secant-cohen-macaulay"
+abstract: >-
+  For every r >= 5 and all a, b >= 3 with a + b >= r + 2 and c >= r, the
+  reduced affine variety of complex tensors of border rank at most r in
+  C^a (x) C^b (x) C^c fails Serre's condition S2 and is not
+  Cohen-Macaulay. Its dimension is D = r(a+b+c-2) and its homogeneous
+  vertex has depth less than D. This includes the rank-five variety in
+  format 3x4x5 and the unit-tensor orbit closures in format r x r x r for
+  every r >= 5, and disproves the universal arithmetic Cohen-Macaulay
+  conjecture for Segre secants. The paper also determines normalization
+  fibres, the completed local ring at a rank-five witness and boundary
+  models at specified higher-rank witnesses. Includes the paper,
+  plain-text proofs, exact supporting checks, and Lean proofs of two
+  finite certificate layers. Files outside paper/ are licensed under MIT;
+  files in paper/, including the manuscript source and PDF, are licensed
+  under CC BY-SA 4.0.
+preferred-citation:
+  type: unpublished
+  license: CC-BY-SA-4.0
+  title: "Secant Varieties of Segre Products Need Not Be Cohen-Macaulay"
+  authors:
+    - given-names: "Wenqi"
+      family-names: "Zhu"
+      affiliation: "Mathematical Institute, Woodstock Road, University of Oxford, Oxford, UK, OX2 6GG"
+      email: "wenqi.zhu@maths.ox.ac.uk"
+    - given-names: "Ping"
+      family-names: "Nie"
+      affiliation: "David R. Cheriton School of Computer Science, University of Waterloo"
+      email: "ping.nie@uwaterloo.ca"

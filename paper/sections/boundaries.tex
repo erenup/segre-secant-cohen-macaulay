@@ -1,0 +1,341 @@
+\section{Boundaries of the decomposition obstruction}\label{bound:section}
+
+The existence of two immersive decompositions has a sharp rank threshold
+for tensors with three factors. It also behaves differently from the
+Cohen--Macaulay property under a change of format. We establish these
+points before discussing the relation with multiplication tensors.
+Throughout this section, immersion means injectivity of the addition
+differential on the space of unordered decompositions into distinct
+nonzero pure summands.
+
+\subsection{The first possible rank}\label{bound:threshold-subsection}
+
+\begin{theorem}\label{bound:small-rank}
+Let $A,B,C$ be finite-dimensional complex vector spaces and let
+$1\leq r\leq4$. No tensor in $A\otimes B\otimes C$ has two distinct
+immersive unordered decompositions into $r$ nonzero pure summands.
+Consequently, among three-factor tensors in arbitrary finite dimensions,
+rank five is the first rank admitting this decomposition obstruction.
+\end{theorem}
+
+\begin{proof}
+The assertion for $r=1$ is immediate. Suppose $2\leq r\leq4$ and
+\[
+ T=\sum_{i=1}^r a_i\otimes b_i\otimes c_i
+\]
+is an immersive decomposition. Each list of opposite-factor products
+is linearly independent. For example, a nonzero relation
+$\sum_i\lambda_i b_i\otimes c_i=0$ and a fixed $0\neq z\in A$
+would give the nonzero source tangent vector with components
+$\lambda_i z\otimes b_i\otimes c_i$, whose image under the addition
+differential is zero. The other two lists are treated in the same way.
+
+It follows that the rank of each factor-column matrix equals the
+corresponding flattening rank of $T$. Indeed, the first flattening is
+the product of the first factor-column matrix and the transpose of
+the full-column-rank matrix of opposite products. The latter transpose
+is surjective, so the product has the same image as the former matrix.
+We may therefore restrict all three factors to the supports of $T$;
+all summands lie in these supports, and any tangent kernel after
+restriction would also be a tangent kernel in the original format.
+Write their dimensions as $a,b,c$.
+
+If $a,b,c\leq r-1$, the source dimension is $r(a+b+c-2)$, which is
+strictly larger than the ambient dimension $abc$. To check this for
+all positive $a,b,c$ in the stated range, observe that
+\[
+ \frac{abc}{a+b+c-2}
+\]
+is nondecreasing in each variable: its derivative with respect to $a$
+is $bc(b+c-2)/(a+b+c-2)^2\geq0$. Its maximum is
+$(r-1)^3/(3r-5)$, whose values for $r=2,3,4$ are respectively
+$1,2,27/7$, all strictly smaller than $r$. Immersion is thus impossible
+unless at least one flattening has rank $r$.
+
+Permute the factors so that $c_1,\ldots,c_r$ are independent, and put
+$P_i=a_i\otimes b_i$. The $C$-flattening has image
+$L=\langle P_1,\ldots,P_r\rangle$, with the $P_i$ independent.
+Let $\mathcal R\subset A\otimes B$ be the rank-at-most-one matrix cone.
+Immersion implies
+\begin{equation}\label{bound:scalar-tangent}
+ L\cap T_{P_i}\mathcal R=\C P_i\qquad(1\leq i\leq r).
+\end{equation}
+Indeed, suppose $\delta P_i\in L\cap T_{P_i}\mathcal R$ is not
+proportional to $P_i$, and write $\delta P_i=\sum_j h_jP_j$.
+Cancel $\delta P_i\otimes c_i$ by the tangent variations
+$-h_jP_j\otimes c_i$ in the $j$th summands. The $i$th component of
+the resulting source tangent vector is
+$(\delta P_i-h_iP_i)\otimes c_i\neq0$, while its sum is zero,
+contradicting immersion.
+
+Any other $r$-term decomposition has independent $C$-factors and
+independent matrix factors spanning the same $L$, because the
+$C$-flattening has rank $r$. If its matrix-factor directions are the
+original $[P_i]$, comparison in this basis fixes the pure summands.
+Otherwise it supplies a rank-one matrix $Q\in L$ whose direction is
+different from every $[P_i]$.
+
+The expansion of $Q$ in the basis $P_1,\ldots,P_r$, restricted to its
+nonzero coefficients, gives a minimally dependent set of $m$ rank-one
+matrices, where $3\leq m\leq r+1\leq5$. Its span $L_0$ has dimension
+$m-1$, and every coefficient in its unique relation is nonzero.
+Let $U,V$ be the spans of their first and second factors, of dimensions
+$u,v$. Writing the relation as
+\[
+ U_{\mathrm{col}}D V_{\mathrm{col}}^{\mathsf t}=0,
+\]
+where $D$ is an invertible diagonal $m\times m$ matrix, shows that
+$u+v\leq m$: the rank-$v$ image of $D V_{\mathrm{col}}^{\mathsf t}$
+is contained in the $(m-u)$-dimensional kernel of
+$U_{\mathrm{col}}$.
+
+If $u=1$ or $v=1$, the entire $L_0$ lies in the rank-one-cone tangent
+at each of its nonzero rank-one points. Since $\dim L_0=m-1\geq2$,
+this contradicts~\eqref{bound:scalar-tangent} at an original $P_i$
+in the relation. Otherwise $u,v\geq2$ and $u+v\leq5$. Up to exchange,
+the only possibilities are $(2,2)$ and $(2,3)$. The affine tangent to
+the rank-one cone in $U\otimes V$ has dimension $u+v-1$, so at any
+point $P$ in the relation,
+\[
+ \dim\bigl(L_0\cap T_P\mathcal R\bigr)
+ \geq (m-1)+(u+v-1)-uv.
+\]
+For $(u,v)=(2,2)$, we have $m\geq4$ and this lower bound is
+$m-2\geq2$. For $(2,3)$, we have $m\geq5$ and it is $m-3\geq2$.
+Taking an original $P_i$ again contradicts
+\eqref{bound:scalar-tangent}. Thus the immersive decomposition is
+unique. The rank-five example in
+Proposition~\ref{prop:witness-immersion} proves that the bound is sharp.
+\end{proof}
+
+Theorem~\ref{bound:small-rank} concerns this particular source of
+normalization branches. It does not assert that every secant of rank
+at most four is Cohen--Macaulay, or that rank five is the least rank
+for failure of arithmetic Cohen--Macaulayness by any method.
+
+\subsection{A Cohen--Macaulay adjacent family}\label{bound:adjacent-subsection}
+
+\begin{proposition}\label{bound:adjacent}
+For every integer $c\geq1$, the variety $X_5(3,3,c)$ is
+Cohen--Macaulay. For $c\leq5$ it is the entire ambient tensor space.
+For $c\geq5$, third flattening identifies it, with reduced structure,
+with the variety of $9\times c$ matrices of rank at most five.
+\end{proposition}
+
+\begin{proof}
+The core decomposition of Lemma~\ref{lemma:witness-core} has addition
+differential rank $45$ in format $3\times3\times5$, by
+Proposition~\ref{prop:witness-immersion}. A nonzero $45\times45$
+derivative minor implies that the image closure has dimension at
+least $45$. This is the dimension of the ambient space, so
+$X_5(3,3,5)$ is that entire space. Projection of the third factor to
+$\C^c$, for $1\leq c\leq5$, proves the corresponding assertion there:
+a linear map preserves sums of five pure tensors and cannot increase
+border rank.
+
+Now let $c\geq5$. Third flattening puts $X_5(3,3,c)$ inside the
+irreducible determinantal variety $D$ of $9\times c$ matrices of
+rank at most five, whose dimension is $5(9+c-5)=5(c+4)$.
+Pad the core decomposition in its third factor. Each of the $c-5$
+new third-factor directions contributes the five independent matrices
+$P_1,\ldots,P_5$ to the differential image. These new blocks have
+distinct third-factor coordinates and are independent of the original
+image. Thus the addition differential has rank
+\[
+ 45+5(c-5)=5(c+4).
+\]
+The secant and $D$ consequently have the same dimension. Since the
+secant is a closed irreducible subvariety of the irreducible $D$,
+they are equal as reduced varieties. For $c\geq6$ the
+Cohen--Macaulay assertion is the generic determinantal case; in this
+format it also follows from
+\cite[Theorem~2.4]{CatalisanoGeramitaGimigliano2008}.
+For $c=5$ the determinantal condition is vacuous.
+\end{proof}
+
+Thus, at fixed rank bound five, first-factor dimension three, and
+$c\geq5$, increasing the second-factor dimension from three to four
+changes a Cohen--Macaulay variety to a non-$S_2$ variety. This statement
+does not establish minimality among all formats. In particular, the
+non-$S_2$ result is not a consequence of merely placing the same two
+decompositions inside an arbitrary larger tensor space.
+
+\subsection{An obstruction on invertible-slice charts}\label{bound:slice-subsection}
+
+For $T\in A\otimes B\otimes C$ and $\alpha\in A^*$, write
+$T_\alpha:B^*\to C$ for the contraction with $\alpha$.
+
+\begin{proposition}\label{bound:invertible-slice}
+Let $r\geq1$, let $\dim B=\dim C=r$, and suppose that
+$T\in A\otimes B\otimes C$ has an invertible slice $T_\alpha$.
+If $T$ has a decomposition into $r$ nonzero pure summands, then either
+that unordered decomposition is unique, or every such decomposition
+lies in a positive-dimensional family and has a nonzero kernel for
+the addition differential. In particular, two distinct immersive
+$r$-term decompositions cannot occur on this chart. No conciseness
+assumption on the $A$ factor is required.
+\end{proposition}
+
+\begin{proof}
+In an $r$-term decomposition $T=\sum_i a_i\otimes b_i\otimes c_i$,
+invertibility of $T_\alpha$ forces every $\alpha(a_i)$ to be nonzero
+and both $(b_i)$ and $(c_i)$ to be bases. Absorb the scalar
+$\alpha(a_i)$ into $b_i$ so that $\alpha(a_i)=1$.
+For each $\beta\in A^*$, the endomorphism
+\[
+ X_\beta=T_\beta T_\alpha^{-1}:C\longrightarrow C
+\]
+is diagonal in the basis $(c_i)$, with eigenvalues $\beta(a_i)$.
+The joint eigenspaces are
+\[
+ E_a=\langle c_i:a_i=a\rangle.
+\]
+Both their dimensions and their labels $\beta\mapsto\beta(a)$ are
+intrinsic to $T$. If the $a_i$ are distinct, every joint eigenspace
+is a line. These lines determine the $c_i$ directions, and
+$T_\alpha$ determines their paired $b_i$ coefficients. The labels
+then fix the normalized $a_i$, proving uniqueness of the pure summands.
+
+If $a_1=a_2=a$, replace the first two summands by
+\[
+ a\otimes(b_1+t b_2)\otimes c_1
+ +a\otimes b_2\otimes(c_2-t c_1).
+\]
+Their sum is unchanged. The two altered factor lists remain bases,
+so the summands remain nonzero and distinct. At $t=0$ the two
+source tangent components are respectively
+$a\otimes b_2\otimes c_1$ and its negative. They are nonzero and
+their sum is zero. Passing to the free finite permutation quotient
+does not remove this tangent kernel. The curve is nonconstant modulo
+permutations and therefore gives a positive-dimensional family.
+An intrinsic joint eigenspace of dimension at least two has repeated
+labels in every decomposition, so this argument applies to every one.
+\end{proof}
+
+This proposition applies only to tensors admitting $r$ actual pure
+summands. It makes no assertion about the Cohen--Macaulay property of
+the whole invertible-slice locus, including tensors of ordinary rank
+larger than $r$.
+
+\subsection{Concise lifts and the Hilbert--Quot comparison}
+\label{bound:moduli-subsection}
+
+A tensor is \emph{concise} if each of its flattenings has full rank in
+its factor. The core tensor $T_5$ in~\eqref{eq:T-first}
+has flattening ranks $(3,3,5)$: the third rank follows from independence
+of the five matrices, while the first two follow from the three
+coordinate row directions and the independent rows of $M$, with
+$\det M=2$. Hence every slice in any factor has matrix rank at most
+three. Padding, invertible changes of basis, and factor permutations
+do not change this conclusion. In particular, this tensor has no
+invertible slice between two five-dimensional factors.
+
+There is also a direct description of its lifts under the concise
+secant construction of~\cite{JagiellaJelisiejew2026}. Let $c\sigma_5$
+denote the projective concise secant variety in the ambient format
+containing $T_5$.
+
+\begin{proposition}\label{bound:smooth-lifts}
+The two displayed decompositions of $T_5$ determine distinct smooth
+points of $c\sigma_5$ above $[T_5]$. With suitable framings, the concise
+tensor at each point is the unit tensor
+$\Delta_5=\sum_{i=1}^5e_i\otimes e_i\otimes e_i$.
+\end{proposition}
+
+\begin{proof}
+Write either decomposition as
+$T_5=\sum_i a_i\otimes b_i\otimes c_i$ in $V_1\otimes V_2\otimes V_3$.
+Set $W_1=W_2=W_3=\C^5$ and define
+\[
+ \widetilde T=\Delta_5,\qquad
+ \phi_1(e_i)=a_i,\quad \phi_2(e_i)=b_i,\quad \phi_3(e_i)=c_i.
+\]
+These data satisfy the intermediate conciseness conditions of
+\cite[Proposition~3.20]{JagiellaJelisiejew2026}. The tensor
+$\widetilde T$ is concise; after applying $\phi_3$, the first two
+flattenings have rank five, because the remaining coordinate basis
+vectors separate the nonzero summands. After applying $\phi_2$ and
+$\phi_3$, the first flattening has rank five because the products
+$b_i\otimes c_i$ are independent: the $c_i$ form a basis of their
+support. The final restriction is $T_5$.
+
+In the projective framed construction, these data lie in an open
+subset of
+\begin{equation}\label{bound:framed-product}
+ X_5(5,5,5)^{\mathrm{conc}}
+ \times\PP\Hom(W_1,V_1)
+ \times\Hom(W_2,V_2)\times\Hom(W_3,V_3).
+\end{equation}
+Here the first restriction map is projectivized. The superscript
+$\mathrm{conc}$ denotes the concise locus of the \emph{affine}
+secant. Apart from the equations defining that affine secant, the
+conditions are open; see
+\cite[Proposition~3.20 and Theorem~3.25]{JagiellaJelisiejew2026}.
+
+The unit tensor is smooth in $X_5(5,5,5)$. Indeed, decompositions whose
+three factor lists are bases form a dense open of the source, and
+their image is exactly the $\GL_5^3$ orbit of $\Delta_5$. This orbit
+is dense and locally closed, hence open; an algebraic group orbit
+over $\C$ is smooth. Thus the product~\eqref{bound:framed-product}
+is smooth at both framed points. The map from the framed concise
+secant to $c\sigma_5$ is a principal $\GL_5^3$ bundle, so smoothness
+descends to both unframed points.
+
+To see that the two points are distinct, note that $\Delta_5$ has a
+unique five-term decomposition: apply
+Proposition~\ref{bound:invertible-slice} with the functional taking
+value one on every $e_i$; its five normalized first-factor labels are
+distinct. An identification of the two framed data up to
+$\GL_5^3$ would therefore permute these five pure summands. Its images
+would make the two original decompositions equal, possibly after a
+common scalar arising from $[\phi_1]$. That scalar is one since both
+sums equal the same nonzero $T_5$. The original decompositions are
+distinct, so no such identification exists.
+\end{proof}
+
+Under the standard basis identifications, $\Delta_5$ is the
+multiplication tensor of the semisimple algebra $\C^5$.
+Embedded reduced configurations of five distinct points are smooth
+points of a Hilbert scheme of points on a smooth variety: their locus
+is the free symmetric-group quotient of the smooth configuration
+space of five ordered distinct points. Thus the algebra arising from
+these lifts supplies smooth Hilbert points. The two rank-one
+configurations themselves are different points of the Hilbert scheme
+of the Segre product; the map to the tensor secant forgets that
+configuration. In the rank-five formats of Theorem~\ref{thm:main}, the local
+Cohen--Macaulay failure of their common image does not transfer through
+this description to either configuration space.
+
+For clarity, the conjectural consequences discussed in the literature
+must be distinguished from this local statement. In
+\cite[\S3.6.1, following Conjecture~3.32]{JagiellaJelisiejew2026},
+universal arithmetic Cohen--Macaulayness of Segre secants is related,
+via smooth equivalences, to Cohen--Macaulayness assertions for surface
+Quot schemes and smoothable Hilbert components. The implications
+stated there run from the universal secant assertion; its failure
+supplies no negation of those assertions.
+
+Haiman's original Conjecture~5.2.1 in~\cite{Haiman2001} asks for
+\emph{normality and Cohen--Macaulayness of the isospectral Hilbert
+scheme} over the principal component of
+$\operatorname{Hilb}^n(\C^d)$, for every $n,d$. The following paragraph
+observes that normality and Cohen--Macaulayness of the principal
+component follow by taking the symmetric-group quotient. Consequently,
+Cohen--Macaulayness of the smoothable Hilbert component is a weaker
+assertion than the original conjecture.
+
+There is also a scheme-structure distinction on the Quot side.
+Artin--Hochster's conjecture, as stated in
+\cite[Conjecture~3.2]{Stark2026}, concerns the commuting \emph{scheme}
+cut out by the entries of $XY-YX$ for two square matrices. The
+presentation of surface Quot schemes in
+\cite[Theorem~3.2]{Stark2026} uses a stable open subset of this
+scheme with framing vectors and a principal general-linear-group
+quotient. By contrast, the minimal-border-rank locus defining the
+concise secant is explicitly reduced
+\cite[Definition~3.14(a)]{JagiellaJelisiejew2026}. Agreement of closed
+points alone cannot identify these scheme structures.
+Propositions~\ref{bound:invertible-slice} and~\ref{bound:smooth-lifts}
+therefore give a limitation of the present decomposition obstruction;
+they provide neither a proof nor a counterexample to the Hilbert,
+isospectral Hilbert, or Quot Cohen--Macaulay assertions.

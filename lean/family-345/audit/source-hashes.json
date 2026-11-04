@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "source_hashes": {
+    "TR25Family.lean": "286928854dc8f02be93bbef71977235cd2a89bf302387921394cf57d055671e4",
+    "TR25Family/ArithmeticDeterminants.lean": "b36c088515cca0e8d54b124dd0b20727f6b2f1b8f89540ae9da3ae3d2d9d0c6a",
+    "TR25Family/ArithmeticFacts.lean": "adb87ee7ac1a809909b32323f164a00313a4b70044728b1e515473bea46590ed",
+    "TR25Family/Definitions.lean": "cdefbfb9a0f7525cb7203f251e8a4321af38ecce94708558390e66b6b3f7b2d4",
+    "TR25Family/Flattening.lean": "a4014dc3faa00aa2a4abeb1d765f0dba223392059524c04a316118fedb3965cb",
+    "TR25Family/PairRanks.lean": "add3b3e9be5a8b90f61c335587cbe1700852362a197720edf17177cb554dcd08",
+    "TR25Family/Rank.lean": "7ae9d7123f1256a343e1f8ef640e352d53bf06bcf162fd2fcb742b33ee1ecd95",
+    "TR25Family/RankData0.lean": "589b09256623dc56c58d32a08c885a3fadd4ba0a9142663b8b89c049b776733c",
+    "TR25Family/RankData1.lean": "7e5922b8f3e5e73945ee3066aefcf37fc7cb196825c799b126d4841f62b0a20e",
+    "TR25Family/RankGeneral.lean": "82f44fc0b14517e481993674ccf6725c0edad7e00ee22367c640cda951da2ace",
+    "TR25Family/RankKernel.lean": "d431e55b79545e622ca9e1cf23cb48e90e1d51a05fc9a5d4377d80f9d6dbc0e3",
+    "TR25Family/RankRows0_00.lean": "32f8824a555bed3d6d0cdc317789a7bb4ff4215678befb7de7aefe4dfe610425",
+    "TR25Family/RankRows0_10.lean": "7087189fe41598bc6843554dd07f5f1de7dd083794e3e12c74d608f4c0d24202",
+    "TR25Family/RankRows0_20.lean": "bdd19ca2bea21c27f58f2c909db435b08124c91cfec4b09454ad12c6e6efd4fd",
+    "TR25Family/RankRows0_30.lean": "9bbef972a76b6634e3ce83cff356be97206531ac031c761f5c88696d210e274f",
+    "TR25Family/RankRows0_40.lean": "1624dd10e16d0cf6446a84f1db66bc719bb91356f427275db085aa2a6c086de6",
+    "TR25Family/RankRows1_00.lean": "101ea03998f7e189ab91dc8bc203c6d89b4a1af1af3dcb825626d07993286a27",
+    "TR25Family/RankRows1_10.lean": "eb41fae3277b75a5e4f7540f69aea0863f6aecd77313564499c6198b1b7a5852",
+    "TR25Family/RankRows1_20.lean": "6dddac9f2e25a3a9cdd64f22393ce5e1d9aad30daa678eaea9ec7377d29ffca6",
+    "TR25Family/RankRows1_30.lean": "235931004f8c9ea0e8d74aeedf3a5268767baff1fa657514a4ce7f2b25def3bd",
+    "TR25Family/RankRows1_40.lean": "262fb6a7a877047854e60de0f8278c231470f61fdc56d89686bb8f46559803fd",
+    "TR25Family/Statement.lean": "bdfddcb1cd1f528576d8d65f0e19259b405b7b530c2155cbd096a2b44de43d21"
+  }
+}

@@ -1,0 +1,105 @@
+\section{Exact arithmetic and the finite formal certificate}
+\label{sec:verification}
+
+The fixed finite numerical input consists of
+the matrix~\eqref{eq:M}, its six rank-one row and column matrices,
+and the six rational values in~\eqref{eq:row-determinants} and
+\eqref{eq:column-determinants}. All entries in the tensor and both
+decompositions are integers. The argument in Section~\ref{sec:witness}
+proves the tangent ranks from these determinants without floating-point
+rank decisions.
+
+\subsection{Independent exact arithmetic checks}
+
+Two separate exact implementations verify the explicit data. One reads
+the two lists of integer factors; the other constructs them directly
+from~\eqref{eq:M}. They verify the equality of the resulting tensors,
+nonzero and distinct summands, distinct decompositions, and the Jacobian
+ranks $45$ and $80$. The first additionally checks pairwise distinct
+projective directions, all three pair-product ranks, and the rank-five
+third flattening explicitly.
+The coordinate Jacobian in the smaller format has $45$ rows and
+$5(3+3+5)=55$ columns; after padding it has $216$ rows and
+$5(6+6+6)=90$ columns.
+
+Exact elimination is performed modulo the primes $1{,}000{,}003$ and
+$101$, respectively. A nonzero minor modulo a prime is a nonzero
+integer minor, so these computations give rigorous lower bounds for
+the ranks over $\Q$ and $\C$. The prime used by the first implementation
+is itself verified by integer trial division. For the matching upper
+bounds, each nonzero pure summand has two independent scaling
+directions in the factor-coordinate kernel, for example
+\[
+ (\dot a_i,\dot b_i,\dot c_i)=(a_i,-b_i,0),
+ \qquad (a_i,0,-c_i).
+\]
+Across five summands these give ten independent kernel vectors.
+The bounds are therefore $55-10=45$ and $90-10=80$, matching the
+modular lower bounds.
+
+The verification includes altered-data tests that break tensor equality,
+pair-product independence, or distinctness of the decompositions.
+These are required to be rejected. The positive checks and the
+altered-data checks have identical prescribed behavior with and without
+Python optimization, and with two choices of hash seed. All decisive
+arithmetic uses integers, rational numbers, or finite prime fields.
+
+\subsection{The Lean statement and its limits}
+
+The accompanying Lean development proves a single finite certificate
+whose assertions are the following:
+\begin{enumerate}
+ \item The two integer factor lists have the same sum, both in format
+ $3\times3\times5$ and after padding to $6\times6\times6$.
+ \item In each list the summands are nonzero and pairwise
+ nonproportional, and the two lists give different sets of directions;
+ these assertions also hold after padding.
+ \item The two third-mode flattening matrices, before and after
+ padding, have rank five over $\C$.
+ \item The six determinants are exactly the rational numbers in
+ \eqref{eq:row-determinants} and~\eqref{eq:column-determinants}.
+ \item Both coordinate Jacobians have rank $45$ over $\C$ in the
+ smaller format and rank $80$ over $\C$ after padding.
+\end{enumerate}
+The formal rank lower bounds use integer right-inverse identities
+with scale factor $36$. The ten explicit scaling directions supply
+the upper bound for the padded Jacobian. The formalization uses Lean
+and Mathlib, with the certificate fixed by the displayed integer data.
+
+These are statements about concrete arrays, determinants and ranks.
+The formal theorem does not state a tensor border-rank bound, identify
+the geometric tangent space, prove the dimension of a secant variety,
+or establish any fact about normalization, conductors, $S_2$,
+Cohen--Macaulayness, or vertex depth. The passage from the finite
+certificate to Theorem~\ref{thm:main}, including the uniform extension
+to all ranks and formats in~\eqref{eq:main-range}, is the written
+proof in the preceding sections. In particular,
+neither the tangent ranks alone nor nonnormality alone imply the
+Cohen--Macaulay conclusion.
+
+
+\subsection{The uniform construction}
+
+The extension to arbitrary $r$ uses the identities in
+Lemma~\ref{lemma:avoidance} and the block comparisons in
+Lemma~\ref{lemma:extended-tangencies}. Identity
+\eqref{eq:avoidance-determinant} can also be verified coefficient by
+coefficient in $\Q[t]$; its nonvanishing for every integer $t\geq4$
+is an immediate consequence of the displayed factorization.
+Thus no search for witnesses or recognition of numerical data is
+needed as $r$ grows.
+
+For additional finite corroboration, exact arithmetic checks the
+$15$ pairs $(r,p)$ with $5\leq r\leq9$ and $3\leq p\leq r-2$,
+putting $q=r+1-p$. Each seed in format $p\times q\times r$
+and each padded example in format $p\times(q+1)\times r$ is checked,
+as is the extension from $4\times5\times8$ to $5\times5\times8$.
+These are $31$ pairs of decompositions. Equality and distinctness
+are tested over the integers, while pair-product and Jacobian ranks
+are checked modulo $101$, with the displayed scaling kernels giving
+matching characteristic-zero upper bounds. Altering equality,
+distinctness, independence, or an avoidance vector is required to
+cause rejection, with the same behavior under Python optimization.
+These checks concern exactly the listed instances. The all-$r$
+statement, the smoothness of the incidence charts, the conductor
+argument, and the local depth conclusions rest on their written proofs.

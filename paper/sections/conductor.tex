@@ -1,0 +1,195 @@
+\section{The conductor obstruction}\label{sec:conductor}
+
+We first establish the local algebra needed to distinguish failure of
+$S_2$ from nonnormality. Normalization is finite for domains essentially
+of finite type over $\C$ \cite[Tags~035B and~035S]{stacks-project}.
+If $A$ is such a domain and $B$ is its
+normalization in $K=\Frac(A)$, its conductor is
+\begin{equation}\label{eq:conductor}
+ I=(A:B)=\{a\in A:aB\subseteq A\}.
+\end{equation}
+It is a nonzero ideal of both $A$ and $B$. Indeed, clearing denominators
+of finitely many $A$-module generators of $B$ gives a nonzero element
+of $I$. The equality $I=\Ann_A(B/A)$ identifies
+$V(I)=\operatorname{Supp}_A(B/A)$ with the locus where normalization
+is not an isomorphism. We call this closed set the conductor locus.
+
+\begin{lemma}[A conductor divisor under $S_2$]\label{lem:conductor}
+Let $A$ be a local domain essentially of finite type over $\C$,
+and assume that $A$ satisfies $S_2$. Let $B$ be its finite normalization
+and $I=(A:B)$. If $\mathfrak q\in\Spec B$ satisfies
+$I B_{\mathfrak q}\neq B_{\mathfrak q}$, then there is a height-one
+prime $\mathfrak h\subseteq\mathfrak q$ of $B$ containing $I$.
+\end{lemma}
+
+\begin{proof}
+As a $B$-module,
+\begin{equation}\label{eq:conductor-hom}
+ I\simeq\Hom_A(B,A).
+\end{equation}
+For completeness, tensoring an $A$-linear map $B\to A$ with $K$
+gives a $K$-linear endomorphism of $K$, hence multiplication by some
+$u\in K$. Evaluating at $1$ shows $u\in A$, and the requirement
+$uB\subseteq A$ gives $u\in I$. Conversely multiplication by every
+$u\in I$ defines such a map. The natural $B$-action on the Hom module
+corresponds to the ideal structure in~\eqref{eq:conductor-hom}.
+
+We show that $I$ is an $S_2$ module over $B$. Fix
+$\mathfrak q\in\Spec B$ and put $\mathfrak p=\mathfrak q\cap A$.
+The heights of these primes agree. To check this in the present setting,
+write the extension as a localization of the normalization of an affine
+domain. The two affine domains have the same fraction field, and the
+residue fields at corresponding primes form a finite algebraic extension.
+The formula
+\[
+ \height\mathfrak p=\operatorname{trdeg}_{\C}K
+                 -\operatorname{trdeg}_{\C}\kappa(\mathfrak p)
+\]
+and its counterpart in the normalization therefore give equal heights
+\cite[Tags~00OT, 00P0 and~00P1]{stacks-project}.
+The localizations involved do not remove any prime below the primes
+being considered.
+
+If this common height is at least two, $S_2$ supplies an
+$A_{\mathfrak p}$-regular sequence $x,y\in\mathfrak p A_{\mathfrak p}$.
+Write $B_{\mathfrak p}$ for localization as an $A$-algebra. Finite
+presentation gives
+\[
+ I_{\mathfrak p}
+   =\Hom_{A_{\mathfrak p}}(B_{\mathfrak p},A_{\mathfrak p}).
+\]
+Multiplication by $x$ is injective on this module. Suppose that
+$y\varphi=x\psi$ for two elements of it. For every
+$b\in B_{\mathfrak p}$ one has
+$y\varphi(b)\in xA_{\mathfrak p}$. Regularity of $y$ modulo $x$
+implies $\varphi(b)\in xA_{\mathfrak p}$. Division by $x$ defines
+an $A_{\mathfrak p}$-linear map $\eta:B_{\mathfrak p}\to A_{\mathfrak p}$,
+with $\varphi=x\eta$. Hence $y$ is a nonzerodivisor modulo $x$ on
+$I_{\mathfrak p}$. Localizing further at $\mathfrak q$ preserves this
+regular sequence; both elements remain in the maximal ideal there.
+In height one, torsion-freeness of the nonzero ideal $I$ gives depth
+at least one. This proves the asserted $S_2$ property of $I$.
+
+Choose a prime $\mathfrak h$ minimal over $I$ and contained in
+$\mathfrak q$. Its height is positive because $I$ is a nonzero ideal
+in a domain. If $\height\mathfrak h\geq2$, normality of $B$ and the preceding
+paragraph imply
+\[
+ \depth B_{\mathfrak h}\geq2,
+ \qquad \depth I_{\mathfrak h}\geq2.
+\]
+Apply the depth lemma \cite[Tag~00LX]{stacks-project} to
+\[
+ 0\longrightarrow I_{\mathfrak h}
+  \longrightarrow B_{\mathfrak h}
+  \longrightarrow (B/I)_{\mathfrak h}\longrightarrow0.
+\]
+It gives $\depth(B/I)_{\mathfrak h}\geq1$. Minimality of
+$\mathfrak h$ over $I$, however, makes $(B/I)_{\mathfrak h}$ a nonzero
+zero-dimensional local module. Such a module has depth zero.
+This contradiction proves $\height\mathfrak h=1$.
+\end{proof}
+
+\begin{lemma}\label{lem:proper-at-fiber}
+Under the notation of~\eqref{eq:conductor}, suppose $A$ is local with
+maximal ideal $\mathfrak n$ and that $\Spec B$ has at least two points
+above $\mathfrak n$. Then the conductor is proper at every point above
+$\mathfrak n$.
+\end{lemma}
+
+\begin{proof}
+If $I B_{\mathfrak q}=B_{\mathfrak q}$ at a prime above
+$\mathfrak n$, some $c\in I$ avoids $\mathfrak q$. Since $c\in A$
+and $\mathfrak q\cap A=\mathfrak n$, it is a unit in $A$. Thus
+$I=A$, so $B=A$, contrary to the existence of the two points.
+\end{proof}
+
+\begin{proposition}[The two-point obstruction]\label{prop:conductor-obstruction}
+Let $X$ be an irreducible affine complex variety and let $f:Y\to X$
+be a dominant birational morphism, with $Y$ smooth and irreducible. Suppose there is an open subset $G\subseteq Y$
+such that
+\[
+ f(G)\subseteq X_{\mathrm{sm}},\qquad
+ \codim_Y(Y\setminus G)\geq2.
+\]
+If distinct closed points $y_1,y_2\in Y$ have the same image $T\in X$
+and both differentials $df_{y_i}$ are injective, then
+$\OO_{X,T}$ does not satisfy $S_2$ as a ring and is not
+Cohen--Macaulay. In particular $X$ does not satisfy $S_2$.
+\end{proposition}
+
+\begin{proof}
+Let $\nu:\overline X\to X$ be the finite normalization.
+The dominant morphism $f$ lifts to a morphism
+\[
+ g:Y\longrightarrow\overline X,
+ \qquad \nu\circ g=f.
+\]
+Here $Y$ is normal because it is smooth. The normalization lifting
+property is \cite[Tag~035Q(4)]{stacks-project}; in this setting the
+property follows directly from integral closure: pullbacks of integral
+rational functions are integral over the relevant local rings of $Y$
+and hence regular. Since $f$ and $\nu$ are birational, $g$ is birational as well.
+
+Injectivity of $df_{y_i}$ makes the Zariski tangent space of the fiber
+$f^{-1}(T)$ zero at $y_i$. The local ring of that fiber therefore has
+dimension zero, so $f$ is quasi-finite at $y_i$. The fiber of $g$ through
+$y_i$ is contained in that fiber, and $g$ is also quasi-finite there.
+Let $Y_0\subseteq Y$ be the open quasi-finite locus of $g$, containing
+both $y_i$ \cite[Tag~01TI]{stacks-project}.
+The morphism $g|_{Y_0}$ is separated, quasi-finite and
+birational with normal target. Since $\overline X$ is affine,
+Zariski's Main Theorem factors it as an open immersion
+$Y_0\hookrightarrow Z$ followed by a finite morphism $Z\to\overline X$
+\cite[Tag~05K0]{stacks-project}; replacing $Z$ by the closure of the
+image of the integral scheme $Y_0$, with its reduced structure, we may
+take $Z$ integral. Then $Z\to\overline X$ is finite and birational with
+normal target, hence an isomorphism \cite[Tag~0AB1]{stacks-project},
+so $g|_{Y_0}$ is an open immersion.
+In particular,
+\[
+ q_i=g(y_i)\in\overline X
+\]
+are distinct points lying over $T$, and an open neighborhood of each
+$q_i$ is identified with the corresponding open subset of $Y$.
+
+Assume for contradiction that $A=\OO_{X,T}$ satisfies $S_2$.
+Its normalization $B$ is the localization of the affine normalization
+above $T$, and the points $q_i$ give two distinct primes of $B$ above
+the maximal ideal of $A$. The conductor also commutes with this
+localization: use~\eqref{eq:conductor-hom} and the fact that the finite
+normalization is a finitely presented module over the Noetherian
+coordinate ring. Lemmas~\ref{lem:conductor} and
+\ref{lem:proper-at-fiber} give a height-one prime in the conductor
+locus whose closure passes through $q_1$.
+
+The same height-one prime defines a divisor on a neighborhood of
+$q_1$ in the affine normalization. Indeed, localization from the
+affine normalization to $B$ preserves heights for all primes below
+$q_1$. The open chart containing $q_1$ also contains that height-one
+generic point. Consequently the chart $g(Y_0)$ contains a conductor
+divisor.
+
+On the other hand, $f(G)$ is contained in the smooth locus of $X$
+by hypothesis. Normalization is an isomorphism over that locus, so the conductor locus is disjoint from
+$g(Y_0\cap G)$. Under the open-chart identification,
+this locus is therefore contained in
+\[
+ Y_0\setminus G.
+\]
+This set has codimension at least two by hypothesis;
+it cannot contain the divisor just obtained. This contradiction
+proves that $A$ is not an $S_2$ ring. A Cohen--Macaulay local ring
+has Cohen--Macaulay localizations
+\cite[Tag~00NB]{stacks-project} and hence is $S_2$, so $A$ is not
+Cohen--Macaulay. If $X$ were $S_2$, its localization $A$ would
+be $S_2$ as well, giving the final assertion.
+\end{proof}
+
+\begin{remark}\label{rem:fiber-scope}
+Only the two specified immersive decompositions are used. Other
+decompositions, additional normalization points, and positive-dimensional
+fibers elsewhere cause no difficulty: Zariski's Main Theorem is applied
+only on the open quasi-finite locus. The argument also makes no claim
+that $X$ is smooth in codimension one.
+\end{remark}

@@ -1,0 +1,44 @@
+{
+  "check_core.py": [
+    {
+      "name": "polynomial",
+      "arguments": [
+        "--mutate",
+        "polynomial"
+      ],
+      "stderr": "REJECT: torus polynomial identity\n"
+    },
+    {
+      "name": "core",
+      "arguments": [
+        "--mutate",
+        "core"
+      ],
+      "stderr": "REJECT: core determinant\n"
+    },
+    {
+      "name": "arc",
+      "arguments": [
+        "--mutate",
+        "arc"
+      ],
+      "stderr": "REJECT: row arc coefficient identity\n"
+    }
+  ],
+  "check_certificate.py": [
+    {
+      "name": "modular-inverse",
+      "arguments": [
+        "negative_controls/bad_modular_inverse.json"
+      ],
+      "stderr": "FAIL: all-span modular inverse identity\n"
+    },
+    {
+      "name": "common-tangent",
+      "arguments": [
+        "negative_controls/bad_common_tangent.json"
+      ],
+      "stderr": "FAIL: common basis tangent condition\n"
+    }
+  ]
+}

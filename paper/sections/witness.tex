@@ -1,0 +1,415 @@
+\section{Integer witnesses in every rank at least five}\label{sec:witness}
+\subsection{Six rank-one matrices and a five-term tensor}
+
+Identify $\C^3\otimes\C^3$ with $3\times3$ matrices, so that
+$a\otimes b$ corresponds to $ab^{\mathsf T}$. Set
+\begin{equation}\label{eq:M}
+ M=\begin{pmatrix}1&1&1\\1&2&3\\1&4&9\end{pmatrix}.
+\end{equation}
+Let $r_i$ be its $i$th row, $m_j$ its $j$th column, and
+$e_1,e_2,e_3$ the coordinate vectors. Define
+\begin{equation}\label{eq:Q}
+ Q_i=e_i r_i\quad(1\leq i\leq3),\qquad
+ Q_{3+j}=-m_j e_j^{\mathsf T}\quad(1\leq j\leq3).
+\end{equation}
+Thus $Q_s=a_s b_s^{\mathsf T}$ for the following integer factors:
+\begin{center}
+\begin{tabular}{c@{\qquad}c@{\qquad}c}
+\toprule
+$s$&$a_s^{\mathsf T}$&$b_s^{\mathsf T}$\\
+\midrule
+$1$&$(1,0,0)$&$(1,1,1)$\\
+$2$&$(0,1,0)$&$(1,2,3)$\\
+$3$&$(0,0,1)$&$(1,4,9)$\\
+$4$&$(-1,-1,-1)$&$(1,0,0)$\\
+$5$&$(-1,-2,-4)$&$(0,1,0)$\\
+$6$&$(-1,-3,-9)$&$(0,0,1)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+They are nonzero and pairwise nonproportional: the row-supported and
+column-supported matrices have different supports, and all entries of
+$M$ are nonzero.
+
+\begin{lemma}\label{lem:L}\label{lemma:witness-core}
+The only linear relation among $Q_1,\ldots,Q_6$, up to a scalar,
+is
+\begin{equation}\label{eq:Q-relation}
+ Q_1+Q_2+Q_3+Q_4+Q_5+Q_6=0.
+\end{equation}
+Their span $L$ has dimension five, and any five of these matrices form
+a basis of $L$. Every $N\in L$ has an expression
+\begin{equation}\label{eq:L-coordinates}
+ N_{ij}=M_{ij}(x_i-y_j),\qquad 1\leq i,j\leq3.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Summing the first three matrices gives $M$, and summing the last
+three gives $-M$. If $\sum_s\alpha_s Q_s=0$, its $(i,j)$ entry is
+$M_{ij}(\alpha_i-\alpha_{3+j})=0$. Every $M_{ij}$ is nonzero,
+so all six coefficients coincide. The unique relation uses every
+matrix with a nonzero coefficient, proving independence of any five.
+Formula~\eqref{eq:L-coordinates} is the linear combination with
+coefficients $x_1,x_2,x_3,y_1,y_2,y_3$ in~\eqref{eq:Q}.
+\end{proof}
+
+Let $f_1,\ldots,f_5$ be the standard basis of $\C^5$. Our tensor is
+\begin{equation}\label{eq:T-first}
+ T=\sum_{i=1}^5 Q_i\otimes f_i
+   \in\C^3\otimes\C^3\otimes\C^5.
+\end{equation}
+This specifies all its integer entries; explicitly, its five matrix
+slices are
+\begin{equation}\label{eq:slices}
+\begin{gathered}
+ \begin{pmatrix}1&1&1\\0&0&0\\0&0&0\end{pmatrix},\quad
+ \begin{pmatrix}0&0&0\\1&2&3\\0&0&0\end{pmatrix},\quad
+ \begin{pmatrix}0&0&0\\0&0&0\\1&4&9\end{pmatrix},\\[3pt]
+ \begin{pmatrix}-1&0&0\\-1&0&0\\-1&0&0\end{pmatrix},\quad
+ \begin{pmatrix}0&-1&0\\0&-2&0\\0&-4&0\end{pmatrix}.
+\end{gathered}
+\end{equation}
+Relation~\eqref{eq:Q-relation} gives the second decomposition
+\begin{equation}\label{eq:T-second}
+ T=\sum_{i=1}^4 Q_i\otimes(f_i-f_5)-Q_6\otimes f_5.
+\end{equation}
+In particular the final summand in~\eqref{eq:T-second} has factors
+$(1,3,9)^{\mathsf T}$, $e_3$, and $f_5$; the preceding four have
+the factors in the table and the indicated third vectors.
+
+Each expression has five distinct nonzero pure summands. The two
+unordered sets are different even if one identifies a pure summand's
+different factorizations: the first uses the matrix direction $Q_5$,
+whereas the second uses $Q_6$, and these are distinct directions.
+In either expression the five third vectors are a basis of $\C^5$,
+and the five matrix factors are a basis of $L$.
+
+The third flattening of $T$ has image $L$ and rank five. Every sum
+of four pure tensors has all flattening ranks at most four, and the
+$5\times5$ minors of a flattening vanish on the Zariski closure of
+that set. Consequently the displayed five-term decomposition and
+the flattening rank prove
+\begin{equation}\label{eq:rank-border-rank}
+ \rank(T)=\brr(T)=5.
+\end{equation}
+Here $\rank(T)$ in~\eqref{eq:rank-border-rank} denotes tensor rank;
+matrix ranks are specified as such elsewhere.
+
+
+
+\subsection{Six tangent intersections}
+
+Let $\mathcal R$ be the nonzero rank-one matrix cone in
+$\C^3\otimes\C^3$. For $Q=ab^{\mathsf T}$ its affine tangent space is
+\begin{equation}\label{eq:matrix-tangent}
+ T_Q\mathcal R=a(\C^3)^{\mathsf T}+\C^3 b^{\mathsf T}.
+\end{equation}
+The formula follows by differentiating $ab^{\mathsf T}$; its image
+has dimension five, with one-dimensional scaling kernel, and equals
+the tangent space of the smooth rank-one locus.
+
+\begin{lemma}\label{lem:tangent-intersections}
+For each $s=1,\ldots,6$,
+\begin{equation}\label{eq:tangent-intersection}
+ L\cap T_{Q_s}\mathcal R=\C Q_s.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Fix a row point $Q_i=e_i r_i$, and let $k<\ell$ be the two remaining
+row indices. By~\eqref{eq:matrix-tangent}, tangency requires rows
+$k$ and $\ell$ of $N$ to be $z_k r_i$ and $z_\ell r_i$.
+If $N$ also belongs to $L$, formula~\eqref{eq:L-coordinates} gives
+\[
+ y_j=x_k-z_k\frac{M_{ij}}{M_{kj}}
+     =x_\ell-z_\ell\frac{M_{ij}}{M_{\ell j}}
+       \quad(j=1,2,3).
+\]
+The coefficient vectors in these three equations are independent.
+Indeed, define
+\[
+ D_i=\det\begin{pmatrix}
+ 1&1&1\\
+ M_{i1}/M_{k1}&M_{i2}/M_{k2}&M_{i3}/M_{k3}\\
+ M_{i1}/M_{\ell1}&M_{i2}/M_{\ell2}&M_{i3}/M_{\ell3}
+ \end{pmatrix}.
+\]
+Direct rational expansion gives
+\begin{equation}\label{eq:row-determinants}
+ (D_1,D_2,D_3)=\left(-\frac1{18},\frac13,-2\right).
+\end{equation}
+Thus $x_k=x_\ell$ and $z_k=z_\ell=0$. All $y_j$ equal $x_k$,
+and~\eqref{eq:L-coordinates} leaves only a scalar multiple of $Q_i$.
+
+For a column point $Q_{3+j}$, the minus sign in~\eqref{eq:Q} does
+not change the tangent space. Interchange rows and columns in the
+preceding argument. With $k<\ell$ the other two column indices,
+the required determinant is
+\[
+ E_j=\det\begin{pmatrix}
+ 1&1&1\\
+ M_{1j}/M_{1k}&M_{2j}/M_{2k}&M_{3j}/M_{3k}\\
+ M_{1j}/M_{1\ell}&M_{2j}/M_{2\ell}&M_{3j}/M_{3\ell}
+ \end{pmatrix}.
+\]
+Its values are
+\begin{equation}\label{eq:column-determinants}
+ (E_1,E_2,E_3)=\left(-\frac1{18},\frac49,-\frac32\right).
+\end{equation}
+They are again nonzero. The same equations now force every column
+other than $j$ to vanish and leave a scalar multiple of $Q_{3+j}$.
+This proves~\eqref{eq:tangent-intersection} in all six cases.
+\end{proof}
+
+
+\subsection{From matrix tangencies to tensor immersion}
+
+\begin{lemma}\label{lemma:tangent-criterion}
+Let $P_1,\ldots,P_r$ be independent nonzero rank-one matrices in
+$A\otimes B$, put $L=\langle P_1,\ldots,P_r\rangle$, and suppose
+\[
+ L\cap T_{P_i}\mathcal R=\C P_i\quad(1\leq i\leq r),
+\]
+where $\mathcal R$ is the nonzero rank-one matrix cone.
+If $c_1,\ldots,c_r$ are a basis of $C$, then addition on the product
+of the $r$ nonzero pure-tensor cones has injective differential at
+$(P_i\otimes c_i)_{i=1}^r$.
+\end{lemma}
+
+\begin{proof}
+Change the basis of $C$ so that $c_i=f_i$. Write a tangent vector at
+the $i$th summand as
+\[
+ \dot P_i\otimes f_i+P_i\otimes\dot c_i,
+ \qquad \dot P_i\in T_{P_i}\mathcal R,
+ \qquad \dot c_i=\sum_j h_{ji}f_j.
+\]
+Suppose that the sum of these $r$ tangent vectors is zero. Comparing
+coefficients of $f_j$ gives
+\[
+ \dot P_j+\sum_i h_{ji}P_i=0.
+\]
+Thus $\dot P_j\in L\cap T_{P_j}\mathcal R=\C P_j$; write
+$\dot P_j=\lambda_jP_j$. Independence of the $P_i$ now implies
+$h_{ji}=0$ for $i\ne j$ and $h_{jj}=-\lambda_j$. Consequently the
+original tangent vector at each individual summand is zero.
+The tangent spaces of the pure-tensor cones therefore sum directly.
+This argument works intrinsically on the pure-tensor cones, after
+removing the factor-coordinate scaling directions.
+\end{proof}
+
+Applying the lemma to each decomposition of $T_5:=T$ in
+\eqref{eq:T-first} and~\eqref{eq:T-second} gives differential rank
+\begin{equation}\label{eq:rank45}
+ 5(3+3+5-2)=45.
+\end{equation}
+The sign change from $Q_6$ to $-Q_6$ does not change its tangent space.
+
+\subsection{Two avoidance identities}
+
+Write $A_0=B_0=\C^3$, and denote the span of the six matrices by
+$L_0\subset A_0\otimes B_0$. For an integer $t\geq4$ put
+\[
+ v(t)=(1,t,t^2)^{\mathsf T}.
+\]
+
+\begin{lemma}\label{lemma:avoidance}
+For every integer $t\geq4$,
+\begin{equation}\label{eq:avoidance}
+ L_0\cap\bigl(\C v(t)\otimes B_0\bigr)=0,
+ \qquad
+ L_0\cap\bigl(A_0\otimes\C v(t)\bigr)=0.
+\end{equation}
+Moreover, the lines $\C v(t)$ are pairwise distinct and avoid all
+first- and second-factor lines in the six core matrices.
+\end{lemma}
+
+\begin{proof}
+Since $M_{ij}=j^{i-1}$, every matrix in $L_0$ has entries
+$N_{ij}=j^{i-1}(x_i-y_j)$. First suppose that $N=v(t)b^{\mathsf T}$.
+The first row gives $y_j=x_1-b_j$. Substitution into the second row,
+with $d=x_1-x_2$, yields
+\[
+ b_j=\frac{jd}{j-t}\qquad(j=1,2,3).
+\]
+All denominators are nonzero. Substitution into the third row, with
+$e=x_1-x_3$, gives
+\[
+ (j+t)d=je\qquad(j=1,2,3).
+\]
+The equations for $j=1,2$ imply $td=0$. Thus $d=e=0$ and $b=0$,
+which proves the first intersection statement.
+
+Now suppose $N=a v(t)^{\mathsf T}$. Let
+$\mathbf 1=(1,1,1)$ and $y=(y_1,y_2,y_3)$. Row $i$ says
+\[
+ y=x_i\mathbf1-a_i\frac{v(t)^{\mathsf T}}{r_i},
+\]
+with entrywise division. The vectors $\mathbf1$, $v(t)^{\mathsf T}$,
+and $v(t)^{\mathsf T}/(1,2,3)$ are independent, since
+\begin{equation}\label{eq:avoidance-determinant}
+ \det\begin{pmatrix}
+ 1&1&1\\1&t&t^2\\1&t/2&t^2/3
+ \end{pmatrix}
+ =-\frac{t(t-1)(t-3)}6\ne0.
+\end{equation}
+The planes obtained from rows one and two therefore meet only in
+$\C\mathbf1$. Hence $a_1=a_2=0$ and $y$ is constant.
+The vector $(1,t/4,t^2/9)$ from row three is not constant: constancy
+would require simultaneously $t=4$ and $t^2=9$. Thus $a_3=0$ as well,
+proving the second statement.
+
+Finally, the first coordinate of every $v(t)$ is one, so distinct
+integers $t$ give distinct lines. None is a coordinate line.
+The other core first-factor lines are those of
+$v(1),v(2),v(3)$. The other second-factor vectors are
+$(1,1,1)$, $(1,2,3)$ and $(1,4,9)$. Direct comparison with
+$(1,t,t^2)$ for $t\geq4$ excludes every such line.
+\end{proof}
+
+\subsection{Adding rows and columns}
+
+Fix $r\geq5$ and integers $p,q\geq3$ with $p+q=r+1$. Set
+\[
+ A'=A_0\oplus E=\C^p,\qquad B'=B_0\oplus F=\C^q,
+\]
+where $A_0,B_0$ occupy the first three coordinates. Let
+$u_1,\ldots,u_{p-3}$ and $w_1,\ldots,w_{q-3}$ be the coordinate bases
+of $E$ and $F$. Define the following integer rank-one matrices:
+\begin{equation}\label{eq:added-matrices}
+ R_s=u_s\otimes v(s+3)\quad(1\leq s\leq p-3),\qquad
+ S_t=v(t+3)\otimes w_t\quad(1\leq t\leq q-3).
+\end{equation}
+Empty lists are permitted. Their span with the core is the direct sum
+\begin{equation}\label{eq:extended-L}
+ L=L_0\oplus\langle R_1,\ldots,R_{p-3}\rangle
+       \oplus\langle S_1,\ldots,S_{q-3}\rangle.
+\end{equation}
+Indeed, $L_0$ lies in $A_0\otimes B_0$, the $R_s$ lie in distinct
+rows of $E\otimes B_0$, and the $S_t$ lie in distinct columns of
+$A_0\otimes F$. In particular $\dim L=5+(p-3)+(q-3)=r$.
+
+\begin{lemma}\label{lemma:extended-tangencies}
+The intersection of $L$ with the affine rank-one matrix tangent space
+at each $Q_i$, $R_s$, and $S_t$ is precisely the scalar line of that
+matrix.
+\end{lemma}
+
+\begin{proof}
+Use the four blocks given by
+$(A_0\oplus E)\otimes(B_0\oplus F)$. The space $L$ has no
+$E\otimes F$ block.
+At a core matrix $Q_i=a_i\otimes b_i$, every extra row of a tangent
+matrix is proportional to $b_i$. In $L$, its row indexed by $u_s$
+is proportional to $v(s+3)$. These lines differ by
+Lemma~\ref{lemma:avoidance}, so all coefficients of the $R_s$ vanish.
+In the same way, the extra columns of a tangent matrix are proportional
+to $a_i$, whereas those of $L$ are proportional to the corresponding
+$v(t+3)$. All coefficients of the $S_t$ vanish. The remaining
+intersection in the core block is $\C Q_i$ by
+Lemma~\ref{lem:tangent-intersections}.
+
+At $R_s=u_s\otimes v(s+3)$, write a tangent matrix as
+\[
+ x\otimes v(s+3)+u_s\otimes y.
+\]
+Its $E\otimes F$ block forces the $F$-part of $y$ to be zero if this
+matrix lies in $L$. Its possible $F$-columns are supported on $u_s$,
+whereas the $F$-columns of $L$ are supported on $A_0$; hence all
+$S_t$ coefficients vanish. For an $E$-row indexed by $u_j$ with
+$j\ne s$, the tangent row is proportional to $v(s+3)$ while the
+$L$-row is proportional to $v(j+3)$. Their distinct lines force every
+other $R_j$ coefficient to be zero. The core block is an element of
+$L_0\cap(A_0\otimes\C v(s+3))$, which is zero by
+\eqref{eq:avoidance}. Only the row indexed by $u_s$ remains, and its
+membership in $L$ makes it a scalar multiple of $R_s$.
+
+At $S_t=v(t+3)\otimes w_t$, interchange rows and columns in this
+argument. The $E\otimes F$ block vanishes, the other extra columns
+are excluded by distinctness of the $v$-lines, and the core block is
+in $L_0\cap(\C v(t+3)\otimes B_0)=0$. The intersection is
+$\C S_t$. These comparisons also cover the case when both $E$ and
+$F$ are nonzero.
+\end{proof}
+
+Let $f_1,\ldots,f_r$ be the coordinate basis of $\C^r$. The required
+integer tensor in the seed format $p\times q\times r$ is
+\begin{equation}\label{eq:uniform-witness}
+ T_{r;p,q}=\sum_{i=1}^5Q_i\otimes f_i
+       +\sum_{s=1}^{p-3}R_s\otimes f_{5+s}
+       +\sum_{t=1}^{q-3}S_t\otimes f_{p+2+t}.
+\end{equation}
+Replacing its first five terms by
+\begin{equation}\label{eq:uniform-second}
+ \sum_{i=1}^4 Q_i\otimes(f_i-f_5)-Q_6\otimes f_5
+\end{equation}
+and leaving the added terms unchanged gives its second decomposition.
+All entries and all displayed decomposition factors are integers.
+
+\begin{proposition}\label{prop:witness-immersion}
+Let $r\geq5$, $p,q\geq3$, and $p+q=r+1$.
+For any $a\geq p$, $b\geq q$, $c\geq r$, pad
+$T_{r;p,q}$ with zero coordinates to format $a\times b\times c$.
+Its ordinary rank and border rank are both $r$. The two displayed
+unordered $r$-term decompositions are distinct, have independent
+third-factor vectors, and have injective addition differentials.
+Each differential has rank $r(a+b+c-2)$.
+\end{proposition}
+
+\begin{proof}
+In either decomposition, the $r$ matrix factors form a basis of $L$:
+any five core matrices form a basis of $L_0$, and the added matrices
+are independent by~\eqref{eq:extended-L}. The $r$ third factors are
+also a basis. In the second decomposition this follows from the
+invertible change replacing $f_i$ by $f_i-f_5$ for $1\leq i\leq4$,
+with $f_5$ and the remaining basis vectors retained. The choice of
+$Q_5$ in the first decomposition and $Q_6$ in the second makes the
+unordered pure summands distinct between the two decompositions.
+Each summand is nonzero; independence of the third factors makes
+summands within a decomposition distinct.
+
+Lemma~\ref{lemma:extended-tangencies} and
+Lemma~\ref{lemma:tangent-criterion} prove immersion in the seed
+format. The third flattening has image $L$ and rank $r$. Flattening
+minors vanish on the border-rank-at-most-$(r-1)$ variety, while the
+displayed decomposition has $r$ terms. Thus both tensor rank and
+border rank equal $r$.
+
+Choose complements for the three inclusions into the padded spaces.
+The derivative directions obtained by varying the first factor in
+its complement are
+\[
+ (\C^a/A')\otimes
+   \langle b_i\otimes c_i:1\leq i\leq r\rangle,
+\]
+with an analogous expression for the second factor; we identify the
+quotient with the chosen complement. Since the $c_i$ are independent
+and every $a_i,b_i$ is nonzero, both opposite-factor pair lists are
+independent. Variation of the third factor in its complement gives
+$L\otimes(\C^c/\C^r)$, also with independent matrix factors.
+These three spaces occupy different complementary tensor blocks and
+are disjoint from the original derivative image. Their dimensions are
+$r(a-p)$, $r(b-q)$, and $r(c-r)$. Adding them to the seed rank gives
+\[
+ r(p+q+r-2)+r(a-p)+r(b-q)+r(c-r)=r(a+b+c-2).
+\]
+This is the dimension of the product of the $r$ pure-tensor cones in
+the padded format. Hence its differential is injective. The free
+finite permutation quotient is etale, so the unordered differential
+is injective as well. Padding preserves the flattening rank and the
+displayed tensor equality, proving all remaining assertions.
+\end{proof}
+
+For the hypotheses of Theorem~\ref{thm:main}, choose explicitly
+\begin{equation}\label{eq:seed-choice}
+ p=\max\{3,r+1-b\},\qquad q=r+1-p.
+\end{equation}
+Then $p\leq a$ because $a\geq3$ and $a+b\geq r+2$;
+also $p\leq r-2$ because $r\geq5$ and $b\geq3$.
+It follows that $q\geq3$ and $q\leq b$.
+Thus~\eqref{eq:uniform-witness} specifies an integer witness for every
+format in the main theorem. At $r=5$ the seed is the original
+$3\times3\times5$ tensor. Its two differential ranks after padding
+are $50$ in format $3\times4\times5$ and $80$ in format
+$6\times6\times6$.

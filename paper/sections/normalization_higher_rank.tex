@@ -1,0 +1,515 @@
+\subsection{A proper model for the higher-rank fibres}
+\label{nf:graph-setup}
+
+We retain $W=A\otimes B$, $S=\Seg(\PP A\times\PP B)$ and the
+span variety $H\subseteq\Gr(r,W)$. The six matrices $Q_i$, their
+five-dimensional span $L_0$, and $v(z)=(1,z,z^2)^{\mathsf T}$ are as
+above. Put $T_5=\sum_{i=1}^5Q_i\otimes f_i$. In all the formats below,
+\[
+ a,b\geq3,\qquad a+b\geq r+2,\qquad c\geq r.
+\]
+The unordered span map is birational in this range. Indeed, choose
+factor lists such that every subset has the largest possible rank.
+Such lists exist by taking Vandermonde vectors. A linear combination
+using exactly $s\geq2$ terms then has matrix rank at least
+\[
+ \min(a,s)+\min(b,s)-s\geq2,
+ \qquad 2\leq s\leq r,
+\]
+by~\eqref{geom:sylvester}. The $r$ matrices are independent and their
+span contains precisely their own rank-one directions. Thus a general
+unordered tuple is uniquely recovered from its span. In characteristic
+zero this gives birationality, as in the proof of
+Proposition~\ref{prop:geometry-summary}.
+
+We shall use a proper model which also records dependent limiting
+configurations. Let $\mathcal K_r$ be the reduced closure of the graph
+of the span map on independent reduced length-$r$ subschemes of $S$ in
+\[
+ \operatorname{Hilb}^r(S)\times H.
+\]
+The projection $\pi:\mathcal K_r\to H$ is proper and birational.
+Properness follows from projectivity of $\operatorname{Hilb}^r(S)$;
+birationality follows from that of the unordered span map.
+
+\begin{lemma}[Fibre schemes and the normalization model]
+\label{nf:proper-graph}
+Suppose that $L\in H$ and the scheme $S\cap\PP L$ consists of
+$m\geq r$ distinct reduced points. Then the fibre $\pi^{-1}(L)$ is a
+reduced finite scheme, each of whose points is an $r$-element subset of
+$S\cap\PP L$. Every independent such subset occurs. If
+$\mathcal K_r$ is smooth at every point of this fibre, then, after
+shrinking $H$ about $L$, the morphism $\pi$ is its normalization and
+is unramified, with smooth source. The corresponding conclusions and
+fibre cardinality hold over every rank-$r$ tensor with flattening image
+$L$.
+\end{lemma}
+
+\begin{proof}
+The condition that a finite subscheme $Z\subseteq S$ be contained in
+a varying linear space $\PP K$ is closed. It holds on the ordinary
+span graph and hence on $\mathcal K_r$. Therefore $\pi^{-1}(L)$ is
+a closed subscheme of
+\[
+ \operatorname{Hilb}^r(S\cap\PP L).
+\]
+For a reduced set of $m$ points this Hilbert scheme is the disjoint
+union of $\binom mr$ copies of $\Spec\C$, indexed by its
+$r$-element subsets. Every closed subscheme of it is reduced. This
+proves the fibre assertion, including the absence of nonreduced
+collisions and of fibre multiplicities greater than one. Independent
+subsets belong to the ordinary graph.
+
+Since the fibre is finite, properness permits shrinking the target
+until $\pi$ is finite. If the source is smooth along that fibre,
+remove the proper image of its closed nonsmooth locus as well. The
+resulting finite birational morphism has normal source and is thus the
+normalization: its affine coordinate rings are integral over those of
+the target, have the same fraction field, and are integrally closed.
+At each point over $L$ the fibre cotangent space is zero. Base change
+for relative differentials and Nakayama's lemma show that $\pi$ is
+unramified there. Removing the finite image of the complement of the
+unramified locus gives the asserted neighborhood.
+
+Finally, Lemma~\ref{geom:flattening-bundle} identifies the rank-$r$
+flattening locus of $X_r(a,b,c)$ with the bundle of surjections
+$C^*\to K$ over $H$. Locally on $H$ this is the product with the
+open set of full-rank $r$-by-$c$ matrices. Its pullback to the finite
+smooth normalization is finite, birational and smooth, hence normal;
+it is therefore the normalization of the tensor neighborhood.
+Unramifiedness is preserved by this base change, and the fibre over a
+fixed surjection is the same reduced fibre as over its image $L$.
+This is the tensor transfer in Proposition~\ref{norm:criterion}.
+\end{proof}
+
+Near a configuration of distinct points, ordering the points gives a
+finite \'etale cover by an open subset of $S^r$. Thus smoothness of
+$\mathcal K_r$ may be checked on its ordered graph. The permutation
+action is free there, including at dependent configurations.
+
+\subsection{Diagonal extensions: six points in every rank}
+\label{nf:diagonal-subsection}
+
+Choose complementary coordinate vectors $u_1,\ldots,u_t$ in $A$
+and $w_1,\ldots,w_t$ in $B$, where $t=r-5$, and set
+\begin{equation}\label{nf:diagonal-data}
+ D_s=u_s\otimes w_s,\qquad
+ L_{\mathrm{diag}}=L_0\oplus\langle D_1,\ldots,D_t\rangle,
+ \qquad
+ T_{\mathrm{diag}}=T_5+\sum_{s=1}^tD_s\otimes f_{5+s}.
+\end{equation}
+
+\begin{theorem}[Diagonal fibres]
+\label{nf:diagonal}
+For every $r\geq6$, $a,b\geq r-2$ and $c\geq r$, the tensor
+$T_{\mathrm{diag}}$ has rank and border rank $r$. The normalization
+of $X_r(a,b,c)$ has exactly six reduced points over it. All six are
+smooth and correspond bijectively to its six actual unordered
+$r$-term decompositions. There is a Zariski open neighborhood of
+$T_{\mathrm{diag}}$ whose entire normalization is smooth and whose
+normalization map is unramified. In particular, no boundary
+normalization point occurs over this tensor. These conclusions hold
+after any permutation of the three factors.
+\end{theorem}
+
+The key exclusion uses the following block calculation. It applies to
+arbitrary rectangular outer blocks, and so includes all the permitted
+padding of the factors.
+
+\begin{lemma}[Diagonal block valuation]
+\label{nf:diagonal-block}
+Let $R=\C[[z]]$, and let $P,N$ be matrices over $R$ of rank at most
+three over $\C((z))$, both specializing to $M$ in the upper-left
+$3$-by-$3$ block and to zero elsewhere. Write
+\[
+ P=\begin{pmatrix}A_P&B_P\\ C_P&E_P\end{pmatrix},
+ \qquad
+ N=\begin{pmatrix}A_N&B_N\\ C_N&E_N\end{pmatrix}.
+\]
+If $A_P-A_N$, $B_P-B_N$ and $C_P-C_N$ are divisible by $z^k$,
+where $k\geq1$, then $E_P-E_N$ is divisible by $z^{k+1}$.
+\end{lemma}
+
+\begin{proof}
+The $A$ blocks are invertible over $R$. The rank bounds give the
+exact identities
+\[
+ E_P=C_PA_P^{-1}B_P,\qquad E_N=C_NA_N^{-1}B_N.
+\]
+Both cross blocks of each matrix are divisible by $z$. Moreover,
+\begin{align*}
+ E_P-E_N
+ &=C_PA_P^{-1}(B_P-B_N)
+   +(C_P-C_N)A_N^{-1}B_N\\
+ &\hspace{12mm}+C_P(A_P^{-1}-A_N^{-1})B_N,\\
+ A_P^{-1}-A_N^{-1}
+ &=-A_P^{-1}(A_P-A_N)A_N^{-1}.
+\end{align*}
+The first two summands are divisible by $z^{k+1}$ and the last by
+$z^{k+2}$, proving the claim.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{nf:diagonal}]
+A matrix in $L_{\mathrm{diag}}$ is block diagonal, with one core
+$3$-by-$3$ block and $t$ scalar diagonal blocks. The rank of such a
+matrix is the sum of the ranks of its nonzero blocks. A nonzero
+rank-one matrix consequently has only one nonzero block. By
+Lemma~\ref{norm:core}, the projective rank-one intersection is
+exactly
+\begin{equation}\label{nf:diagonal-intersection}
+ S\cap\PP L_{\mathrm{diag}}
+ =\{[Q_1],\ldots,[Q_6],[D_1],\ldots,[D_t]\}.
+\end{equation}
+This equality holds scheme-theoretically with all points reduced.
+Indeed, at a core point choose a nonzero core pivot and normalize both
+factor coordinates at that pivot to one. The off-block entries in
+its row and column force every complementary factor coordinate to
+vanish scheme-theoretically. The remaining intersection is the
+reduced core intersection. At $[D_s]$ use its diagonal entry as pivot:
+the vanishing of every other entry in that pivot row and column forces
+all other factor coordinates to vanish. The same argument eliminates
+unused coordinates under arbitrary padding.
+
+The only relation among the $r+1$ displayed generators is
+$\sum_{i=1}^6Q_i=0$. Thus their independent $r$-subsets are exactly
+the six subsets omitting one core point. Each is a basis of
+$L_{\mathrm{diag}}$. The third flattening of $T_{\mathrm{diag}}$
+has rank $r$ and image $L_{\mathrm{diag}}$. An $r$-term
+decomposition must give a rank-one basis of that image, and conversely
+each such basis determines the third factors uniquely. It therefore
+gives exactly one unordered decomposition into nonzero pure summands.
+There are exactly six such decompositions, and the displayed sum and
+the flattening lower bound give rank and border rank $r$.
+
+We must exclude the remaining $r$-subsets from the proper graph.
+By Lemma~\ref{nf:proper-graph}, they are the only possible boundary
+configurations. Fix one omitting $D_s$; it contains all six core
+points and every other $D_j$. Suppose it occurs in $\mathcal K_r$.
+Choose a curve through this point with generic point in the ordinary
+independent span graph, normalize the curve and complete its local
+ring. After lifting to the ordering cover, this gives rank-one matrix
+arcs over $R=\C[[z]]$,
+\[
+ p_i(z)\longrightarrow Q_i\quad(1\leq i\leq6),\qquad
+ d_j(z)\longrightarrow D_j\quad(j\ne s),
+\]
+whose generic span has dimension $r$ and specializes to
+$L_{\mathrm{diag}}$. Representatives regular in their pivot charts
+may be chosen with exactly the indicated limits.
+
+The first-factor vectors of the retained $d_j(z)$ are independent
+over $R$, as are their second-factor vectors. Completing these lists
+to bases gives changes of basis in $A$ and $B$, congruent to the
+identity modulo $z$, which make all retained $d_j(z)$ equal to $D_j$.
+These changes preserve the limiting subspace. The moving span is a
+rank-$r$ subbundle of the constant $W$-bundle. Choose a regular section
+$Z(z)$ of it satisfying $Z(0)=D_s$, and write over $\C((z))$
+\[
+ Z(z)=\sum_{i=1}^6\alpha_i(z)p_i(z)
+                  +\sum_{j\ne s}\beta_j(z)D_j.
+\]
+Some coefficient has a pole, since the limiting tuple does not span
+$D_s$. Let $k\geq1$ be the largest pole order. After multiplication
+by $z^k$, reduction modulo $z$ gives a nonzero relation on the limiting
+tuple. The six core coefficients therefore all have the same nonzero
+constant $\lambda$, and every retained diagonal coefficient has
+constant zero. Dividing by $\lambda$, denote the integral
+coefficients by $a_i(z)$ and $b_j(z)$; then
+\[
+ a_i(0)=1,\qquad b_j(0)=0.
+\]
+Set
+\[
+ P=\sum_{i=1}^3a_ip_i,\qquad
+ N=-\sum_{i=4}^6a_ip_i.
+\]
+Both matrices have rank at most three and specialize to $M$ in the
+core block. Their relation is
+\begin{equation}\label{nf:diagonal-pole-relation}
+ P-N+\sum_{j\ne s}b_jD_j=\lambda^{-1}z^kZ(z).
+\end{equation}
+Its core and cross blocks show that the three differences in
+Lemma~\ref{nf:diagonal-block} are divisible by $z^k$. The whole
+lower-right block of $P-N$ is consequently divisible by $z^{k+1}$.
+At the $(u_s,w_s)$ coordinate, all retained $D_j$ vanish, whereas
+the right side of~\eqref{nf:diagonal-pole-relation} has valuation
+exactly $k$, because $Z(0)=D_s$. This is a contradiction.
+
+Thus the proper fibre contains only the six independent subsets.
+At each, the graph is an open chart in the smooth unordered
+configuration space. Lemma~\ref{nf:proper-graph} now proves the
+normalization assertions, including the multiplicity one of every
+fibre point and the tensor-neighborhood statement. The dimension
+assumptions give $a+b\geq2r-4\geq r+2$, as required for generic
+birationality. Permuting tensor factors gives the final assertion.
+\end{proof}
+
+\subsection{The seventh point at rank six}
+\label{nf:rank-six-subsection}
+
+\begin{theorem}[The rank-six row-extension fibre]
+\label{nf:rank-six}
+Let $a\geq4$, $b\geq3$, $a+b\geq8$ and $c\geq6$. For a new
+coordinate vector $u\in A$ outside $A_0$, put
+\[
+ R=u\otimes v(4),\qquad L=L_0\oplus\C R,\qquad
+ T_{\mathrm{row},6}=T_5+R\otimes f_6.
+\]
+The tensor has rank and border rank six. The normalization of
+$X_6(a,b,c)$ has exactly seven reduced points over it, all smooth.
+Six correspond to actual six-term decompositions. The seventh
+corresponds to the dependent configuration of all six core directions
+$[Q_1],\ldots,[Q_6]$ and is not an actual decomposition. On a
+Zariski open neighborhood of this tensor the entire normalization is
+smooth and its morphism is unramified. Exchanging $A$ and $B$ gives
+the column-extension statement with $a\geq3$, $b\geq4$,
+$a+b\geq8$ and $c\geq6$; all factor permutations are allowed.
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{norm:row-column} gives the reduced intersection
+\[
+ S\cap\PP L=\{[Q_1],\ldots,[Q_6],[R]\},
+\]
+the six actual decompositions and the rank assertions. The six
+subsets omitting a core point are independent. By
+Lemma~\ref{nf:proper-graph}, the only remaining candidate in the
+proper fibre is the six-core configuration. We calculate the graph
+scheme at that configuration.
+
+Let $\mathcal C_6\subseteq S^6$ be the ordered distinct-point
+configuration space, of dimension $n=6(a+b-2)$, and let
+$x=([Q_1],\ldots,[Q_6])$. Choose regular nonzero representatives
+$P_i$ near $x$ and a fixed invertible five-row coordinate minor of
+the first five columns of $(P_1,\ldots,P_6)$. Subtract from $P_6$
+the unique linear combination of the first five columns which agrees
+on those pivot rows, and call the residual vector $q$. Its remaining
+coordinates generate the ideal $I$ of all six-by-six minors. This is
+an equality of ideals, since row reduction using the invertible
+pivot changes the column matrix to an identity block with final
+residual column $q$. Write $D=V(I)$ for this exact determinantal
+subscheme.
+
+Equivalently, impose the relation
+\begin{equation}\label{nf:rank-six-relation}
+ \sum_{i=1}^6\lambda_iP_i=0,\qquad \lambda_6=1.
+\end{equation}
+The pivot solves the other five coefficients uniquely and regularly,
+so eliminating them identifies this incidence scheme with $D$.
+All six coefficients at $x$ are nonzero; we may restrict to the
+locus where they are units. Lift the projective points to nonzero
+factor vectors $a_i,b_i$. This is a smooth torus torsor of relative
+dimension twelve. Absorbing $\lambda_i$ into $a_i$ turns
+\eqref{nf:rank-six-relation} into
+\begin{equation}\label{nf:rank-six-product}
+ \mathsf A\mathsf B^{\mathsf T}=0,
+ \qquad
+ \mathsf A=(a_1,\ldots,a_6),\quad
+ \mathsf B=(b_1,\ldots,b_6),
+\end{equation}
+with the five relation coordinates otherwise free.
+
+Here is an explicit scheme chart for~\eqref{nf:rank-six-product}.
+Write
+\[
+ \mathsf A=[A_1\ A_2],\qquad
+ \mathsf B^{\mathsf T}=\begin{bmatrix}B_1\\B_2\end{bmatrix},
+ \qquad B_1=[D_0\ E_0],\quad B_2=[C_0\ F_0],
+\]
+where $C_0,D_0$ are three-by-three. At the core, $A_1$ has a
+fixed invertible three-row minor and $C_0$ is invertible. On that
+open chart the product equations are exactly
+\[
+ A_1D_0+A_2C_0=0,\qquad A_1E_0+A_2F_0=0.
+\]
+They are scheme-theoretically equivalent to
+\begin{equation}\label{nf:rank-six-solved-chart}
+ A_2=-A_1D_0C_0^{-1},\qquad
+ E_0=D_0C_0^{-1}F_0.
+\end{equation}
+Indeed, the first equation solves $A_2$; after substitution, a left
+inverse for $A_1$ turns the second into the displayed equation for
+$E_0$. There are no further equations. The free coordinates
+$A_1,C_0,D_0,F_0$ have total dimension
+\[
+ 3a+9+9+3(b-3)=3a+3b+9.
+\]
+Adding the five relation coordinates and descending through the
+12-dimensional smooth torsor shows that $D$ is smooth of dimension
+$3a+3b+2$. Its codimension in $\mathcal C_6$ is
+\begin{equation}\label{nf:rank-six-center-codimension}
+ h=3a+3b-14.
+\end{equation}
+In particular the exact maximal-minor ideal, and not merely its
+radical, is the ideal of a smooth center.
+
+At $x$, differentiating the residual column gives, up to a common
+nonzero scalar,
+\[
+ dq_x(\delta P_1,\ldots,\delta P_6)
+       =\sum_{i=1}^6\delta P_i\pmod{L_0}.
+\]
+The sum of the affine rank-one tangent spaces at the $Q_i$ is
+\[
+ U=A_0\otimes B+A\otimes B_0,
+ \qquad \dim U=3a+3b-9.
+\]
+To see the equality, use the tangent formula
+$T_{a_i\otimes b_i}\widehat S=a_i\otimes B+A\otimes b_i$,
+and the facts that the $a_i$ span $A_0$ and the $b_i$ span $B_0$.
+Projective representative changes discard only radial directions,
+which lie in $L_0$. Thus the differential image is exactly $U/L_0$,
+of dimension $h$. Its kernel is $T_xD$, and it induces an isomorphism
+\begin{equation}\label{nf:rank-six-normal-map}
+ N_{D/\mathcal C_6,x}\simeq U/L_0.
+\end{equation}
+
+The Pl\"ucker coordinates of the rational span map are
+\[
+ P_1\wedge\cdots\wedge P_5\wedge P_6
+       =P_1\wedge\cdots\wedge P_5\wedge q.
+\]
+Their base ideal is exactly $I$. The closure of this rational graph
+is therefore the blowup $\operatorname{Bl}_D(\mathcal C_6)$:
+on affine charts the Rees algebra $\bigoplus_{j\geq0}I^j$ embeds
+in the polynomial algebra with its degree parameter, and its Proj
+is the closure of the graph where $I$ is nonzero. The Pl\"ucker
+relations hold on this closure, so using the Grassmannian as target
+gives the same graph. Both $\mathcal C_6$ and $D$ are smooth, hence
+this blowup is smooth. Explicitly, in \'etale local coordinates with
+$I=(x_1,\ldots,x_h)$, the chart indexed by $x_j$ has equations
+$x_i=x_jz_i$ for $i\ne j$ and is smooth after eliminating those
+$x_i$.
+
+The exceptional fibre over $x$ is $\PP(N_{D/\mathcal C_6,x})$.
+Under~\eqref{nf:rank-six-normal-map}, its map to the Grassmannian is
+\[
+ [w]\longmapsto L_0+\C w,\qquad [w]\in\PP(U/L_0).
+\]
+Different lines give different six-dimensional subspaces. Since
+$R\in A\otimes B_0\subseteq U$ and $R\notin L_0$, exactly one
+exceptional point maps to $L=L_0+\C R$. It is smooth. The free
+permutation quotient preserves this local smoothness and gives
+exactly one point over the unordered six-core configuration.
+
+The complete proper fibre consequently consists of this point and
+the six smooth ordinary points. By Lemma~\ref{nf:proper-graph},
+all seven have multiplicity one, and they give the entire smooth,
+unramified normalization over a neighborhood of $L$ and then over
+a neighborhood of $T_{\mathrm{row},6}$. The exceptional configuration
+spans only $L_0$, so it cannot represent an actual six-term
+decomposition of a tensor whose third flattening has rank six.
+The symmetry statements follow by permuting the factors.
+\end{proof}
+
+\subsection{All ranks with a three-dimensional matrix factor}
+\label{nf:three-factor-subsection}
+
+\begin{theorem}[The three-dimensional-factor row family]
+\label{nf:three-factor}
+Let $r\geq6$, $a\geq r-1$ and $c\geq r$, and let $B=B_0$ have
+dimension exactly three. For independent extra coordinate vectors
+$u_1,\ldots,u_{r-5}$ in $A$, set
+\begin{equation}\label{nf:row-data}
+ R_s=u_s\otimes v(s+3),\qquad
+ L_r=L_0\oplus\langle R_1,\ldots,R_{r-5}\rangle,\qquad
+ T_{\mathrm{row}}=T_5+\sum_{s=1}^{r-5}R_s\otimes f_{5+s}.
+\end{equation}
+The tensor has rank and border rank $r$. The normalization of
+$X_r(a,3,c)$ has exactly $r+1$ reduced points over it, all smooth.
+Six correspond to actual $r$-term decompositions. The other $r-5$
+correspond to the dependent configurations which omit one $R_s$
+and contain all six $Q_i$. There is a Zariski open neighborhood of
+$T_{\mathrm{row}}$ whose entire normalization is smooth and whose
+normalization morphism is unramified. All factor permutations of
+this statement hold.
+\end{theorem}
+
+\begin{proof}
+By Proposition~\ref{norm:row-column}, the rank-one intersection is
+exactly the $r+1$ listed reduced points, and the only relation among
+them is the six-core relation. There are six independent
+$r$-subsets, giving precisely the six actual decompositions; the
+rank and border rank are $r$. The other $r-5$ subsets each omit
+one added point. Lemma~\ref{nf:proper-graph} reduces exhaustion and
+smoothness to the graph at these dependent configurations.
+
+Fix one such ordered configuration $x=(p_1,\ldots,p_r)$ and reorder
+it so that the first $r-1$ points are independent. Write $K$ for
+their $(r-1)$-dimensional span at $x$. In local projective charts
+choose nonzero affine representatives $P_i(y)$ and invert a fixed
+$(r-1)$-row minor of the first $r-1$ columns. Their spans form a
+subbundle $K(y)$ of the constant $W$-bundle, whose quotient is locally
+free of rank
+\[
+ h=\dim W-(r-1)=3a-r+1.
+\]
+In a quotient trivialization let $q(y)$ be the residual image of
+$P_r(y)$. Elementary row operations using the pivot show that the
+coordinates of $q$ generate the ideal of all $r$-by-$r$ minors.
+Thus the rank-deficiency subscheme is exactly $D=\{q=0\}$,
+with this ideal, not just this zero set.
+
+In the unique relation $\sum_i\lambda_iP_i(x)=0$, the six core
+coefficients are nonzero and those of the retained added points are
+zero. Differentiating the residual column yields, up to a common
+nonzero scalar and quotient coordinates,
+\begin{equation}\label{nf:row-residual-derivative}
+ dq_x(\delta P_1,\ldots,\delta P_r)
+   =\sum_{i\,\text{core}}\lambda_i\delta P_i\pmod K.
+\end{equation}
+The three row-core matrices are $Q_i=e_i\otimes r_i$, where the
+rows $r_1,r_2,r_3$ of the invertible matrix $M$ form a basis of $B$.
+Their affine tangent spaces contain $A\otimes r_i$; their sum
+therefore contains all of $A\otimes B=W$. Each relevant coefficient
+in~\eqref{nf:row-residual-derivative} is nonzero. Passing to
+projective tangent spaces removes only the radial directions $Q_i$,
+which already lie in $K$. Consequently $dq_x$ is surjective onto
+$W/K$.
+
+It follows from the Jacobian criterion that $q$ is smooth near $x$
+and that $D$ is smooth of codimension $h$. Equivalently, the
+coordinates $q_1,\ldots,q_h$ form part of an \'etale local coordinate
+system. As in the rank-six calculation, the local ordered span graph
+is the blowup of the exact maximal-minor ideal $(q_1,\ldots,q_h)$.
+In its $q_j$ chart the equations are
+\[
+ q_i=q_jz_i\quad(i\ne j).
+\]
+Eliminating these $q_i$ leaves $q_j$, the $z_i$, and the complementary
+smooth coordinates free. Thus the graph is smooth at every point
+above $x$.
+
+The exceptional fibre over $x$ is $\PP(W/K)$. Its map to the
+Grassmannian is the usual isomorphism from $\PP(W/K)$ to the
+variety of $r$-dimensional subspaces containing $K$,
+\[
+ [w]\longmapsto K+\C w.
+\]
+Since $K\subset L_r$, the prescribed target $L_r$ selects exactly
+one exceptional point. In particular that point exists in the graph,
+is smooth, and is the only point over this dependent configuration
+and $L_r$. The ordering cover is \'etale, so the same is true in the
+unordered graph.
+
+This gives one point for each of the $r-5$ dependent subsets and one
+ordinary smooth point for each of the six independent subsets.
+Lemma~\ref{nf:proper-graph} proves that this is the entire reduced
+fibre, that it has $r+1$ points, and that the normalization is smooth
+and unramified on a neighborhood. Its tensor transfer proves the
+assertions over $T_{\mathrm{row}}$. Here $a+3\geq r+2$ supplies
+the required generic birationality. A dependent subset spans only an
+$(r-1)$-space and hence cannot give an actual decomposition of this
+rank-$r$ flattening.
+\end{proof}
+
+The equality $B=B_0$ is a hypothesis of
+Theorem~\ref{nf:three-factor}: it is precisely what makes the three
+row-core tangent spaces cover $A\otimes B$ in the residual derivative.
+The first factor and the third factor may be enlarged throughout the
+stated ranges. Theorem~\ref{nf:rank-six} separately permits enlargement
+of both matrix factors at rank six. The three theorems above do not address the mixed row/column family
+in ranks $r\geq7$ with both matrix factors enlarged; specified such
+families will be treated below. Their neighborhood statements imply
+no global smoothness, Cohen--Macaulayness or rational singularities
+of a normalization.
